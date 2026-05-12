@@ -242,6 +242,15 @@ p, .body {
     -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
+  function renameContactList(oldName, newName) {
+    const trimmed = newName.trim();
+    if (!trimmed || trimmed === oldName) return;
+    setState(s => ({
+      ...s,
+      contactLists: s.contactLists.map(l => l === oldName ? trimmed : l),
+      contacts: s.contacts.map(c => ({...c, lists: (c.lists||[]).map(l => l === oldName ? trimmed : l)}))
+    }));
+  }
   *, *::before, *::after { box-sizing: border-box; }
 
   button:focus-visible { outline: 2px solid var(--hed-lime); outline-offset: 2px; }
@@ -6475,6 +6484,8 @@ function FuncContactsScreen({ accent, onTab, onOpenThread, onOpenContact }) {
   const [newListOpen, setNewListOpen] = React.useState(false);
   const [newListName, setNewListName] = React.useState('');
   const [deleteConfirm, setDeleteConfirm] = React.useState(null);
+  const [renameList, setRenameList] = React.useState(null);
+  const [renameName, setRenameName] = React.useState('');
   const ROLE_FILTERS = ['All', '★ Starred', 'Talent', 'Venue'];
   const filtered = s.contacts.filter(c => {
     if (list === 'Talent' && c.role !== 'Talent') return false;
@@ -6497,7 +6508,7 @@ function FuncContactsScreen({ accent, onTab, onOpenThread, onOpenContact }) {
         {(s.contactLists || []).map(l => (
           <span key={l} style={{ display: 'inline-flex', alignItems: 'center', gap: 2 }}>
             <Chip on={list === l} accent={accent} onClick={() => setList(l)}>{l}</Chip>
-            {list === l && <button onClick={() => setDeleteConfirm(l)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: HED.muted, fontSize: 14, padding: '0 2px' }}>×</button>}
+            {list === l && <><button onClick={() => { setRenameList(l); setRenameName(l); }} style={{ background: 'none', border: 'none', cursor: 'pointer', color: HED.textSoft, fontSize: 13, padding: '0 3px', lineHeight: 1 }}>✏</button><button onClick={() => setDeleteConfirm(l)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: HED.muted, fontSize: 14, padding: '0 2px' }}>×</button></>
           </span>
         ))}
         <Chip on={false} accent={accent} onClick={() => setNewListOpen(true)}>＋ New List</Chip>
@@ -6519,7 +6530,15 @@ function FuncContactsScreen({ accent, onTab, onOpenThread, onOpenContact }) {
         ))}
       </div>
       {addOpen && <AddContactSheet accent={accent} onClose={() => setAddOpen(false)}/>}
-      {deleteConfirm && (
+      {renameList && (
+          <BottomSheet onClose={() => setRenameList(null)}>
+            <div style={{ fontSize: 17, fontWeight: 600, color: HED.text, marginBottom: 4 }}>Rename List</div>
+            <div style={{ fontSize: 13, color: HED.textSoft, marginBottom: 16 }}>"{renameList}"</div>
+            <input value={renameName} onChange={e => setRenameName(e.target.value)} placeholder="List name" style={{ ...fieldStyle(), width: '100%', marginBottom: 16, boxSizing: 'border-box' }} autoFocus/>
+            <PrimaryBtn accent={accent} onClick={() => { renameContactList(renameList, renameName); if (list === renameList) setList(renameName.trim()); setRenameList(null); }}>Save</PrimaryBtn>
+          </BottomSheet>
+        )}
+        {deleteConfirm && (
           <BottomSheet onClose={() => setDeleteConfirm(null)}>
             <div style={{ textAlign: 'center', padding: '8px 0 16px' }}>
               <div style={{ fontSize: 17, fontWeight: 600, color: HED.text, marginBottom: 8 }}>Delete List</div>
