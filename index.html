@@ -3258,12 +3258,13 @@ function seedState() {
       photo: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=200&q=80',
     },
     billing: {
-      currentPlan: 'venue-solo',        // 'gig-ready' | 'venue-solo' | 'venue-hq' | 'agency-pro' | 'enterprise'
+      currentPlan: 'venue-hq',        // 'gig-ready' | 'venue-solo' | 'venue-hq' | 'agency-pro' | 'enterprise'
       currentArtistPlan: 'artist-free', // 'artist-free' | 'artist-pro'
       cycle: 'monthly',                 // 'monthly' | 'yearly'
       nextBillingDate: 'May 16, 2026',
       defaultVenueId: 'v1',
       payoutConnected: false,
+      venueTemplateSlots: ['v1', 'v2', 'v3'], // venue IDs with active EPK template slots (max 3)
       paymentMethods: [
         { id: 'pm1', brand: 'Visa', last4: '4242', exp: '12/27', isDefault: true },
       ],
@@ -9153,9 +9154,9 @@ function AccountWithNav({ accent, onTab, onOpenEPKs, onOpenVenues, onOpenBrowseB
         <Card padding={16} style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 18 }}>
           <Avatar src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=200&q=80" size={62} ring={accent}/>
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontWeight: 600, fontSize: 17 }}>{s.auth.name}</div>
+            <div style={{ fontWeight: 600, fontSize: 17 }}>{(s.auth.firstName || '') + ' ' + (s.auth.lastName || '')}</div>
             <div style={{ color: HED.muted, fontSize: 13, marginTop: 2, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{s.auth.email}</div>
-            <div style={{ marginTop: 8 }}><Badge tone="lime">Venue Solo &middot; $39/mo</Badge></div>
+            <div style={{ marginTop: 8 }}><Badge tone="lime">Venue HQ &middot; 3 Seats</Badge></div>
           </div>
         </Card>
 
@@ -9187,6 +9188,51 @@ function AccountWithNav({ accent, onTab, onOpenEPKs, onOpenVenues, onOpenBrowseB
             </div>
           </div>
           <Icon name="chevron-right" size={16} color={HED.subtle}/>
+        </Card>
+
+        {/* Venue Template Slots */}
+        <div style={{ fontSize: 11, fontWeight: 700, color: HED.muted, textTransform: 'uppercase', letterSpacing: 0.6, marginBottom: 8, paddingLeft: 2 }}>Venue Templates</div>
+        <Card padding={14} style={{ marginBottom: 18 }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
+            <div style={{ fontSize: 13.5, fontWeight: 600 }}>EPK Template Slots</div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              {[0,1,2].map(i => (
+                <div key={i} style={{ width: 10, height: 10, borderRadius: '50%', background: (s.billing.venueTemplateSlots || []).length > i ? accent : HED.border }}/>
+              ))}
+              <div style={{ fontSize: 12, color: HED.muted, marginLeft: 4 }}>{(s.billing.venueTemplateSlots || []).length} / 3</div>
+            </div>
+          </div>
+          <div style={{ color: HED.muted, fontSize: 12, marginBottom: 12, lineHeight: 1.5 }}>
+            Venue HQ includes 3 EPK template slots. Select which venues display your custom EPK to artists.
+          </div>
+          {s.venues.map(v => {
+            const slots = s.billing.venueTemplateSlots || [];
+            const active = slots.includes(v.id);
+            const canActivate = !active && slots.length < 3;
+            return (
+              <div key={v.id} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 0', borderBottom: `1px solid ${HED.borderSoft}` }}>
+                <div style={{ width: 36, height: 36, borderRadius: 9, background: active ? `color-mix(in oklch, ${accent} 18%, transparent)` : HED.surface, border: `1px solid ${active ? accent : HED.border}`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: active ? accent : HED.muted, flexShrink: 0 }}>
+                  <Icon name="building" size={16}/>
+                </div>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ fontSize: 13.5, fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{v.name}</div>
+                  <div style={{ fontSize: 12, color: HED.muted }}>{v.city}</div>
+                </div>
+                <div
+                  onClick={() => {
+                    const cur = s.billing.venueTemplateSlots || [];
+                    if (active) {
+                      actions.updateBilling({ venueTemplateSlots: cur.filter(id => id !== v.id) });
+                    } else if (cur.length < 3) {
+                      actions.updateBilling({ venueTemplateSlots: [...cur, v.id] });
+                    }
+                  }}
+                  style={{ width: 44, height: 26, borderRadius: 13, background: active ? accent : HED.surface, border: `1px solid ${active ? accent : HED.border}`, display: 'flex', alignItems: 'center', padding: '0 3px', cursor: canActivate || active ? 'pointer' : 'not-allowed', transition: 'all 0.2s', flexShrink: 0, opacity: !active && !canActivate ? 0.4 : 1 }}>
+                  <div style={{ width: 20, height: 20, borderRadius: '50%', background: active ? HED.bg : HED.muted, transform: active ? 'translateX(18px)' : 'translateX(0)', transition: 'all 0.2s' }}/>
+                </div>
+              </div>
+            );
+          })}
         </Card>
 
         <div style={{ fontSize: 11, fontWeight: 700, color: HED.muted, textTransform: 'uppercase', letterSpacing: 0.6, marginBottom: 8, paddingLeft: 2 }}>Settings</div>
