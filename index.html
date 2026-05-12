@@ -241,17 +241,7 @@ p, .body {
     color: #2a251f;
     -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-  }
-  function renameContactList(oldName, newName) {
-    const trimmed = newName.trim();
-    if (!trimmed || trimmed === oldName) return;
-    setState(s => ({
-      ...s,
-      contactLists: s.contactLists.map(l => l === oldName ? trimmed : l),
-      contacts: s.contacts.map(c => ({...c, lists: (c.lists||[]).map(l => l === oldName ? trimmed : l)}))
-    }));
-  }
-  *, *::before, *::after { box-sizing: border-box; }
+  }  *, *::before, *::after { box-sizing: border-box; }
 
   button:focus-visible { outline: 2px solid var(--hed-lime); outline-offset: 2px; }
 
@@ -3515,6 +3505,15 @@ const actions = {
       contacts: s.contacts.map(c => ({ ...c, lists: (c.lists || []).filter(l => l !== name) })),
     }));
   },
+  renameContactList(oldName, newName) {
+    const trimmed = newName.trim();
+    if (!trimmed || trimmed === oldName) return;
+    setState(s => ({
+      ...s,
+      contactLists: s.contactLists.map(l => l === oldName ? trimmed : l),
+      contacts: s.contacts.map(c => ({...c, lists: (c.lists||[]).map(l => l === oldName ? trimmed : l)}))
+    }));
+  },
   toggleContactList(contactId, listName) {
     setState(s => ({
       ...s,
@@ -6535,7 +6534,7 @@ function FuncContactsScreen({ accent, onTab, onOpenThread, onOpenContact }) {
             <div style={{ fontSize: 17, fontWeight: 600, color: HED.text, marginBottom: 4 }}>Rename List</div>
             <div style={{ fontSize: 13, color: HED.textSoft, marginBottom: 16 }}>"{renameList}"</div>
             <input value={renameName} onChange={e => setRenameName(e.target.value)} placeholder="List name" style={{ ...fieldStyle(), width: '100%', marginBottom: 16, boxSizing: 'border-box' }} autoFocus/>
-            <PrimaryBtn accent={accent} onClick={() => { renameContactList(renameList, renameName); if (list === renameList) setList(renameName.trim()); setRenameList(null); }}>Save</PrimaryBtn>
+            <PrimaryBtn accent={accent} onClick={() => { actions.renameContactList(renameList, renameName); if (list === renameList) setList(renameName.trim()); setRenameList(null); }}>Save</PrimaryBtn>
           </BottomSheet>
         )}
         {deleteConfirm && (
