@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Hedlyner ‚Äî Clickable Prototype</title>
+<title>Hedlyner &mdash; Clickable Prototype</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <link rel="stylesheet" href="https://unpkg.com/lucide-static@latest/font/lucide.css">
@@ -10,11 +10,11 @@
 <style>
 /* ===== DESIGN SYSTEM: colors_and_type.css (inlined) ===== */
 /* =========================================================================
-   Hedlyner Design System ‚Äî Colors & Type
+   Hedlyner Design System -- Colors & Type
    Source of truth: hedlyner-ui-v5 src/index.css + Figma "New Component Library"
    ========================================================================= */
 
-/* Fonts ‚Äî Instrument Sans is THE brand family. Inter as dev fallback. Domine rare serif accent. */
+/* Fonts -- Instrument Sans is THE brand family. Inter as dev fallback. Domine rare serif accent. */
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Domine:wght@400;500;600;700&display=swap');
 
 :root {
@@ -33,7 +33,7 @@
   --hed-deep-green:  #061C17;   /* signature deep background */
   --hed-purple:      #BF80FF;   /* alt purple (extended) */
 
-  /* ---------- NEUTRAL SCALE (0=white ‚Üí 1000=black) ---------- */
+  /* ---------- NEUTRAL SCALE (0=white  1000=black) ---------- */
   --neutral-0:    #FFFFFF;
   --neutral-100:  #F5F5F5;
   --neutral-200:  #DEDEDE;
@@ -215,13 +215,13 @@ p, .body {
   letter-spacing: 0;
 }
 
-/* Utilities ‚Äî text colors */
+/* Utilities -- text colors */
 .text-lime    { color: var(--hed-lime); }
 .text-violet  { color: var(--hed-violet); }
 .text-muted   { color: var(--fg-muted); }
 .text-fg      { color: var(--fg); }
 
-/* Utilities ‚Äî backgrounds */
+/* Utilities -- backgrounds */
 .bg-lime      { background: var(--hed-lime); color: var(--fg-on-lime); }
 .bg-violet    { background: var(--hed-violet); color: var(--fg-on-lime); }
 .bg-deep      { background: var(--hed-deep-green); color: var(--fg); }
@@ -381,21 +381,21 @@ p, .body {
       <span class="brand-tag">Prototype</span>
     </div>
     <h1 class="head-line">Live booking, end-to-end on mobile.</h1>
-    <p class="blurb">Tap through both flows ‚Äî book an artist, or apply as one. The phone on the right is fully interactive. Use the shortcuts to jump to any step.</p>
+    <p class="blurb">Tap through both flows &mdash; book an artist, or apply as one. The phone on the right is fully interactive. Use the shortcuts to jump to any step.</p>
 
     <div class="legend">
       <h3>The two flows</h3>
       <div class="legend-row">
         <div class="dot"></div>
         <div>
-          <strong>Booker</strong> ‚Äî Discover artists, send an offer, advance the show, get to "great show."<br/>
+          <strong>Booker</strong> &mdash; Discover artists, send an offer, advance the show, get to "great show."<br/>
           <span class="muted">Start: bottom-nav <em>Discover</em> tab.</span>
         </div>
       </div>
       <div class="legend-row">
         <div class="dot violet"></div>
         <div>
-          <strong>Artist</strong> ‚Äî Build an EPK, browse open bookings, get paid.<br/>
+          <strong>Artist</strong> &mdash; Build an EPK, browse open bookings, get paid.<br/>
           <span class="muted">Start: <em>Account</em> tab &rarr; Artist Tools.</span>
         </div>
       </div>
@@ -424,11 +424,11 @@ p, .body {
       </div>
       <div class="shortcut-grp">
         <div class="grp-label">Other</div>
-        <button class="shortcut" data-route="messages" data-tab="messages"><span class="num">¬∑</span> Messages</button>
-        <button class="shortcut" data-route="contacts" data-tab="contacts"><span class="num">¬∑</span> Contacts</button>
+        <button class="shortcut" data-route="messages" data-tab="messages"><span class="num">&middot;</span> Messages</button>
+        <button class="shortcut" data-route="contacts" data-tab="contacts"><span class="num">&middot;</span> Contacts</button>
       </div>
       <p style="font-size:11.5px; color:#8a847a; line-height:1.5; margin-top:18px; padding-top:14px; border-top:1px solid rgba(0,0,0,0.08);">
-        Or just tap freely ‚Äî bottom nav, swipe cards, the <strong>+</strong> FAB on Bookings, etc. Open the <strong>Tweaks</strong> panel to swap accent or advance variant.
+        Or just tap freely &mdash; bottom nav, swipe cards, the <strong>+</strong> FAB on Bookings, etc. Open the <strong>Tweaks</strong> panel to swap accent or advance variant.
       </p>
     </div>
   </div>
@@ -486,7 +486,7 @@ p, .body {
 //     );
 //   }
 //
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ
+// -----------------------------------------------------------------------------
 
 const __TWEAKS_STYLE = `
   .twk-panel{position:fixed;right:16px;bottom:16px;z-index:2147483646;width:280px;
@@ -598,9 +598,9 @@ const __TWEAKS_STYLE = `
     filter:drop-shadow(0 1px 1px rgba(0,0,0,.3))}
 `;
 
-// ‚îÄ‚îÄ useTweaks ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ
+// -- useTweaks ---------------------------------------------------------------
 // Single source of truth for tweak values. setTweak persists via the host
-// (__edit_mode_set_keys ‚Üí host rewrites the EDITMODE block on disk).
+// (__edit_mode_set_keys \u2192 host rewrites the EDITMODE block on disk).
 function useTweaks(defaults) {
   const [values, setValues] = React.useState(defaults);
   // Accepts either setTweak('key', value) or setTweak({ key: value, ... }) so a
@@ -612,15 +612,15 @@ function useTweaks(defaults) {
     setValues((prev) => ({ ...prev, ...edits }));
     window.parent.postMessage({ type: '__edit_mode_set_keys', edits }, '*');
     // Same-window signal so in-page listeners (deck-stage rail thumbnails)
-    // can react ‚Äî the parent message only reaches the host, not peers.
+    // can react -- the parent message only reaches the host, not peers.
     window.dispatchEvent(new CustomEvent('tweakchange', { detail: edits }));
   }, []);
   return [values, setTweak];
 }
 
-// ‚îÄ‚îÄ TweaksPanel ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ
+// -- TweaksPanel -------------------------------------------------------------
 // Floating shell. Registers the protocol listener BEFORE announcing
-// availability ‚Äî if the announce ran first, the host's activate could land
+// availability -- if the announce ran first, the host's activate could land
 // before our handler exists and the toolbar toggle would silently no-op.
 // The close button posts __edit_mode_dismissed so the host's toolbar toggle
 // flips off in lockstep; the host echoes __deactivate_edit_mode back which
@@ -632,7 +632,7 @@ function TweaksPanel({ title = 'Tweaks', noDeckControls = false, children }) {
   // toggle drives the deck's per-viewer _railVisible via window message;
   // state is mirrored from the same localStorage key the deck reads so
   // the control reflects reality across reloads. The mechanism is the
-  // message ‚Äî authors who want custom placement can post it directly
+  // message -- authors who want custom placement can post it directly
   // and pass noDeckControls to suppress this one.
   const hasDeckStage = React.useMemo(
     () => typeof document !== 'undefined' && !!document.querySelector('deck-stage'),
@@ -722,7 +722,7 @@ function TweaksPanel({ title = 'Tweaks', noDeckControls = false, children }) {
           <b>{title}</b>
           <button className="twk-x" aria-label="Close tweaks"
                   onMouseDown={(e) => e.stopPropagation()}
-                  onClick={dismiss}>‚úï</button>
+                  onClick={dismiss}>&#x2715;</button>
         </div>
         <div className="twk-body">
           {hasDeckStage && !noDeckControls && (
@@ -737,7 +737,7 @@ function TweaksPanel({ title = 'Tweaks', noDeckControls = false, children }) {
   );
 }
 
-// ‚îÄ‚îÄ Layout helpers ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ
+// -- Layout helpers ----------------------------------------------------------
 
 function TweakSection({ label, children }) {
   return (
@@ -760,7 +760,7 @@ function TweakRow({ label, value, children, inline = false }) {
   );
 }
 
-// ‚îÄ‚îÄ Controls ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ
+// -- Controls ----------------------------------------------------------------
 
 function TweakSlider({ label, value, min = 0, max = 100, step = 1, unit = '', onChange }) {
   return (
@@ -786,20 +786,20 @@ function TweakRadio({ label, value, options, onChange }) {
   const trackRef = React.useRef(null);
   const [dragging, setDragging] = React.useState(false);
   // The active value is read by pointer-move handlers attached for the lifetime
-  // of a drag ‚Äî ref it so a stale closure doesn't fire onChange for every move.
+  // of a drag &mdash; ref it so a stale closure doesn't fire onChange for every move.
   const valueRef = React.useRef(value);
   valueRef.current = value;
 
   // Segments wrap mid-word once per-segment width runs out. The track is
-  // ~248px (280 panel ‚àí 28 body pad ‚àí 4 seg pad), each button loses 12px
-  // to its own padding, and 11.5px system-ui averages ~6.3px/char ‚Äî so 2
+  // ~248px (280 panel &#x2212; 28 body pad &#x2212; 4 seg pad), each button loses 12px
+  // to its own padding, and 11.5px system-ui averages ~6.3px/char &mdash; so 2
   // options fit ~16 chars each, 3 fit ~10. Past that (or >3 options), fall
   // back to a dropdown rather than wrap.
   const labelLen = (o) => String(typeof o === 'object' ? o.label : o).length;
   const maxLen = options.reduce((m, o) => Math.max(m, labelLen(o)), 0);
   const fitsAsSegments = maxLen <= ({ 2: 16, 3: 10 }[options.length] ?? 0);
   if (!fitsAsSegments) {
-    // <select> emits strings ‚Äî map back to the original option value so the
+    // <select> emits strings &mdash; map back to the original option value so the
     // fallback stays type-preserving (numbers, booleans) like the segment path.
     const resolve = (s) => {
       const m = options.find((o) => String(typeof o === 'object' ? o.value : o) === s);
@@ -911,7 +911,7 @@ function TweakNumber({ label, value, min, max, step = 1, unit = '', onChange }) 
   );
 }
 
-// Relative-luminance contrast pick ‚Äî checkmarks drawn over a swatch need to
+// Relative-luminance contrast pick &mdash; checkmarks drawn over a swatch need to
 // read on both #111 and #fafafa without per-option configuration. Hex input
 // only (#rgb / #rrggbb); named or rgb()/hsl() colors fall through to "light".
 function __twkIsLight(hex) {
@@ -931,8 +931,8 @@ const __TwkCheck = ({ light }) => (
   </svg>
 );
 
-// TweakColor ‚Äî curated color/palette picker. Each option is either a single
-// hex string or an array of 1-5 hex strings; the card adapts ‚Äî a lone color
+// TweakColor &mdash; curated color/palette picker. Each option is either a single
+// hex string or an array of 1-5 hex strings; the card adapts &mdash; a lone color
 // renders solid, a palette renders colors[0] as the hero (left ~2/3) with the
 // rest stacked in a sharp column on the right. onChange emits the
 // option in the shape it was passed (string stays string, array stays array).
@@ -963,7 +963,7 @@ function TweakColor({ label, value, options, onChange }) {
           return (
             <button key={i} type="button" className="twk-chip" role="radio"
                     aria-checked={on} data-on={on ? '1' : '0'}
-                    aria-label={colors.join(', ')} title={colors.join(' ¬∑ ')}
+                    aria-label={colors.join(', ')} title={colors.join(' &middot; ')}
                     style={{ background: hero }}
                     onClick={() => onChange(o)}>
               {sup.length > 0 && (
@@ -1021,7 +1021,7 @@ const ARTISTS = [
     location: 'New Orleans, LA',
     photo: 'https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=900&q=80',
     bio: 'Frenchmen Street regular, three nights a week at Snug Harbor. Trio rotates piano-bass-drums or guitar-bass-drums depending on the room.',
-    bioShort: 'Frenchmen Street regular. Three-piece ‚Äî adapts to the room.',
+    bioShort: 'Frenchmen Street regular. Three-piece \u2014 adapts to the room.',
     setLength: '90 min',
     fee: '$900',
     epkStatus: 'Published',
@@ -1034,7 +1034,7 @@ const ARTISTS = [
     genres: ['Indie Folk', 'Singer-Songwriter'],
     location: 'Austin, TX',
     photo: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=900&q=80',
-    bio: 'Solo with a loop pedal ‚Äî builds string-quartet textures live. Spotify editorial on three Indie Folk playlists this year.',
+    bio: 'Solo with a loop pedal \u2014 builds string-quartet textures live. Spotify editorial on three Indie Folk playlists this year.',
     bioShort: 'Solo with a loop pedal. Builds string-quartet textures live.',
     setLength: '45 min',
     fee: '$450',
@@ -1048,9 +1048,9 @@ const ARTISTS = [
     genres: ['Bluegrass', 'Americana'],
     location: 'Knoxville, TN',
     photo: 'https://images.unsplash.com/photo-1501612780327-45045538702b?w=900&q=80',
-    bio: 'Five-piece with mandolin, banjo, fiddle, upright bass, and acoustic guitar. Brewery-circuit veterans ‚Äî they know how to read a room.',
+    bio: 'Five-piece with mandolin, banjo, fiddle, upright bass, and acoustic guitar. Brewery-circuit veterans \u2014 they know how to read a room.',
     bioShort: 'Five-piece bluegrass. Brewery-circuit veterans.',
-    setLength: '2 √ó 45 min',
+    setLength: '2 \u00D7 45 min',
     fee: '$1,200',
     epkStatus: 'Published',
     instagram: '@cedarhollowband',
@@ -1078,7 +1078,7 @@ const ARTISTS = [
     photo: 'https://images.unsplash.com/photo-1485579149621-3123dd979885?w=900&q=80',
     bio: 'Sibling duo, tight harmonies, one nylon guitar. Wedding circuit + tasting-room residencies.',
     bioShort: 'Sibling duo. Tight harmonies, one nylon guitar.',
-    setLength: '2 √ó 60 min',
+    setLength: '2 \u00D7 60 min',
     fee: '$700',
     epkStatus: 'Published',
     instagram: '@hollisandwren',
@@ -1088,15 +1088,15 @@ const ARTISTS = [
     id: 'a7', name: 'Marcus Beaumont Solo', act: 'Marcus Beaumont (solo piano)',
     genres: ['Jazz', 'Standards'], location: 'New Orleans, LA',
     photo: 'https://images.unsplash.com/photo-1465225314224-587cd83d322b?w=900&q=80',
-    bioShort: 'Solo piano set ‚Äî cocktail hours and quiet rooms.',
-    setLength: '2 √ó 60 min', fee: '$450', epkStatus: 'Published', instagram: '@beaumontpiano',
+    bioShort: 'Solo piano set \u2014 cocktail hours and quiet rooms.',
+    setLength: '2 \u00D7 60 min', fee: '$450', epkStatus: 'Published', instagram: '@beaumontpiano',
   },
   {
     id: 'a8', name: 'Cedar Hollow', act: 'Cedar Hollow',
     genres: ['Bluegrass', 'Americana'], location: 'Knoxville, TN',
     photo: 'https://images.unsplash.com/photo-1501612780327-45045538702b?w=900&q=80',
     bioShort: 'Five-piece bluegrass. Brewery-circuit veterans.',
-    setLength: '2 √ó 45 min', fee: '$1,200', epkStatus: 'Published', instagram: '@cedarhollowband',
+    setLength: '2 \u00D7 45 min', fee: '$1,200', epkStatus: 'Published', instagram: '@cedarhollowband',
   },
   {
     id: 'a9', name: 'Tannehill Trio', act: 'Tannehill Trio',
@@ -1111,7 +1111,7 @@ const ARTISTS = [
 const MY_EPKS = [
   {
     id: 'me1',
-    name: 'Jay Holloway ‚Äî Solo Acoustic',
+    name: 'Jay Holloway \u2014 Solo Acoustic',
     genres: ['Folk', 'Acoustic'],
     photo: 'https://images.unsplash.com/photo-1471478331149-c72f17e33c73?w=900&q=80',
     status: 'Published',
@@ -1153,15 +1153,15 @@ const VENUES = [
   { id: 'v5', name: 'Pisgah Brewing', city: 'Black Mountain, NC', type: 'Brewery', address: '2948 US-70, Black Mountain, NC 28711', timezone: 'America/New_York', website: '', capacity: 350, description: '', inviteDetails: '', terms: '', provided: '', stages: ['Outdoor Stage'] },
 ];
 
-// Open bookings to apply to (Talent Corner ‚Äî Artist flow Step 2)
+// Open bookings to apply to (Talent Corner -- Artist flow Step 2)
 const OPEN_BOOKINGS = [
   {
     id: 'ob1',
     title: 'Saturday Tap Room Session',
     venue: 'Wedge at Foundation',
     city: 'Asheville, NC',
-    date: 'Sat ¬∑ May 23, 2026',
-    duration: '2 √ó 45 min',
+    date: 'Sat \u00B7 May 23, 2026',
+    duration: '2 \u00D7 45 min',
     payout: '$450',
     payoutType: 'Flat',
     genre: 'Americana, Folk',
@@ -1171,7 +1171,7 @@ const OPEN_BOOKINGS = [
     title: 'Sunday Brunch Residency',
     venue: 'Burial Beer Co.',
     city: 'Asheville, NC',
-    date: 'Sun ¬∑ May 31, 2026',
+    date: 'Sun \u00B7 May 31, 2026',
     duration: '90 min',
     payout: 'Negotiable',
     payoutType: 'Negotiable',
@@ -1182,7 +1182,7 @@ const OPEN_BOOKINGS = [
     title: 'Friday Night Headliner',
     venue: 'The Grey Eagle',
     city: 'Asheville, NC',
-    date: 'Fri ¬∑ Jun 5, 2026',
+    date: 'Fri \u00B7 Jun 5, 2026',
     duration: '75 min',
     payout: '$1,400',
     payoutType: 'Flat + door',
@@ -1190,10 +1190,10 @@ const OPEN_BOOKINGS = [
   },
   {
     id: 'ob4',
-    title: 'Patio Series ‚Äî Pisgah',
+    title: 'Patio Series \u2014 Pisgah',
     venue: 'Pisgah Brewing',
     city: 'Black Mountain, NC',
-    date: 'Sat ¬∑ Jun 13, 2026',
+    date: 'Sat \u00B7 Jun 13, 2026',
     duration: '60 min',
     payout: '$525',
     payoutType: 'Flat',
@@ -1201,11 +1201,11 @@ const OPEN_BOOKINGS = [
   },
 ];
 
-// User's bookings ‚Äî both as artist (where booked) and as buyer (where hosting)
+// User's bookings -- both as artist (where booked) and as buyer (where hosting)
 const MY_BOOKINGS = [
   {
     id: 'b1',
-    title: 'Friday Night ‚Äî Lila & The Dust Roads',
+    title: 'Friday Night \u2014 Lila & The Dust Roads',
     artist: ARTISTS[0],
     venue: 'Wedge at Foundation',
     city: 'Asheville, NC',
@@ -1230,14 +1230,14 @@ const MY_BOOKINGS = [
   },
   {
     id: 'b2',
-    title: 'Spring Sessions ‚Äî Cedar Hollow',
+    title: 'Spring Sessions \u2014 Cedar Hollow',
     artist: ARTISTS[3],
     venue: 'Highland Brewing',
     city: 'Asheville, NC',
     day: 'Sat',
     date: 'May 23, 2026',
     startTime: '7:00 PM',
-    duration: '2 √ó 45 min',
+    duration: '2 \u00D7 45 min',
     payout: '$1,200',
     payoutType: 'Flat',
     status: 'Hold',
@@ -1259,13 +1259,13 @@ const MY_BOOKINGS = [
   {
     id: 'b3',
     title: 'Saturday Tap Room Session',
-    artist: { name: 'Jay Holloway', act: 'Jay Holloway ‚Äî Solo Acoustic' },
+    artist: { name: 'Jay Holloway', act: 'Jay Holloway \u2014 Solo Acoustic' },
     venue: 'Wedge at Foundation',
     city: 'Asheville, NC',
     day: 'Sat',
     date: 'May 23, 2026',
     startTime: '5:00 PM',
-    duration: '2 √ó 45 min',
+    duration: '2 \u00D7 45 min',
     payout: '$450',
     payoutType: 'Flat',
     status: 'Advance',
@@ -1276,7 +1276,7 @@ const MY_BOOKINGS = [
   },
   {
     id: 'b4',
-    title: 'Brunch ‚Äî Marcus Beaumont Trio',
+    title: 'Brunch \u2014 Marcus Beaumont Trio',
     artist: ARTISTS[1],
     venue: 'Burial Beer Co.',
     city: 'Asheville, NC',
@@ -1301,7 +1301,7 @@ const MY_BOOKINGS = [
     day: 'Sat',
     date: 'Mar 28, 2026',
     startTime: '6:00 PM',
-    duration: '2 √ó 60 min',
+    duration: '2 \u00D7 60 min',
     payout: '$700',
     payoutType: 'Flat',
     status: 'Cancelled',
@@ -1312,7 +1312,7 @@ const MY_BOOKINGS = [
   },
 ];
 
-// Contacts can have multiple artist accounts (acts/EPKs) ‚Äî one person manages many projects.
+// Contacts can have multiple artist accounts (acts/EPKs) -- one person manages many projects.
 // `artists` = array of artist IDs (refs into ARTISTS) the contact manages.
 const CONTACTS = [
   { id: 'c1', name: 'Lila Ostrander', email: 'lila@dustroads.co', role: 'Talent', last: 'Apr 28', initials: 'LO', color: '#BA87FF', artists: ['a1'], lists: ['Favorites', 'Americana Roster'] },
@@ -1332,14 +1332,14 @@ const CONTACT_LISTS = [
   { id: 'l4', name: 'Singer-Songwriters', count: 2 },
 ];
 
-// "Discoverable" artists ‚Äî public EPKs not in user's contacts. Used for swipe-to-invite.
+// "Discoverable" artists -- public EPKs not in user's contacts. Used for swipe-to-invite.
 const DISCOVER_ARTISTS = [
   {
     id: 'd1', name: 'Juno Marsh', act: 'Juno Marsh',
     genres: ['Indie Folk', 'Singer-Songwriter', 'Americana'], location: 'Asheville, NC',
     photo: 'https://images.unsplash.com/photo-1499415479124-43c32433a620?w=900&q=80',
     bioShort: 'Local Asheville. Warm baritone, fingerstyle nylon. Plays brewery rooms weekly.',
-    setLength: '2 √ó 45 min', fee: '$400', epkStatus: 'Published',
+    setLength: '2 \u00D7 45 min', fee: '$400', epkStatus: 'Published',
     matchScore: 94, matchReasons: ['Same city as venue', 'Genre match: Americana', 'Plays brewery rooms'],
     distanceMi: 3,
     spotifyTrack: '4cOdK2wGLETKBW3PvgPWqT',
@@ -1353,7 +1353,7 @@ const DISCOVER_ARTISTS = [
     id: 'd2', name: 'Ryan Crowe', act: 'Crowe & Sons',
     genres: ['Bluegrass', 'Old-Time', 'Americana'], location: 'Weaverville, NC',
     photo: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=900&q=80',
-    bioShort: 'Father‚Äìsons trio. Old-time fiddle, banjo, upright. Tasting-room favorites.',
+    bioShort: 'Father\u2013sons trio. Old-time fiddle, banjo, upright. Tasting-room favorites.',
     setLength: '90 min', fee: '$550', epkStatus: 'Published',
     matchScore: 89, matchReasons: ['Within 15 mi', 'Genre match: Americana', 'Brewery experience'],
     distanceMi: 11,
@@ -1399,17 +1399,17 @@ const DISCOVER_ARTISTS = [
     genres: ['Soul', 'R&B', 'Funk'], location: 'Charlotte, NC',
     photo: 'https://images.unsplash.com/photo-1493676304819-0d7a8d026dcf?w=900&q=80',
     bioShort: 'Solo with looper + Rhodes. Smooth pocket. Wedding & cocktail circuit.',
-    setLength: '2 √ó 60 min', fee: '$650', epkStatus: 'Published',
+    setLength: '2 \u00D7 60 min', fee: '$650', epkStatus: 'Published',
     matchScore: 68, matchReasons: ['Within 130 mi', 'Brewery experience'],
     distanceMi: 124,
     spotifyTrack: '6habFhsOp2NvshLv26DqMb',
     youtubeId: 'dQw4w9WgXcQ',
     stats: [{ value: '54.8K', label: 'Monthly Listeners', source: 'Spotify' }, { value: '19.7K', label: 'Followers', source: 'Instagram' }, { value: '22.3K', label: 'Followers', source: 'TikTok' }],
-    config: 'Solo', styles: 'Electronic, Acoustic', setOptions: '2 √ó 60-min sets',
+    config: 'Solo', styles: 'Electronic, Acoustic', setOptions: '2 \u00D7 60-min sets',
     press: { quote: 'A modern soul artist with a timeless feel.', source: 'Charlotte Observer' },
     epkUrl: '#/epk/devon-klein',
   },
-  // Additional directory-only artists ‚Äî lower match scores, broader range.
+  // Additional directory-only artists -- lower match scores, broader range.
   {
     id: 'd6', name: 'Sable Wren', act: 'Sable Wren',
     genres: ['Indie Rock', 'Shoegaze'], location: 'Durham, NC',
@@ -1425,7 +1425,7 @@ const DISCOVER_ARTISTS = [
     genres: ['Jazz', 'Standards'], location: 'Raleigh, NC',
     photo: 'https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=900&q=80',
     bioShort: 'Piano trio. Standards, bossa, light originals. Cocktail-room ready.',
-    setLength: '3 √ó 45 min', fee: '$900', epkStatus: 'Published',
+    setLength: '3 \u00D7 45 min', fee: '$900', epkStatus: 'Published',
     matchScore: 49, distanceMi: 240,
     config: '3-piece', styles: 'Acoustic',
     spotifyTrack: '4iV5W9uYEdYUVa79Axb7Rh', youtubeId: 'dQw4w9WgXcQ',
@@ -1435,7 +1435,7 @@ const DISCOVER_ARTISTS = [
     genres: ['Pop', 'Singer-Songwriter'], location: 'Knoxville, TN',
     photo: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=900&q=80',
     bioShort: 'Solo with loop pedal. Sharp pop hooks, originals + covers.',
-    setLength: '2 √ó 50 min', fee: '$450', epkStatus: 'Published',
+    setLength: '2 \u00D7 50 min', fee: '$450', epkStatus: 'Published',
     matchScore: 47, distanceMi: 110,
     config: 'Solo', styles: 'Acoustic',
     spotifyTrack: '1mea3bSkSGXuIRvnydlB5b', youtubeId: 'dQw4w9WgXcQ',
@@ -1455,7 +1455,7 @@ const DISCOVER_ARTISTS = [
     genres: ['Country', 'Honky-Tonk'], location: 'Nashville, TN',
     photo: 'https://images.unsplash.com/photo-1508973379184-7517410fb0bc?w=900&q=80',
     bioShort: 'Honky-tonk lead w/ Telecaster. Plays it straight.',
-    setLength: '2 √ó 60 min', fee: '$1,200', epkStatus: 'Published',
+    setLength: '2 \u00D7 60 min', fee: '$1,200', epkStatus: 'Published',
     matchScore: 38, distanceMi: 280,
     config: '4-piece', styles: 'Full Band',
     spotifyTrack: '0tgVpDi06FyKpA1z0VMD4v', youtubeId: 'dQw4w9WgXcQ',
@@ -1486,7 +1486,7 @@ const MESSAGES = [
   { id: 'm1', name: 'Lila Ostrander', last: 'Sound check at 6 works for me', time: '12m', unread: 2, photo: ARTISTS[0].photo },
   { id: 'm2', name: 'Wedge at Foundation', last: 'House kit confirmed for Friday', time: '1h', unread: 0, photo: null, initials: 'WF', color: '#D47EBF' },
   { id: 'm3', name: 'Cedar Hollow', last: 'Need a W-9 from you when you can', time: '3h', unread: 1, photo: ARTISTS[3].photo },
-  { id: 'm4', name: 'Marcus Beaumont', last: 'Thanks for the Sunday spot ‚Äî was a good crowd', time: '2d', unread: 0, photo: ARTISTS[1].photo },
+  { id: 'm4', name: 'Marcus Beaumont', last: 'Thanks for the Sunday spot \u2014 was a good crowd', time: '2d', unread: 0, photo: ARTISTS[1].photo },
 ];
 
 const EPK_STEPS = [
@@ -1509,7 +1509,7 @@ Object.assign(window, {
 
 <script type="text/babel">
 // Core UI primitives for Hedlyner mobile app.
-// Phone is 390√ó844 (iPhone 14-ish content area inside ios_frame).
+// Phone is 390\u00D7844 (iPhone 14-ish content area inside ios_frame).
 
 const HED = {
   bg: 'var(--neutral-900)',
@@ -1524,12 +1524,12 @@ const HED = {
   violet: 'var(--hed-violet)',
 };
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Icon (lucide via class)
+// ----------- Icon (lucide via class)
 function Icon({ name, size = 18, color = 'currentColor', style = {} }) {
   return <i className={`icon-${name}`} style={{ fontSize: size, color, lineHeight: 1, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', ...style }} />;
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ PhoneShell ‚Äî wraps a screen in a status-bar / bottom-nav layout
+// ----------- PhoneShell -- wraps a screen in a status-bar / bottom-nav layout
 // We use a custom dark status bar with lime time text to match brand.
 function StatusBar({ time = '9:41', dark = true }) {
   const c = dark ? '#fff' : '#000';
@@ -1548,7 +1548,7 @@ function StatusBar({ time = '9:41', dark = true }) {
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ BottomNav
+// ----------- BottomNav
 const TABS = [
   { id: 'discover', label: 'Discover', icon: 'compass' },
   { id: 'bookings', label: 'Bookings', icon: 'calendar-days' },
@@ -1581,7 +1581,7 @@ function BottomNav({ active, onTab, accent = HED.lime }) {
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Phone ‚Äî full bezel + nav. Children fill the content area.
+// ----------- Phone -- full bezel + nav. Children fill the content area.
 function Phone({ children, tab = 'discover', onTab, hideNav = false, scroll = true, statusDark = true, accent, overlay }) {
   return (
     <div style={{
@@ -1601,7 +1601,7 @@ function Phone({ children, tab = 'discover', onTab, hideNav = false, scroll = tr
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Screen header (large title + optional trailing)
+// ----------- Screen header (large title + optional trailing)
 function ScreenHeader({ title, subtitle, trailing, sticky = false, back = false, onBack }) {
   return (
     <div style={{
@@ -1623,7 +1623,7 @@ function ScreenHeader({ title, subtitle, trailing, sticky = false, back = false,
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Buttons
+// ----------- Buttons
 function Btn({ children, kind = 'primary', size = 'md', icon, onClick, full, style = {}, accent }) {
   const accentColor = accent || HED.lime;
   const sizes = { sm: { h: 32, fs: 13, px: 12, gap: 6 }, md: { h: 44, fs: 15, px: 18, gap: 8 }, lg: { h: 52, fs: 16, px: 22, gap: 10 } };
@@ -1650,16 +1650,16 @@ function Btn({ children, kind = 'primary', size = 'md', icon, onClick, full, sty
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Badge / Chip
+// ----------- Badge / Chip
 function Badge({ children, tone = 'neutral', size = 'sm' }) {
   const tones = {
-    // Booking status tones ‚Äî each distinct so a glance tells you where things stand.
-    book:      { bg: 'rgba(132, 204, 22, 0.18)', fg: '#a3e635' },   // artist accepted, awaiting manual confirm ‚Äî fresh green
+    // Booking status tones -- each distinct so a glance tells you where things stand.
+    book:      { bg: 'rgba(132, 204, 22, 0.18)', fg: '#a3e635' },   // artist accepted, awaiting manual confirm -- fresh green
     confirmed: { bg: 'rgba(132, 204, 22, 0.18)', fg: '#a3e635' },   // alias kept for back-compat
-    advance:   { bg: 'rgba(96, 165, 250, 0.18)', fg: '#60a5fa' },   // manually confirmed & in advance ‚Äî active blue
-    hold:      { bg: 'rgba(186, 135, 255, 0.18)', fg: HED.violet }, // pending response ‚Äî violet
-    'wrap-up': { bg: 'rgba(251, 191, 36, 0.16)', fg: '#fbbf24' },   // post-show settle-up ‚Äî amber
-    completed: { bg: 'rgba(255, 255, 255, 0.07)', fg: HED.muted },  // closed ‚Äî neutral
+    advance:   { bg: 'rgba(96, 165, 250, 0.18)', fg: '#60a5fa' },   // manually confirmed & in advance -- active blue
+    hold:      { bg: 'rgba(186, 135, 255, 0.18)', fg: HED.violet }, // pending response -- violet
+    'wrap-up': { bg: 'rgba(251, 191, 36, 0.16)', fg: '#fbbf24' },   // post-show settle-up -- amber
+    completed: { bg: 'rgba(255, 255, 255, 0.07)', fg: HED.muted },  // closed -- neutral
     cancelled: { bg: 'rgba(226, 52, 83, 0.18)',  fg: '#fb7185' },   // red
     draft: { bg: HED.surface, fg: HED.muted },
     published: { bg: 'rgba(205,235,9,0.16)', fg: HED.lime },
@@ -1695,7 +1695,7 @@ function Chip({ children, on = false, onClick, accent }) {
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Avatar (with photo or initials)
+// ----------- Avatar (with photo or initials)
 function Avatar({ src, initials, color = '#BA87FF', size = 40, ring }) {
   return (
     <div style={{
@@ -1710,7 +1710,7 @@ function Avatar({ src, initials, color = '#BA87FF', size = 40, ring }) {
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Card
+// ----------- Card
 function Card({ children, style = {}, onClick, padding = 16 }) {
   return (
     <div onClick={onClick} style={{
@@ -1720,7 +1720,7 @@ function Card({ children, style = {}, onClick, padding = 16 }) {
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ BookingStatusBadge
+// ----------- BookingStatusBadge
 function StatusBadge({ status }) {
   const map = {
     Book: 'book', Confirmed: 'book', Advance: 'advance', Hold: 'hold',
@@ -1744,7 +1744,7 @@ const { Phone, ScreenHeader, Btn, Badge, Chip, Avatar, Card, StatusBadge, Icon, 
 // Empty divider
 const Divider = ({ style }) => <div style={{ height: 1, background: HED.border, ...style }} />;
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Discover Swipe (Booker hero)
+// --------------------------------- Discover Swipe (Booker hero)
 function DiscoverScreen({ accent = HED.lime, onTab, onOpenEpk }) {
   const [idx, setIdx] = React.useState(0);
   const [drag, setDrag] = React.useState({ x: 0, y: 0, dragging: false });
@@ -1865,8 +1865,8 @@ function ActionBtn({ icon, color = '#fff', bg = HED.surface, size = 52, onClick,
   );
 }
 
-// SwipeCard reuses SwipeDiscoverCard ‚Äî the same rich EPK card from Step 3
-// of the New Booking flow ‚Üí Discover ‚Üí top matches swipe phase.
+// SwipeCard reuses SwipeDiscoverCard -- the same rich EPK card from Step 3
+// of the New Booking flow \u2192 Discover \u2192 top matches swipe phase.
 function SwipeCard({ artist, accent, onTap, dx = 0 }) {
   const Card = window.SwipeDiscoverCard;
   return (
@@ -1896,7 +1896,7 @@ function Sticker({ text, color, rotate, pos }) {
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ My Bookings list
+// --------------------------------- My Bookings list
 function MyBookingsScreen({ onTab, accent = HED.lime, onOpenBooking, onCreateBooking }) {
   const [tab, setTab] = React.useState('Active');
   const filter = b => tab === 'All' ? true : tab === 'Active' ? !['Completed', 'Cancelled'].includes(b.status) : ['Completed', 'Cancelled'].includes(b.status);
@@ -1930,7 +1930,7 @@ function MyBookingsScreen({ onTab, accent = HED.lime, onOpenBooking, onCreateBoo
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8, gap: 8 }}>
               <div style={{ minWidth: 0, flex: 1 }}>
                 <div style={{ fontWeight: 600, fontSize: 15.5, marginBottom: 2, letterSpacing: -0.2 }}>{b.title}</div>
-                <div style={{ color: HED.muted, fontSize: 13 }}>{b.venue} ¬∑ {b.city}</div>
+                <div style={{ color: HED.muted, fontSize: 13 }}>{b.venue} &middot; {b.city}</div>
               </div>
               <StatusBadge status={b.status}/>
             </div>
@@ -1953,7 +1953,7 @@ function MyBookingsScreen({ onTab, accent = HED.lime, onOpenBooking, onCreateBoo
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Booking Detail / Advance
+// --------------------------------- Booking Detail / Advance
 function BookingDetailScreen({ booking, onTab, onBack, accent = HED.lime, variant = 'A' }) {
   const b = booking || window.MY_BOOKINGS[0];
   const isBuyer = b.role === 'Buyer';
@@ -1995,14 +1995,14 @@ function BookingDetailA({ booking: b, accent, isBuyer, onBack }) {
         <h1 style={{ margin: 0, fontSize: 24, fontWeight: 600, letterSpacing: -0.5, lineHeight: 1.15 }}>{b.title}</h1>
         <div style={{ marginTop: 6, color: HED.muted, fontSize: 14, display: 'flex', gap: 6, alignItems: 'center', flexWrap: 'wrap' }}>
           <span><span style={{ color: '#fff', fontWeight: 600 }}>{b.day}</span> {b.date}</span>
-          <span>¬∑</span>
+          <span>&middot;</span>
           <span>{b.venue}</span>
         </div>
       </div>
 
       {/* Stat row */}
       <div style={{ padding: '0 20px 14px', display: 'flex', gap: 8 }}>
-        <StatTile label="Days to Go" value={b.daysToGo > 0 ? b.daysToGo : '‚Äî'} accent={accent}/>
+        <StatTile label="Days to Go" value={b.daysToGo > 0 ? b.daysToGo : '\u2014'} accent={accent}/>
         <StatTile label="Phase" value={b.phase.replace(' Phase','')}/>
         <StatTile label="Payout" value={b.payout} accent={accent}/>
         <StatTile label="Artist" value={b.artist.act ? b.artist.act.split(' ').slice(0,2).join(' ') : 'TBD'}/>
@@ -2014,7 +2014,7 @@ function BookingDetailA({ booking: b, accent, isBuyer, onBack }) {
           <Icon name="zap" size={16} color={accent}/>
           <div>
             <div style={{ fontWeight: 700, fontSize: 13, color: accent, letterSpacing: 0.3 }}>{b.phase.toUpperCase()}</div>
-            <div style={{ fontSize: 13, color: '#fff', marginTop: 2 }}>Final preparations ‚Äî confirm details with the artist.</div>
+            <div style={{ fontSize: 13, color: '#fff', marginTop: 2 }}>Final preparations &mdash; confirm details with the artist.</div>
           </div>
         </div>
       </div>
@@ -2074,7 +2074,7 @@ function BookingDetailA({ booking: b, accent, isBuyer, onBack }) {
   );
 }
 
-// Variant B ‚Äî timeline/phase-driven layout
+// Variant B -- timeline/phase-driven layout
 function BookingDetailB({ booking: b, accent, isBuyer, onBack }) {
   const phases = ['Hold', 'Book', 'Advance', 'Wrap-Up', 'Completed'];
   const currentPhase = b.phase.replace(' Phase','');
@@ -2091,7 +2091,7 @@ function BookingDetailB({ booking: b, accent, isBuyer, onBack }) {
         <div style={{ position: 'absolute', bottom: 14, left: 14, right: 14 }}>
           <Badge tone={isBuyer ? 'buyer' : 'talent'}>{isBuyer ? 'You\'re booking' : 'You\'re performing'}</Badge>
           <div style={{ marginTop: 6, fontSize: 22, fontWeight: 600, letterSpacing: -0.4, lineHeight: 1.1 }}>{b.title}</div>
-          <div style={{ marginTop: 4, color: 'rgba(255,255,255,0.8)', fontSize: 13 }}>{b.venue} ¬∑ {b.day}, {b.date}</div>
+          <div style={{ marginTop: 4, color: 'rgba(255,255,255,0.8)', fontSize: 13 }}>{b.venue} &middot; {b.day}, {b.date}</div>
         </div>
       </div>
 
@@ -2127,7 +2127,7 @@ function BookingDetailB({ booking: b, accent, isBuyer, onBack }) {
             <div style={{ fontSize: 44, fontWeight: 700, color: accent, letterSpacing: -1.5, lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>{b.daysToGo > 0 ? b.daysToGo : 0}</div>
             <div>
               <div style={{ fontSize: 13, color: HED.muted, textTransform: 'uppercase', letterSpacing: 0.5, fontWeight: 600 }}>Days to Go</div>
-              <div style={{ fontSize: 14, marginTop: 2 }}>{b.startTime} ¬∑ {b.duration}</div>
+              <div style={{ fontSize: 14, marginTop: 2 }}>{b.startTime} &middot; {b.duration}</div>
             </div>
             <div style={{ flex: 1 }}/>
             <div style={{ textAlign: 'right' }}>
@@ -2146,7 +2146,7 @@ function BookingDetailB({ booking: b, accent, isBuyer, onBack }) {
             <Avatar src={b.artist.photo} size={52} ring={accent} initials={(b.artist.name||'A').slice(0,1)}/>
             <div style={{ flex: 1 }}>
               <div style={{ fontWeight: 600, fontSize: 15 }}>{b.artist.act}</div>
-              <div style={{ color: HED.muted, fontSize: 12.5, marginTop: 2 }}>{b.duration} ¬∑ {b.payout}</div>
+              <div style={{ color: HED.muted, fontSize: 12.5, marginTop: 2 }}>{b.duration} &middot; {b.payout}</div>
             </div>
             <button style={{ width: 40, height: 40, borderRadius: 10, background: HED.bg, border: `1px solid ${HED.border}`, cursor: 'pointer', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Icon name="message-square" size={16}/></button>
           </div>
@@ -2204,11 +2204,11 @@ Object.assign(window, {
 </script>
 
 <script type="text/babel">
-// Screens part 2 ‚Äî Artist flow + supporting screens.
+// Screens part 2 -- Artist flow + supporting screens.
 const { Phone, ScreenHeader, Btn, Badge, Chip, Avatar, Card, StatusBadge, Icon, HED } = window;
 const { Divider, SectionLabel, KV, DetailRow } = window;
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Browse Bookings (Artist Step 2 ‚Äî Talent Corner)
+// --------------------------------- Browse Bookings (Artist Step 2 -- Talent Corner)
 function BrowseBookingsScreen({ onTab, accent = HED.lime, onBack, onApply }) {
   const [genre, setGenre] = React.useState('All');
   const [payoutType, setPayoutType] = React.useState('Any');
@@ -2238,7 +2238,7 @@ function BrowseBookingsScreen({ onTab, accent = HED.lime, onBack, onApply }) {
                 <div style={{ fontWeight: 600, fontSize: 15.5, letterSpacing: -0.2 }}>{b.title}</div>
                 <Badge tone="violet">Open</Badge>
               </div>
-              <div style={{ color: HED.muted, fontSize: 13, marginBottom: 10 }}>{b.venue} ¬∑ {b.city}</div>
+              <div style={{ color: HED.muted, fontSize: 13, marginBottom: 10 }}>{b.venue} &middot; {b.city}</div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
                 <Mini icon="calendar" k="Date" v={b.date}/>
                 <Mini icon="clock" k="Set" v={b.duration}/>
@@ -2267,7 +2267,7 @@ function Mini({ icon, k, v, accent }) {
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ My EPKs list
+// --------------------------------- My EPKs list
 function MyEPKsScreen({ onTab, accent = HED.lime, onCreateEPK, onOpenEPK, onBack }) {
   return (
     <Phone tab="account" onTab={onTab} accent={accent}>
@@ -2276,7 +2276,7 @@ function MyEPKsScreen({ onTab, accent = HED.lime, onCreateEPK, onOpenEPK, onBack
         <div style={{ fontSize: 22, fontWeight: 600, letterSpacing: -0.4 }}>My EPKs</div>
       </div>
       <div style={{ padding: '8px 16px 0', color: HED.muted, fontSize: 13, lineHeight: 1.4 }}>
-        Your electronic press kits ‚Äî what bookers see when they discover you.
+        Your electronic press kits &mdash; what bookers see when they discover you.
       </div>
 
       <div style={{ padding: '14px 16px 80px', display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -2312,7 +2312,7 @@ function MyEPKsScreen({ onTab, accent = HED.lime, onCreateEPK, onOpenEPK, onBack
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ EPK Builder shell (9-step)
+// --------------------------------- EPK Builder shell (9-step)
 function EPKBuilderScreen({ onTab, accent = HED.lime, onBack }) {
   const [step, setStep] = React.useState(2);
   const total = window.EPK_STEPS.length;
@@ -2350,7 +2350,7 @@ function EPKBuilderScreen({ onTab, accent = HED.lime, onBack }) {
           ))}
         </div>
 
-        {/* Body ‚Äî placeholder */}
+        {/* Body -- placeholder */}
         <div style={{ flex: 1, padding: '18px 20px', overflow: 'auto', display: 'flex', flexDirection: 'column' }}>
           <div style={{ fontSize: 11, color: accent, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 0.6, marginBottom: 6 }}>Step {step}</div>
           <h2 style={{ margin: 0, fontSize: 28, fontWeight: 600, letterSpacing: -0.5 }}>{cur.name}</h2>
@@ -2387,7 +2387,7 @@ function EPKBuilderScreen({ onTab, accent = HED.lime, onBack }) {
 function stepBlurb(name) {
   const m = {
     Basics: 'Stage name, act type, location, and primary photo.',
-    Bio: 'Long-form bio for bookers. Keep it tight ‚Äî one paragraph hooks, one paragraph history.',
+    Bio: 'Long-form bio for bookers. Keep it tight \u2014 one paragraph hooks, one paragraph history.',
     'Genre & Style': 'Tag the genres and influences that describe your sound.',
     Media: 'Add live audio, video, and press photos.',
     Links: 'Spotify, Apple Music, Instagram, your website.',
@@ -2399,7 +2399,7 @@ function stepBlurb(name) {
   return m[name] || '';
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Get Paid
+// --------------------------------- Get Paid
 function GetPaidScreen({ onTab, accent = HED.lime, onBack }) {
   return (
     <Phone tab="bookings" onTab={onTab} accent={accent}>
@@ -2409,7 +2409,7 @@ function GetPaidScreen({ onTab, accent = HED.lime, onBack }) {
       <div style={{ padding: '20px 24px 12px' }}>
         <div style={{ fontSize: 11, color: accent, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 0.6 }}>End of Advance</div>
         <h1 style={{ margin: '4px 0 0', fontSize: 30, fontWeight: 600, letterSpacing: -0.6 }}>Get paid</h1>
-        <div style={{ color: HED.muted, fontSize: 14, marginTop: 6 }}>Saturday Tap Room Session ¬∑ Wedge at Foundation</div>
+        <div style={{ color: HED.muted, fontSize: 14, marginTop: 6 }}>Saturday Tap Room Session &middot; Wedge at Foundation</div>
       </div>
 
       {/* Big payout card */}
@@ -2423,7 +2423,7 @@ function GetPaidScreen({ onTab, accent = HED.lime, onBack }) {
           <div style={{ position: 'relative' }}>
             <div style={{ fontSize: 11, color: accent, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1 }}>Payout Amount</div>
             <div style={{ fontSize: 56, fontWeight: 700, letterSpacing: -2, lineHeight: 1, marginTop: 4, color: '#fff' }}>$450<span style={{ fontSize: 22, color: HED.muted, fontWeight: 500, marginLeft: 6 }}>.00</span></div>
-            <div style={{ marginTop: 12, fontSize: 13, color: HED.muted }}>Flat payout ¬∑ less 8% Hedlyner fee</div>
+            <div style={{ marginTop: 12, fontSize: 13, color: HED.muted }}>Flat payout &middot; less 8% Hedlyner fee</div>
           </div>
         </div>
       </div>
@@ -2435,7 +2435,7 @@ function GetPaidScreen({ onTab, accent = HED.lime, onBack }) {
             <div style={{ width: 44, height: 32, borderRadius: 6, background: '#5d34d4', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 11, fontWeight: 700, letterSpacing: 0.5 }}>STRIPE</div>
             <div style={{ flex: 1 }}>
               <div style={{ fontWeight: 600, fontSize: 14 }}>Direct deposit</div>
-              <div style={{ color: HED.muted, fontSize: 12.5 }}>Bank ending in ‚Ä¢‚Ä¢‚Ä¢‚Ä¢ 4471</div>
+              <div style={{ color: HED.muted, fontSize: 12.5 }}>Bank ending in &bull;&bull;&bull;&bull; 4471</div>
             </div>
             <Icon name="chevron-right" size={18} color={HED.muted}/>
           </div>
@@ -2446,14 +2446,14 @@ function GetPaidScreen({ onTab, accent = HED.lime, onBack }) {
         <SectionLabel>Breakdown</SectionLabel>
         <Card padding={0}>
           <BreakdownRow k="Set fee" v="$450.00"/>
-          <BreakdownRow k="Hedlyner fee (8%)" v="‚àí$36.00" muted/>
+          <BreakdownRow k="Hedlyner fee (8%)" v="\u2212$36.00" muted/>
           <BreakdownRow k="Net payout" v="$414.00" last accent={accent}/>
         </Card>
       </div>
 
       <div style={{ padding: '4px 20px 28px' }}>
         <Btn kind="primary" full size="lg" accent={accent} icon="check-circle">Mark Complete</Btn>
-        <div style={{ textAlign: 'center', color: HED.subtle, fontSize: 11.5, marginTop: 10 }}>Funds typically arrive in 1‚Äì2 business days.</div>
+        <div style={{ textAlign: 'center', color: HED.subtle, fontSize: 11.5, marginTop: 10 }}>Funds typically arrive in 1&ndash;2 business days.</div>
       </div>
     </Phone>
   );
@@ -2467,7 +2467,7 @@ function BreakdownRow({ k, v, last, accent, muted }) {
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Create Booking sheet (3-step)
+// --------------------------------- Create Booking sheet (3-step)
 function CreateBookingSheet({ accent = HED.lime, onClose }) {
   const [step, setStep] = React.useState(1);
   const [series, setSeries] = React.useState(false);
@@ -2594,12 +2594,12 @@ function CreatePlaceholder({ name, desc, icon, accent }) {
       </div>
       <div style={{ fontSize: 18, fontWeight: 600, marginBottom: 6 }}>{name}</div>
       <div style={{ color: HED.muted, fontSize: 13.5, lineHeight: 1.5, maxWidth: 260, textWrap: 'pretty' }}>{desc}</div>
-      <div style={{ marginTop: 18, padding: '6px 12px', borderRadius: 999, background: HED.surface2, color: HED.subtle, fontSize: 11.5, fontWeight: 600, letterSpacing: 0.4 }}>PLACEHOLDER ¬∑ uses existing web flow</div>
+      <div style={{ marginTop: 18, padding: '6px 12px', borderRadius: 999, background: HED.surface2, color: HED.subtle, fontSize: 11.5, fontWeight: 600, letterSpacing: 0.4 }}>PLACEHOLDER &middot; uses existing web flow</div>
     </div>
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ EPK Detail (read-only)
+// --------------------------------- EPK Detail (read-only)
 function EPKDetailScreen({ artist, accent = HED.lime, onBack, onTab }) {
   const raw = artist || window.ARTISTS[0];
   // Normalize across the two artist data shapes (ARTISTS vs DISCOVER_ARTISTS)
@@ -2609,7 +2609,7 @@ function EPKDetailScreen({ artist, accent = HED.lime, onBack, onTab }) {
     act: raw.act || raw.name || 'Artist',
     genres: raw.genres || [],
     bio: raw.bio || raw.bioShort || '',
-    setLength: raw.setLength || '‚Äî',
+    setLength: raw.setLength || '\u2014',
     fee: raw.fee || 'Negotiable',
     location: raw.location || '',
     photo: raw.photo || '',
@@ -2703,7 +2703,7 @@ function EPKDetailScreen({ artist, accent = HED.lime, onBack, onTab }) {
             <Avatar size={44} initials={(a.name || '').split(' ').map(s=>s[0]).slice(0,2).join('')} color={accent}/>
             <div>
               <div style={{ fontWeight: 600 }}>{a.name}</div>
-              <div style={{ color: HED.muted, fontSize: 12.5 }}>Booking ¬∑ {(a.instagram || '').replace('@','')}@gmail.com</div>
+              <div style={{ color: HED.muted, fontSize: 12.5 }}>Booking &middot; {(a.instagram || '').replace('@','')}@gmail.com</div>
             </div>
           </div>
         </Card>
@@ -2736,7 +2736,7 @@ function LinkRow({ icon, k, v, last }) {
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Repeat / Re-book (Booker Step 4)
+// --------------------------------- Repeat / Re-book (Booker Step 4)
 function RepeatScreen({ onTab, accent = HED.lime, onBack }) {
   const b = window.MY_BOOKINGS[3]; // completed Marcus Beaumont
   return (
@@ -2747,7 +2747,7 @@ function RepeatScreen({ onTab, accent = HED.lime, onBack }) {
       <div style={{ padding: '6px 24px 16px' }}>
         <Badge tone="completed">Completed</Badge>
         <h1 style={{ margin: '10px 0 4px', fontSize: 28, fontWeight: 600, letterSpacing: -0.5, lineHeight: 1.1 }}>That was a great show.</h1>
-        <div style={{ color: HED.muted, fontSize: 14 }}>{b.title} ¬∑ {b.day} {b.date}</div>
+        <div style={{ color: HED.muted, fontSize: 14 }}>{b.title} &middot; {b.day} {b.date}</div>
       </div>
 
       <div style={{ padding: '8px 20px' }}>
@@ -2769,7 +2769,7 @@ function RepeatScreen({ onTab, accent = HED.lime, onBack }) {
             </div>
             <div style={{ flex: 1, minWidth: 0 }}>
               <div style={{ fontWeight: 600, fontSize: 16 }}>Start a new booking</div>
-              <div style={{ color: HED.muted, fontSize: 12.5, marginTop: 2 }}>Fresh ‚Äî pick venue, date, and artist.</div>
+              <div style={{ color: HED.muted, fontSize: 12.5, marginTop: 2 }}>Fresh &mdash; pick venue, date, and artist.</div>
             </div>
             <Icon name="chevron-right" size={18} color={HED.muted}/>
           </div>
@@ -2781,7 +2781,7 @@ function RepeatScreen({ onTab, accent = HED.lime, onBack }) {
             </div>
             <div style={{ flex: 1, minWidth: 0 }}>
               <div style={{ fontWeight: 600, fontSize: 16 }}>View Brunch Series</div>
-              <div style={{ color: HED.muted, fontSize: 12.5, marginTop: 2 }}>3 remaining dates ¬∑ next Sun May 24</div>
+              <div style={{ color: HED.muted, fontSize: 12.5, marginTop: 2 }}>3 remaining dates &middot; next Sun May 24</div>
             </div>
             <Icon name="chevron-right" size={18} color={HED.muted}/>
           </div>
@@ -2794,7 +2794,7 @@ function RepeatScreen({ onTab, accent = HED.lime, onBack }) {
         <Card padding={0}>
           <DetailRow icon="users" k="Attendance" v="~ 82 guests"/>
           <DetailRow icon="dollar-sign" k="Paid out" v={b.payout} accent={accent}/>
-          <DetailRow icon="star" k="Your rating" v="‚òÖ‚òÖ‚òÖ‚òÖ‚òÖ" last/>
+          <DetailRow icon="star" k="Your rating" v="\u2605\u2605\u2605\u2605\u2605" last/>
         </Card>
       </div>
     </Phone>
@@ -2810,11 +2810,11 @@ Object.assign(window, {
 </script>
 
 <script type="text/babel">
-// Screens part 3 ‚Äî Contacts, Messages, Account.
+// Screens part 3 -- Contacts, Messages, Account.
 const { Phone, ScreenHeader, Btn, Badge, Chip, Avatar, Card, Icon, HED } = window;
 const { SectionLabel } = window;
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ My Contacts
+// --------------------------------- My Contacts
 function ContactsScreen({ onTab, accent = HED.lime }) {
   const [list, setList] = React.useState('All');
   const lists = ['All', 'Favorites', 'Asheville Acts', 'Brunch Roster'];
@@ -2858,7 +2858,7 @@ function ContactsScreen({ onTab, accent = HED.lime }) {
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Messages
+// --------------------------------- Messages
 function MessagesScreen({ onTab, accent = HED.lime }) {
   return (
     <Phone tab="messages" onTab={onTab} accent={accent}>
@@ -2886,7 +2886,7 @@ function MessagesScreen({ onTab, accent = HED.lime }) {
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Account
+// --------------------------------- Account
 function AccountScreen({ onTab, accent = HED.lime, onOpenEPKs }) {
   return (
     <Phone tab="account" onTab={onTab} accent={accent}>
@@ -2898,7 +2898,7 @@ function AccountScreen({ onTab, accent = HED.lime, onOpenEPKs }) {
           <div style={{ flex: 1 }}>
             <div style={{ fontWeight: 600, fontSize: 17 }}>Jay Holloway</div>
             <div style={{ color: HED.muted, fontSize: 13, marginTop: 2 }}>jay@hollowaymusic.co</div>
-            <div style={{ marginTop: 8 }}><Badge tone="lime">Pro ¬∑ $25/booking</Badge></div>
+            <div style={{ marginTop: 8 }}><Badge tone="lime">Pro &middot; $25/booking</Badge></div>
           </div>
         </Card>
 
@@ -2954,10 +2954,10 @@ Object.assign(window, { ContactsScreen, MessagesScreen, AccountScreen });
 </script>
 
 <script type="text/babel">
-// My Venues + Edit Venue screens ‚Äî match Hedlyner design language
+// My Venues + Edit Venue screens -- match Hedlyner design language
 const { Phone, ScreenHeader, Btn, Badge, Card, Icon, HED, Avatar, useStore, actions, iconBtnStyle } = window;
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Form primitives (local ‚Äî match design system)
+// --------------------------------- Form primitives (local -- match design system)
 function VField({ label, required, hint, children }) {
   return (
     <div style={{ marginBottom: 14 }}>
@@ -3028,7 +3028,7 @@ function SectionHeader({ icon, title, subtitle, accent }) {
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ My Venues list
+// --------------------------------- My Venues list
 function MyVenuesScreen({ accent = HED.lime, onTab, onBack, onOpenVenue, onAddVenue }) {
   const s = useStore();
   return (
@@ -3076,7 +3076,7 @@ function MyVenuesScreen({ accent = HED.lime, onTab, onBack, onOpenVenue, onAddVe
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Edit Venue
+// --------------------------------- Edit Venue
 function EditVenueScreen({ venueId, accent = HED.lime, onTab, onBack, onSaved }) {
   const s = useStore();
   const original = s.venues.find(v => v.id === venueId) || s.venues[0];
@@ -3128,7 +3128,7 @@ function EditVenueScreen({ venueId, accent = HED.lime, onTab, onBack, onSaved })
             </VField>
           </div>
           <VField label="Description">
-            <VTextarea value={v.description} onChange={x => set('description', x)} placeholder="Describe the venue‚Ä¶"/>
+            <VTextarea value={v.description} onChange={x => set('description', x)} placeholder="Describe the venue\u2026"/>
           </VField>
         </Card>
 
@@ -3136,7 +3136,7 @@ function EditVenueScreen({ venueId, accent = HED.lime, onTab, onBack, onSaved })
         <Card padding={16} style={{ marginBottom: 14 }}>
           <SectionHeader icon="info" title="For Artist Invites" subtitle="Shown to artists when you invite them to a booking." accent={accent}/>
           <VField label="Additional Details">
-            <VTextarea value={v.inviteDetails} onChange={x => set('inviteDetails', x)} placeholder="Load-in, parking, point of contact‚Ä¶" rows={3}/>
+            <VTextarea value={v.inviteDetails} onChange={x => set('inviteDetails', x)} placeholder="Load-in, parking, point of contact\u2026" rows={3}/>
           </VField>
         </Card>
 
@@ -3144,7 +3144,7 @@ function EditVenueScreen({ venueId, accent = HED.lime, onTab, onBack, onSaved })
         <Card padding={16} style={{ marginBottom: 14 }}>
           <SectionHeader icon="file-text" title="Terms & Conditions" subtitle="Venue-specific terms shown on offer." accent={accent}/>
           <VField label="Venue-Specific Terms">
-            <VTextarea value={v.terms} onChange={x => set('terms', x)} placeholder="Cancellation, deposits, merch policy‚Ä¶" rows={4}/>
+            <VTextarea value={v.terms} onChange={x => set('terms', x)} placeholder="Cancellation, deposits, merch policy\u2026" rows={4}/>
           </VField>
         </Card>
 
@@ -3152,7 +3152,7 @@ function EditVenueScreen({ venueId, accent = HED.lime, onTab, onBack, onSaved })
         <Card padding={16} style={{ marginBottom: 14 }}>
           <SectionHeader icon="settings" title="What's Provided" subtitle="Equipment, sound, lighting." accent={accent}/>
           <VField label="Equipment & Facilities">
-            <VTextarea value={v.provided} onChange={x => set('provided', x)} placeholder="PA, monitors, drum kit, lighting‚Ä¶" rows={3}/>
+            <VTextarea value={v.provided} onChange={x => set('provided', x)} placeholder="PA, monitors, drum kit, lighting\u2026" rows={3}/>
           </VField>
         </Card>
 
@@ -3219,7 +3219,7 @@ Object.assign(window, { MyVenuesScreen, EditVenueScreen });
 
 const STORAGE_KEY = 'hedlyner-proto-v5';
 
-// ‚îÄ‚îÄ‚îÄ Default seed (only used if no saved state)
+// --- Default seed (only used if no saved state)
 function seedState() {
   const ARTISTS = window.ARTISTS;
   const MY_BOOKINGS = window.MY_BOOKINGS;
@@ -3236,7 +3236,7 @@ function seedState() {
       id: m.id, name: m.name, photo: m.photo, initials: m.initials, color: m.color,
       messages: [
         { from: 'them', text: 'Hey! Confirming for the gig.', time: '2d' },
-        { from: 'me', text: 'Awesome ‚Äî house kit details?', time: '2d' },
+        { from: 'me', text: 'Awesome \u2014 house kit details?', time: '2d' },
         { from: 'them', text: m.last, time: m.time },
       ],
     };
@@ -3283,7 +3283,7 @@ function seedState() {
       marketingEmails: true,
       productEmails: true,
     },
-    role: 'booker', // 'booker' | 'artist' ‚Äî used for view perspective
+    role: 'booker', // 'booker' | 'artist' -- used for view perspective
     artists: ARTISTS,
     bookings: MY_BOOKINGS.map(b => ({ ...b })),
     openBookings: OPEN_BOOKINGS.map(b => ({ ...b, applied: false })),
@@ -3316,7 +3316,7 @@ function saveState(s) {
   try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); } catch (e) {}
 }
 
-// ‚îÄ‚îÄ‚îÄ Tiny pubsub
+// --- Tiny pubsub
 const listeners = new Set();
 let state = null;
 
@@ -3345,7 +3345,7 @@ function useStore() {
   return ensureLoaded();
 }
 
-// ‚îÄ‚îÄ‚îÄ Action helpers (mutators)
+// --- Action helpers (mutators)
 const actions = {
   signIn(name, email) {
     setState(s => ({ ...s, auth: { ...s.auth, signedIn: true, name: name || s.auth.name, email: email || s.auth.email } }));
@@ -3452,7 +3452,7 @@ const actions = {
   addContact(c) {
     setState(s => ({ ...s, contacts: [{ ...c, id: 'c-' + Date.now() }, ...s.contacts] }));
   },
-  // Add a contact + the artist accounts (acts) it manages ‚Äî they're separate stores.
+  // Add a contact + the artist accounts (acts) it manages -- they're separate stores.
   addContactWithArtists(contact, artists) {
     setState(s => {
       const cId = 'c-' + Date.now();
@@ -3462,7 +3462,7 @@ const actions = {
         act: a.act || a.name,
         location: contact.location || '',
         genres: a.tags || [],
-        fee: a.payout ? `$${a.payout}` : '‚Äî',
+        fee: a.payout ? `$${a.payout}` : '\u2014',
         bioShort: a.bio || '',
         notes: a.notes || '',
         socialLinks: a.socialLinks || {},
@@ -3504,9 +3504,9 @@ function botReply(text) {
   const t = text.toLowerCase();
   if (/sound check|soundcheck/.test(t)) return 'Sound check at 6 works for me.';
   if (/payout|fee|paid/.test(t)) return 'Payout terms look good. Confirmed.';
-  if (/cancel/.test(t)) return 'Got it ‚Äî let me check our calendar and get back to you.';
-  if (/[?]$/.test(text.trim())) return 'Good question ‚Äî give me a sec.';
-  if (/thanks|thank you/.test(t)) return 'üëç Anytime.';
+  if (/cancel/.test(t)) return 'Got it \u2014 let me check our calendar and get back to you.';
+  if (/[?]$/.test(text.trim())) return 'Good question \u2014 give me a sec.';
+  if (/thanks|thank you/.test(t)) return '\uD83D\uDC4D Anytime.';
   return 'Sounds good. See you then.';
 }
 
@@ -3521,7 +3521,7 @@ Object.assign(window, { useStore, getState, setState, actions, seedState });
 const { Phone, ScreenHeader, Btn, Badge, Chip, Avatar, Card, StatusBadge, Icon, HED } = window;
 const { Divider, SectionLabel, KV, DetailRow, FormField, Input, Select, Toggle, Stat, Mini, ActionBtn, SwipeCard, Sticker, StatTile } = window;
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Splash + Sign In
+// --------------------------------- Splash + Sign In
 function AuthScreen({ accent, onSignIn }) {
   const [mode, setMode] = React.useState('splash'); // splash | signin
   const [email, setEmail] = React.useState('jay@hollowaymusic.co');
@@ -3536,7 +3536,7 @@ function AuthScreen({ accent, onSignIn }) {
       {mode === 'splash' && (
         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '48px 28px 56px' }}>
           <h1 style={{ fontSize: 42, fontWeight: 600, letterSpacing: -1, lineHeight: 1.02, margin: 0, color: '#fff' }}>Live booking,<br/><span style={{ color: accent }}>your way.</span></h1>
-          <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: 15, lineHeight: 1.5, marginTop: 14, textWrap: 'pretty' }}>Discover artists, send offers, advance shows, get paid ‚Äî all in one place.</p>
+          <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: 15, lineHeight: 1.5, marginTop: 14, textWrap: 'pretty' }}>Discover artists, send offers, advance shows, get paid &mdash; all in one place.</p>
           <div style={{ marginTop: 28, display: 'flex', flexDirection: 'column', gap: 10 }}>
             <Btn kind="primary" full size="lg" accent={accent} icon="log-in" onClick={() => setMode('signin')}>Sign In</Btn>
             <Btn kind="outline" full size="lg" icon="user-round-plus" onClick={() => onSignIn(email, 'Jay Holloway')}>Create Account</Btn>
@@ -3553,8 +3553,8 @@ function AuthScreen({ accent, onSignIn }) {
             <FormField label="Password"><input type="password" value={pw} onChange={e => setPw(e.target.value)} style={fieldStyle()}/></FormField>
           </div>
           <Btn kind="primary" full size="lg" accent={accent} icon="log-in" onClick={() => onSignIn(email, 'Jay Holloway')}>Sign In</Btn>
-          <button onClick={() => setMode('splash')} style={{ background: 'transparent', border: 'none', color: HED.muted, fontFamily: 'inherit', fontSize: 13, cursor: 'pointer', padding: 8 }}>‚Üê Back</button>
-          <div style={{ position: 'absolute', bottom: -340, left: 0, right: 0, textAlign: 'center', color: HED.subtle, fontSize: 11.5 }}>Demo ¬∑ any credentials work</div>
+          <button onClick={() => setMode('splash')} style={{ background: 'transparent', border: 'none', color: HED.muted, fontFamily: 'inherit', fontSize: 13, cursor: 'pointer', padding: 8 }}>&#x2190; Back</button>
+          <div style={{ position: 'absolute', bottom: -340, left: 0, right: 0, textAlign: 'center', color: HED.subtle, fontSize: 11.5 }}>Demo &middot; any credentials work</div>
         </div>
       )}
     </div>
@@ -3568,7 +3568,7 @@ function fieldStyle() {
   };
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Functional Discover (uses store)
+// --------------------------------- Functional Discover (uses store)
 function FuncDiscoverScreen({ accent, onTab, onOpenEpk, onInvite }) {
   const s = useStore();
   const [query, setQuery] = React.useState('');
@@ -3599,7 +3599,7 @@ function FuncDiscoverScreen({ accent, onTab, onOpenEpk, onInvite }) {
       <Phone tab="discover" onTab={onTab} accent={accent}>
         <ScreenHeader title="Discover"/>
         <div style={{ padding: 32, textAlign: 'center', color: HED.muted }}>
-          <div style={{ fontSize: 50, marginBottom: 12 }}>üéâ</div>
+          <div style={{ fontSize: 50, marginBottom: 12 }}>&#x1F389;</div>
           <div style={{ fontSize: 16, color: '#fff', fontWeight: 600, marginBottom: 6 }}>You've seen everyone.</div>
           <div style={{ fontSize: 13.5, lineHeight: 1.5 }}>Loosen filters or check back tomorrow.</div>
           <Btn kind="secondary" icon="refresh-cw" style={{ marginTop: 18 }} onClick={() => actions.reset()}>Reset deck</Btn>
@@ -3700,7 +3700,7 @@ function FuncDiscoverScreen({ accent, onTab, onOpenEpk, onInvite }) {
                 <div style={{ fontSize: 11.5, color: HED.muted, fontWeight: 600, textTransform: 'uppercase', letterSpacing: 0.6, marginBottom: 6, display: 'flex', alignItems: 'center', gap: 6 }}><Icon name="map-pin" size={12}/>Location</div>
                 <div style={{ position: 'relative' }}>
                   <div style={{ position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)', color: HED.muted, display: 'flex' }}><Icon name="map-pin" size={14}/></div>
-                  <input value={filters.location} onChange={e => setFilters(f => ({ ...f, location: e.target.value }))} placeholder="City, region‚Ä¶" style={{ ...fieldStyle(), height: 40, paddingLeft: 34 }}/>
+                  <input value={filters.location} onChange={e => setFilters(f => ({ ...f, location: e.target.value }))} placeholder="City, region\u2026" style={{ ...fieldStyle(), height: 40, paddingLeft: 34 }}/>
                 </div>
               </div>
               <div>
@@ -3732,8 +3732,8 @@ function iconBtnStyle() {
   return { background: HED.surface, border: `1px solid ${HED.border}`, borderRadius: 10, width: 38, height: 38, color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' };
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Functional Bookings list (uses store)
-// ‚îÄ‚îÄ‚îÄ Mobile-friendly filter helpers (used by FuncBookingsScreen)
+// --------------------------------- Functional Bookings list (uses store)
+// --- Mobile-friendly filter helpers (used by FuncBookingsScreen)
 // Single-select chip group: clicking a selected chip clears the value.
 function FilterChipGroup({ label, icon, accent, options, selected, onSelect }) {
   return (
@@ -3767,7 +3767,7 @@ function FilterChipGroup({ label, icon, accent, options, selected, onSelect }) {
   );
 }
 
-// Mini inline calendar for mobile date range ‚Äî taps "From" / "To" to switch which
+// Mini inline calendar for mobile date range \u2014 taps "From" / "To" to switch which
 // edge is being selected. Calendar is collapsed by default and expands on tap.
 function InlineDateRange({ accent, fromISO, toISOv, onFrom, onTo }) {
   const init = fromISO ? new Date(fromISO) : new Date();
@@ -3792,7 +3792,7 @@ function InlineDateRange({ accent, fromISO, toISOv, onFrom, onTo }) {
   };
 
   const display = (iso) => {
-    if (!iso) return '‚Äî';
+    if (!iso) return '&mdash;';
     const d = new Date(iso);
     return `${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][d.getMonth()]} ${d.getDate()}`;
   };
@@ -3859,7 +3859,7 @@ function dateEdgeBtn(active, hasValue, accent) {
 }
 
 // MonthCalendar / toISO are declared later in the file but hoisted via React render.
-// We need them at runtime ‚Äî they are global once func-screens.jsx loads.
+// We need them at runtime \u2014 they are global once func-screens.jsx loads.
 
 function ActivePill({ label, onRemove, accent }) {
   return (
@@ -4083,7 +4083,7 @@ function FuncBookingsScreen({ accent, onTab, onOpenBooking, onCreateBooking }) {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8, gap: 8 }}>
               <div style={{ minWidth: 0, flex: 1 }}>
                 <div style={{ fontWeight: 600, fontSize: 15.5, marginBottom: 2, letterSpacing: -0.2 }}>{b.title}</div>
-                <div style={{ color: HED.muted, fontSize: 13 }}>{b.venue} ¬∑ {b.city}</div>
+                <div style={{ color: HED.muted, fontSize: 13 }}>{b.venue} \u00B7 {b.city}</div>
               </div>
               <StatusBadge status={b.status}/>
             </div>
@@ -4102,7 +4102,7 @@ function FuncBookingsScreen({ accent, onTab, onOpenBooking, onCreateBooking }) {
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Booking detail with real actions
+// --------------------------------- Booking detail with real actions
 function FuncBookingDetail({ booking, accent, variant, onTab, onBack }) {
   const s = useStore();
   const b = s.bookings.find(x => x.id === booking.id) || booking;
@@ -4141,7 +4141,7 @@ function FuncBookingDetail({ booking, accent, variant, onTab, onBack }) {
 
       <div style={{ padding: '4px 20px 14px' }}>
         <h1 style={{ margin: 0, fontSize: 24, fontWeight: 600, letterSpacing: -0.5, lineHeight: 1.15 }}>{b.title}</h1>
-        <div style={{ marginTop: 6, color: HED.muted, fontSize: 14 }}><span style={{ color: '#fff', fontWeight: 600 }}>{b.day}</span> {b.date} ¬∑ {b.venue}</div>
+        <div style={{ marginTop: 6, color: HED.muted, fontSize: 14 }}><span style={{ color: '#fff', fontWeight: 600 }}>{b.day}</span> {b.date} \u00B7 {b.venue}</div>
       </div>
 
       {/* Phase Timeline */}
@@ -4176,7 +4176,7 @@ function FuncBookingDetail({ booking, accent, variant, onTab, onBack }) {
             <div style={{ fontSize: 44, fontWeight: 700, color: accent, letterSpacing: -1.5, lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>{b.daysToGo > 0 ? b.daysToGo : 0}</div>
             <div>
               <div style={{ fontSize: 13, color: HED.muted, textTransform: 'uppercase', letterSpacing: 0.5, fontWeight: 600 }}>Days to Go</div>
-              <div style={{ fontSize: 14, marginTop: 2 }}>{b.startTime} ¬∑ {b.duration}</div>
+              <div style={{ fontSize: 14, marginTop: 2 }}>{b.startTime} \u00B7 {b.duration}</div>
             </div>
             <div style={{ flex: 1 }}/>
             <div style={{ textAlign: 'right' }}>
@@ -4200,7 +4200,7 @@ function FuncBookingDetail({ booking, accent, variant, onTab, onBack }) {
                   <div style={{ fontWeight: 600, fontSize: 15, color: '#fff' }}>{acc.name}</div>
                   <div style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 11.5, fontWeight: 600, color: '#a3e635', marginTop: 3 }}>
                     <span style={{ width: 6, height: 6, borderRadius: 999, background: '#a3e635' }}/>
-                    Accepted offer{acc.acceptedDate ? ` ¬∑ ${acc.acceptedDate}` : ''}
+                    Accepted offer{acc.acceptedDate ? ` \u00B7 ${acc.acceptedDate}` : ''}
                   </div>
                 </div>
                 <button title="Message artist" style={iconBtnStyle()}><Icon name="message-square" size={16}/></button>
@@ -4221,7 +4221,7 @@ function FuncBookingDetail({ booking, accent, variant, onTab, onBack }) {
               <Avatar src={b.artist?.photo} size={52} ring={accent} initials={(b.artist?.name || 'A').slice(0,1)}/>
               <div style={{ flex: 1 }}>
                 <div style={{ fontWeight: 600, fontSize: 15 }}>{b.artist?.act}</div>
-                <div style={{ color: HED.muted, fontSize: 12.5, marginTop: 2 }}>{b.duration} ¬∑ {b.payout}</div>
+                <div style={{ color: HED.muted, fontSize: 12.5, marginTop: 2 }}>{b.duration} \u00B7 {b.payout}</div>
               </div>
               <button title="Message artist" style={iconBtnStyle()}><Icon name="message-square" size={16}/></button>
             </div>
@@ -4231,7 +4231,7 @@ function FuncBookingDetail({ booking, accent, variant, onTab, onBack }) {
 
       {(b.status === 'Advance' || b.status === 'Wrap-Up') && (() => {
         const acc = (b.invitees || []).find(i => i.offerStatus === 'accepted') || {};
-        const artistEmail = b.artist?.email || acc.email || '‚Äî';
+        const artistEmail = b.artist?.email || acc.email || '&mdash;';
         return (
           <div style={{ padding: '0 20px 14px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
@@ -4249,7 +4249,7 @@ function FuncBookingDetail({ booking, accent, variant, onTab, onBack }) {
                 </div>
               </div>
               <div style={{ padding: 14, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px 14px', borderTop: `1px solid ${HED.borderSoft}` }}>
-                <KV k="Artist Name" v={b.artist?.name || acc.name || '‚Äî'}/>
+                <KV k="Artist Name" v={b.artist?.name || acc.name || '&mdash;'}/>
                 <KV k="Role" v="Talent"/>
                 <KV k="Email" v={artistEmail} mono/>
                 <KV k="Set Duration" v={b.duration}/>
@@ -4317,12 +4317,12 @@ function FuncBookingDetail({ booking, accent, variant, onTab, onBack }) {
                 <SectionLabel style={{ margin: 0 }}>Contact Details</SectionLabel>
               </div>
               <Card padding={0}>
-                <DetailRow icon="user" k="Full Name" v={b.artist?.name || acc.name || '‚Äî'}/>
+                <DetailRow icon="user" k="Full Name" v={b.artist?.name || acc.name || '&mdash;'}/>
                 <DetailRow icon="briefcase" k="Type" v="Talent"/>
-                <DetailRow icon="mail" k="Email" v={b.artist?.email || acc.email || '‚Äî'} mono/>
+                <DetailRow icon="mail" k="Email" v={b.artist?.email || acc.email || '&mdash;'} mono/>
                 <DetailRow icon="phone" k="Phone" v={b.artist?.phone || 'N/A'}/>
                 <DetailRow icon="building" k="Company" v={b.artist?.company || 'N/A'}/>
-                <DetailRow icon="music" k="Artist Name" v={b.artist?.act || '‚Äî'}/>
+                <DetailRow icon="music" k="Artist Name" v={b.artist?.act || '&mdash;'}/>
                 <DetailRow icon="dollar-sign" k="Desired Payout" v={b.artist?.fee ? `$${b.artist.fee}` : 'N/A'}/>
                 <DetailRow icon="quote" k="Bio" v={b.artist?.bioShort || b.artist?.bio || 'N/A'}/>
                 <DetailRow icon="clock" k="Added" v={b.artist?.added || '7 months ago'} last/>
@@ -4381,7 +4381,7 @@ function FuncBookingDetail({ booking, accent, variant, onTab, onBack }) {
       {b.status === 'Completed' && (
         <div style={{ padding: '0 20px 28px' }}>
           <Card padding={14} style={{ textAlign: 'center', background: `color-mix(in oklch, ${accent} 14%, ${HED.surface})` }}>
-            <div style={{ fontSize: 24, marginBottom: 4 }}>üéâ</div>
+            <div style={{ fontSize: 24, marginBottom: 4 }}>\uD83C\uDF89</div>
             <div style={{ fontWeight: 600, fontSize: 15, marginBottom: 4 }}>Booking complete</div>
             <div style={{ color: HED.muted, fontSize: 13 }}>Great show. Funds settled.</div>
           </Card>
@@ -4414,26 +4414,26 @@ function FuncBookingDetail({ booking, accent, variant, onTab, onBack }) {
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Functional Create Booking ‚Äî 3 real steps
+// --------------------------------- Functional Create Booking \u2014 3 real steps
 function FuncCreateBooking({ accent, onClose, onCreated }) {
   const s = useStore();
   const [step, setStep] = React.useState(1);
   const [dateSheetOpen, setDateSheetOpen] = React.useState(false);
   const [form, setForm] = React.useState({
     title: '', venue: s.venues[0].name, city: s.venues[0].city,
-    // Date model ‚Äî three modes: 'single' | 'recurring' | 'custom'
+    // Date model \u2014 three modes: 'single' | 'recurring' | 'custom'
     dateMode: 'single',
     singleDate: null,         // ISO yyyy-mm-dd
     rangeStart: null, rangeEnd: null, weekdays: [],  // recurring
     customDates: [],          // array of ISO yyyy-mm-dd
     startTime: '8:00 PM', duration: '60 min',
     artist: null,        // primary headliner (first invitee for legacy)
-    invitees: [],        // array of artist objects (acts) ‚Äî multi-invite
+    invitees: [],        // array of artist objects (acts) \u2014 multi-invite
     description: '',
     additionalDetails: '', terms: '', techSpecs: '',
     settingsOpen: false,
     payoutType: 'Fixed', payout: '$650', notes: '',
-    // Step 4 ‚Äî Automations
+    // Step 4 \u2014 Automations
     autoPayment: false,        // collect payout via Hedlyner (single + series)
     autoConfirm: false,        // auto-confirm artists who accept (requires fields)
     seriesLimitMode: 'none',   // 'none' | 'count' | 'window'
@@ -4451,8 +4451,8 @@ function FuncCreateBooking({ accent, onClose, onCreated }) {
   );
   const dateSummary = (
     form.dateMode === 'single' && form.singleDate ? formatISO(form.singleDate) :
-    form.dateMode === 'recurring' && form.rangeStart && form.rangeEnd ? `Series ¬∑ ${form.weekdays.length} day${form.weekdays.length === 1 ? '' : 's'}/wk ¬∑ ${formatISOShort(form.rangeStart)}‚Äì${formatISOShort(form.rangeEnd)}` :
-    form.dateMode === 'custom' && form.customDates.length ? `Series ¬∑ ${form.customDates.length} date${form.customDates.length === 1 ? '' : 's'}` :
+    form.dateMode === 'recurring' && form.rangeStart && form.rangeEnd ? `Series \u00B7 ${form.weekdays.length} day${form.weekdays.length === 1 ? '' : 's'}/wk \u00B7 ${formatISOShort(form.rangeStart)}\u2013${formatISOShort(form.rangeEnd)}` :
+    form.dateMode === 'custom' && form.customDates.length ? `Series \u00B7 ${form.customDates.length} date${form.customDates.length === 1 ? '' : 's'}` :
     ''
   );
   const isSeries = form.dateMode !== 'single';
@@ -4490,7 +4490,7 @@ function FuncCreateBooking({ accent, onClose, onCreated }) {
         payout: form.payout, payoutType: form.payoutType,
         status: 'Hold', phase: 'Hold Phase', role: 'Buyer',
         daysToGo: daysFrom(firstDate),
-        series: isSeries ? `New Series ¬∑ ${seriesCount} dates` : null,
+        series: isSeries ? `New Series \u00B7 ${seriesCount} dates` : null,
         artist: form.artist || (form.invitees[0]) || { act: 'TBD' },
         automations: {
           autoPayment: form.autoPayment,
@@ -4503,7 +4503,7 @@ function FuncCreateBooking({ accent, onClose, onCreated }) {
       };
       actions.addBooking(newB);
       actions.pushNotification(isSeries
-        ? `Series offer sent ¬∑ ${seriesCount} bookings for "${form.title}"`
+        ? `Series offer sent \u00B7 ${seriesCount} bookings for "${form.title}"`
         : `Offer sent for "${form.title}"`);
       onCreated && onCreated(newB);
     }
@@ -4655,7 +4655,7 @@ function FuncCreateBooking({ accent, onClose, onCreated }) {
           <Btn kind="primary" full accent={accent} onClick={next} icon={step === 4 ? 'send' : 'chevron-right'}>
             {step === 4
               ? (form.invitees.length > 1
-                  ? `Send ${form.invitees.length}${isSeries ? ` √ó ${seriesCount}` : ''} Offers`
+                  ? `Send ${form.invitees.length}${isSeries ? ` &times; ${seriesCount}` : ''} Offers`
                   : (isSeries ? `Send ${seriesCount} Offers` : 'Send Offer'))
               : 'Continue'}
           </Btn>
@@ -4675,7 +4675,7 @@ function FuncCreateBooking({ accent, onClose, onCreated }) {
 }
 function ErrText({ t }) { return <div style={{ color: '#fb7185', fontSize: 12, marginTop: 4 }}>{t}</div>; }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Step 3: Invite Artists (Contacts + Discover modes)
+// --------------------------------- Step 3: Invite Artists (Contacts + Discover modes)
 function Step3Invite({ accent, form, setForm, dateSummary, isSeries, seriesCount, errors }) {
   const [mode, setMode] = React.useState('contacts'); // 'contacts' | 'discover'
   const invitees = form.invitees || [];
@@ -4750,19 +4750,19 @@ function Step3Invite({ accent, form, setForm, dateSummary, isSeries, seriesCount
       <div style={{ marginTop: 16, padding: 14, background: `color-mix(in oklch, ${accent} 8%, ${HED.surface})`, border: `1px solid color-mix(in oklch, ${accent} 24%, transparent)`, borderRadius: 12 }}>
         <div style={{ fontSize: 11, color: accent, fontWeight: 700, letterSpacing: 0.5, textTransform: 'uppercase', marginBottom: 6 }}>Review</div>
         <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 2 }}>{form.title || 'Untitled'}</div>
-        <div style={{ color: HED.muted, fontSize: 13 }}>{form.venue} ¬∑ {dateSummary || 'no date'} ¬∑ {form.startTime}</div>
+        <div style={{ color: HED.muted, fontSize: 13 }}>{form.venue} &middot; {dateSummary || 'no date'} &middot; {form.startTime}</div>
         <div style={{ color: HED.muted, fontSize: 13 }}>
           {invitees.length === 0 ? 'No artists invited yet'
             : invitees.length === 1 ? `Inviting: ${invitees[0].act}`
-            : `Inviting ${invitees.length} artists${isSeries ? ` √ó ${seriesCount} dates` : ''}`}
+            : `Inviting ${invitees.length} artists${isSeries ? ` &times; ${seriesCount} dates` : ''}`}
         </div>
-        <div style={{ color: '#fff', fontSize: 13, marginTop: 4 }}>{form.payoutType} ¬∑ <span style={{ color: accent, fontWeight: 700 }}>{form.payout}</span>{isSeries && <span style={{ color: HED.muted }}> √ó {seriesCount}</span>}</div>
+        <div style={{ color: '#fff', fontSize: 13, marginTop: 4 }}>{form.payoutType} &middot; <span style={{ color: accent, fontWeight: 700 }}>{form.payout}</span>{isSeries && <span style={{ color: HED.muted }}> &times; {seriesCount}</span>}</div>
       </div>
     </div>
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ Contacts mode: search + list filter, contacts grouped by email, expandable artist cards
+// --- Contacts mode: search + list filter, contacts grouped by email, expandable artist cards
 function ContactsInvitePicker({ accent, isInvited, onToggle }) {
   const s = useStore();
   const [query, setQuery] = React.useState('');
@@ -4820,7 +4820,7 @@ function ContactsInvitePicker({ accent, isInvited, onToggle }) {
 
       {/* Result count */}
       <div style={{ fontSize: 11.5, color: HED.muted, marginBottom: 8, fontWeight: 500 }}>
-        {filtered.length} contact{filtered.length === 1 ? '' : 's'} ¬∑ {filtered.reduce((n, c) => n + (c.artists || []).length, 0)} artist account{filtered.reduce((n, c) => n + (c.artists || []).length, 0) === 1 ? '' : 's'}
+        {filtered.length} contact{filtered.length === 1 ? '' : 's'} &middot; {filtered.reduce((n, c) => n + (c.artists || []).length, 0)} artist account{filtered.reduce((n, c) => n + (c.artists || []).length, 0) === 1 ? '' : 's'}
       </div>
 
       {filtered.length === 0 ? (
@@ -4880,7 +4880,7 @@ function ContactGroup({ contact, accent, isInvited, onToggle }) {
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ fontWeight: 600, fontSize: 13, color: '#fff', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{a.act}</div>
                 <div style={{ color: HED.muted, fontSize: 11.5, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                  {(a.genres || []).slice(0, 2).join(' ¬∑ ')} ¬∑ {a.fee}
+                  {(a.genres || []).slice(0, 2).join(' \u00B7 ')} &middot; {a.fee}
                 </div>
               </div>
               {a.epkStatus === 'Draft' && (
@@ -4894,7 +4894,7 @@ function ContactGroup({ contact, accent, isInvited, onToggle }) {
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ Discover mode: swipe through top 5 matches first, then search the rest of the directory.
+// --- Discover mode: swipe through top 5 matches first, then search the rest of the directory.
 function DiscoverInvitePicker({ accent, form, isInvited, onToggle }) {
   const s = useStore();
   const [phase, setPhase] = React.useState('swipe'); // 'swipe' | 'search'
@@ -4922,7 +4922,7 @@ function DiscoverInvitePicker({ accent, form, isInvited, onToggle }) {
       .slice(0, 5);
   }, [baseFiltered.map(a => a.id).join('|')]);
 
-  // Phase 2: rest of the directory ‚Äî the artists NOT shown as top matches.
+  // Phase 2: rest of the directory -- the artists NOT shown as top matches.
   const topMatchIds = new Set(topMatches.map(a => a.id));
   const directory = baseFiltered.filter(a => !topMatchIds.has(a.id));
   const searchResults = directory.filter(a => {
@@ -4947,13 +4947,13 @@ function DiscoverInvitePicker({ accent, form, isInvited, onToggle }) {
             {phase === 'swipe' ? (
               <>
                 <span style={{ color: '#fff', fontWeight: 600 }}>Top {topMatches.length} matches</span> for{' '}
-                {form.venue} ¬∑ {form.city || 'Asheville, NC'}
-                {form.payout && <> ¬∑ <span style={{ color: '#fff', fontWeight: 600 }}>{form.payout}</span></>}
+                {form.venue} &middot; {form.city || 'Asheville, NC'}
+                {form.payout && <> &middot; <span style={{ color: '#fff', fontWeight: 600 }}>{form.payout}</span></>}
               </>
             ) : (
               <>
                 <span style={{ color: '#fff', fontWeight: 600 }}>Artist directory</span>
-                {' ¬∑ '}{directory.length} more artists to explore
+                {' \u00B7 '}{directory.length} more artists to explore
               </>
             )}
           </div>
@@ -5062,7 +5062,7 @@ function SwipeDiscover({ artists, accent, isInvited, onToggle, onFinished }) {
           }}>
             <Icon name="search" size={15} color="#0a0a0a"/> Search the artist directory
           </button>
-          <div style={{ fontSize: 11, color: HED.subtle }}>Optional ‚Äî you can continue with just your matches</div>
+          <div style={{ fontSize: 11, color: HED.subtle }}>Optional &mdash; you can continue with just your matches</div>
         </div>
       </div>
     );
@@ -5144,7 +5144,7 @@ function SwipeDiscover({ artists, accent, isInvited, onToggle, onFinished }) {
         </div>
       </div>
       <div style={{ textAlign: 'center', fontSize: 11, color: HED.muted, marginTop: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}>
-        <Icon name="hand" size={11}/> Swipe or tap ¬∑ {idx + 1} of {artists.length}
+        <Icon name="hand" size={11}/> Swipe or tap &middot; {idx + 1} of {artists.length}
       </div>
     </div>
   );
@@ -5194,7 +5194,7 @@ function SwipeDiscoverCard({ artist, accent, invited, dx = 0 }) {
           <div style={{
             position: 'absolute', top: 10, right: 10, padding: '4px 9px', borderRadius: 999,
             background: accent, fontSize: 11, fontWeight: 700, color: '#0a0a0a',
-          }}>‚úì Invited</div>
+          }}>&#x2713; Invited</div>
         )}
         <div style={{
           position: 'absolute', bottom: 0, left: 0, right: 0, padding: '24px 14px 12px',
@@ -5202,7 +5202,7 @@ function SwipeDiscoverCard({ artist, accent, invited, dx = 0 }) {
         }}>
           <div style={{ fontSize: 22, fontWeight: 700, color: '#fff', marginBottom: 3, letterSpacing: -0.3 }}>{artist.act}</div>
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.85)', display: 'flex', alignItems: 'center', gap: 4 }}>
-            <Icon name="map-pin" size={12} color="rgba(255,255,255,0.7)"/>{artist.location} ¬∑ {artist.distanceMi} mi
+            <Icon name="map-pin" size={12} color="rgba(255,255,255,0.7)"/>{artist.location} &middot; {artist.distanceMi} mi
           </div>
         </div>
       </div>
@@ -5272,9 +5272,9 @@ function SwipeDiscoverCard({ artist, accent, invited, dx = 0 }) {
         {/* Configuration row */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, fontSize: 12, color: '#cccccc', marginBottom: 14 }}>
           {artist.config && <span style={{ display: 'flex', alignItems: 'center', gap: 5 }}><Icon name="users" size={13} color={accent}/>{artist.config}</span>}
-          {artist.config && artist.styles && <span style={{ color: HED.border }}>¬∑</span>}
+          {artist.config && artist.styles && <span style={{ color: HED.border }}>&middot;</span>}
           {artist.styles && <span style={{ display: 'flex', alignItems: 'center', gap: 5 }}><Icon name="music" size={13} color={accent}/>{artist.styles}</span>}
-          {artist.styles && artist.setOptions && <span style={{ color: HED.border }}>¬∑</span>}
+          {artist.styles && artist.setOptions && <span style={{ color: HED.border }}>&middot;</span>}
           {artist.setOptions && <span style={{ display: 'flex', alignItems: 'center', gap: 5 }}><Icon name="clock" size={13} color={accent}/>{artist.setOptions}</span>}
         </div>
 
@@ -5284,7 +5284,7 @@ function SwipeDiscoverCard({ artist, accent, invited, dx = 0 }) {
             <Icon name="quote" size={14} color={accent} style={{ marginTop: 2, flexShrink: 0 }}/>
             <div>
               <div style={{ fontSize: 13, color: '#cccccc', fontStyle: 'italic', lineHeight: 1.45 }}>"{artist.press.quote}"</div>
-              <div style={{ fontSize: 11, color: HED.muted, marginTop: 4 }}>‚Äî {artist.press.source}</div>
+              <div style={{ fontSize: 11, color: HED.muted, marginTop: 4 }}>&mdash; {artist.press.source}</div>
             </div>
           </div>
         )}
@@ -5378,7 +5378,7 @@ function SearchDiscoverRow({ artist, accent, invited, expanded, onToggleExpand, 
       border: `1px solid ${invited ? `color-mix(in oklch, ${accent} 60%, ${HED.border})` : HED.border}`,
       borderRadius: 12, marginBottom: 8, overflow: 'hidden',
     }}>
-      {/* Compact header ‚Äî tappable to expand */}
+      {/* Compact header -- tappable to expand */}
       <button onClick={onToggleExpand} style={{
         width: '100%', display: 'flex', alignItems: 'flex-start', gap: 10, padding: 12,
         background: 'transparent', border: 'none', cursor: 'pointer', fontFamily: 'inherit', textAlign: 'left',
@@ -5397,9 +5397,9 @@ function SearchDiscoverRow({ artist, accent, invited, expanded, onToggleExpand, 
             <div style={{ color: accent, fontSize: 13, fontWeight: 700, flexShrink: 0 }}>{a.fee}</div>
           </div>
           <div style={{ color: HED.muted, fontSize: 11.5, marginBottom: 6, display: 'flex', alignItems: 'center', gap: 4, overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis' }}>
-            <Icon name="map-pin" size={11}/>{a.location} ¬∑ {a.distanceMi} mi
-            {a.setLength && <> ¬∑ <Icon name="clock" size={11}/>{a.setLength}</>}
-            {a.config && <> ¬∑ <Icon name="users" size={11}/>{a.config}</>}
+            <Icon name="map-pin" size={11}/>{a.location} &middot; {a.distanceMi} mi
+            {a.setLength && <> &middot; <Icon name="clock" size={11}/>{a.setLength}</>}
+            {a.config && <> &middot; <Icon name="users" size={11}/>{a.config}</>}
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
             {a.genres.slice(0, 3).map(g => (
@@ -5447,7 +5447,7 @@ function SearchDiscoverRow({ artist, accent, invited, expanded, onToggleExpand, 
       {/* Expanded mini EPK */}
       {expanded && (
         <div style={{ padding: '4px 14px 14px', borderTop: `1px solid ${HED.border}` }}>
-          {/* MEDIA ‚Äî first thing they see */}
+          {/* MEDIA -- first thing they see */}
           {(a.youtubeId || a.spotifyTrack) && (
             <div style={{ marginTop: 12, marginBottom: 14 }}>
               {/* Tab strip */}
@@ -5556,7 +5556,7 @@ function SearchDiscoverRow({ artist, accent, invited, expanded, onToggleExpand, 
               <Icon name="quote" size={12} color={accent} style={{ marginTop: 2, flexShrink: 0 }}/>
               <div>
                 <div style={{ fontSize: 12, color: '#cccccc', fontStyle: 'italic', lineHeight: 1.45 }}>"{a.press.quote}"</div>
-                <div style={{ fontSize: 10, color: HED.muted, marginTop: 3 }}>‚Äî {a.press.source}</div>
+                <div style={{ fontSize: 10, color: HED.muted, marginTop: 3 }}>&mdash; {a.press.source}</div>
               </div>
             </div>
           )}
@@ -5570,7 +5570,7 @@ function SearchDiscoverRow({ artist, accent, invited, expanded, onToggleExpand, 
             fontSize: 13, fontWeight: 700, fontFamily: 'inherit', cursor: 'pointer',
             display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6,
           }}>
-            {invited ? (<><Icon name="check" size={14} color={accent}/> Invited ‚Äî tap to remove</>) : (<><Icon name="send" size={14} color="#0a0a0a"/> Invite to booking</>)}
+            {invited ? (<><Icon name="check" size={14} color={accent}/> Invited &mdash; tap to remove</>) : (<><Icon name="send" size={14} color="#0a0a0a"/> Invite to booking</>)}
           </button>
         </div>
       )}
@@ -5598,7 +5598,7 @@ function mediaTabStyle(on, accent) {
   };
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Date helpers
+// --------------------------------- Date helpers
 function todayISO() {
   const d = new Date(); d.setHours(0,0,0,0);
   return toISO(d);
@@ -5626,7 +5626,7 @@ function computeRecurringCount(start, end, weekdays) {
   return c;
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Date field button (in Step 1)
+// --------------------------------- Date field button (in Step 1)
 function DateFieldButton({ accent, value, isSeries, onClick }) {
   return (
     <button onClick={onClick} style={{
@@ -5651,7 +5651,7 @@ function DateFieldButton({ accent, value, isSeries, onClick }) {
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Step 4: Automations
+// --------------------------------- Step 4: Automations
 function Step4Automations({ accent, form, set, isSeries, seriesCount, autoConfirmReady }) {
   const missingFields = [];
   if (!form.startTime) missingFields.push('Start Time');
@@ -5683,7 +5683,7 @@ function Step4Automations({ accent, form, set, isSeries, seriesCount, autoConfir
         }}>
           <Icon name="credit-card" size={16} color={accent}/>
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: 12.5, fontWeight: 600, color: '#fff' }}>Visa ‚Ä¢‚Ä¢‚Ä¢‚Ä¢ 4242</div>
+            <div style={{ fontSize: 12.5, fontWeight: 600, color: '#fff' }}>Visa &bull;&bull;&bull;&bull; 4242</div>
             <div style={{ fontSize: 11, color: HED.muted, marginTop: 1 }}>Default payment method</div>
           </div>
           <button style={{
@@ -5716,7 +5716,7 @@ function Step4Automations({ accent, form, set, isSeries, seriesCount, autoConfir
           </div>
           <div style={{ fontSize: 11.5, color: HED.muted, marginBottom: 4 }}>Complete the following to enable:</div>
           {missingFields.map(f => (
-            <div key={f} style={{ fontSize: 11.5, color: HED.muted, paddingLeft: 8, marginTop: 2 }}>¬∑ {f}</div>
+            <div key={f} style={{ fontSize: 11.5, color: HED.muted, paddingLeft: 8, marginTop: 2 }}>&middot; {f}</div>
           ))}
         </div>
       )}
@@ -5874,7 +5874,7 @@ function NumStepper({ accent, value, min = 1, max = 99, onChange }) {
       display: 'inline-flex', alignItems: 'center',
       background: HED.surface, border: `1px solid ${HED.border}`, borderRadius: 8, overflow: 'hidden',
     }}>
-      <button onClick={dec} style={stepBtn()}>‚àí</button>
+      <button onClick={dec} style={stepBtn()}>&#x2212;</button>
       <div style={{ minWidth: 32, padding: '0 6px', textAlign: 'center', fontSize: 13, fontWeight: 600, color: '#fff' }}>{value}</div>
       <button onClick={inc} style={stepBtn()}>+</button>
     </div>
@@ -5904,7 +5904,7 @@ function SegToggle({ accent, options, value, onChange }) {
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Date Sheet (mobile-native)
+// --------------------------------- Date Sheet (mobile-native)
 // Default = single date. "Make this a series" promotes to recurring/custom.
 function DateSheet({ accent, form, onApply, onClose }) {
   const [mode, setMode] = React.useState(form.dateMode); // 'single' | 'recurring' | 'custom'
@@ -6068,7 +6068,7 @@ function SeriesUpsell({ accent, onConfirm, onClose }) {
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Calendar (shared)
+// --------------------------------- Calendar (shared)
 function MonthCalendar({ accent, viewYear, viewMonth, onPrevMonth, onNextMonth, isSelected, onSelect, isInRange, isRangeEdge, minDate }) {
   const first = new Date(viewYear, viewMonth, 1);
   const startDay = first.getDay();
@@ -6122,7 +6122,7 @@ function MonthCalendar({ accent, viewYear, viewMonth, onPrevMonth, onNextMonth, 
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Single date picker
+// --------------------------------- Single date picker
 function SingleDatePicker({ accent, value, onChange }) {
   const init = value ? fromISO(value) : new Date();
   const [vm, setVm] = React.useState({ y: init.getFullYear(), m: init.getMonth() });
@@ -6138,7 +6138,7 @@ function SingleDatePicker({ accent, value, onChange }) {
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Recurring picker
+// --------------------------------- Recurring picker
 function RecurringPicker({ accent, rangeStart, rangeEnd, weekdays, setRangeStart, setRangeEnd, setWeekdays, count }) {
   const init = rangeStart ? fromISO(rangeStart) : new Date();
   const [vm, setVm] = React.useState({ y: init.getFullYear(), m: init.getMonth() });
@@ -6215,7 +6215,7 @@ function RangeChip({ label, value, active, accent, onClick }) {
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Custom dates picker
+// --------------------------------- Custom dates picker
 function CustomDatesPicker({ accent, dates, setDates }) {
   const init = dates.length ? fromISO(dates[0]) : new Date();
   const [vm, setVm] = React.useState({ y: init.getFullYear(), m: init.getMonth() });
@@ -6257,7 +6257,7 @@ function CustomDatesPicker({ accent, dates, setDates }) {
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Functional Messages list + Thread
+// --------------------------------- Functional Messages list + Thread
 function FuncMessagesScreen({ accent, onTab, onOpenThread }) {
   const s = useStore();
   const [q, setQ] = React.useState('');
@@ -6315,7 +6315,7 @@ function FuncThreadScreen({ threadId, accent, onTab, onBack }) {
         <Avatar size={36} src={t.photo} initials={t.initials} color={t.color || HED.violet}/>
         <div style={{ flex: 1 }}>
           <div style={{ fontWeight: 600, fontSize: 15 }}>{t.name}</div>
-          <div style={{ color: HED.muted, fontSize: 11.5 }}>Online ¬∑ last seen now</div>
+          <div style={{ color: HED.muted, fontSize: 11.5 }}>Online &middot; last seen now</div>
         </div>
         <button title="Call" style={iconBtnStyle()}><Icon name="phone" size={16}/></button>
       </div>
@@ -6349,7 +6349,7 @@ function FuncThreadScreen({ threadId, accent, onTab, onBack }) {
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Functional Contacts (search + add)
+// --------------------------------- Functional Contacts (search + add)
 function FuncContactsScreen({ accent, onTab, onOpenThread }) {
   const s = useStore();
   const [q, setQ] = React.useState('');
@@ -6474,17 +6474,17 @@ function AddContactSheet({ accent, onClose }) {
             <div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
                 <FormField label="First Name" required>
-                  <input value={first} onChange={e => setFirst(e.target.value)} placeholder="Enter first name‚Ä¶" style={fieldStyle()}/>
+                  <input value={first} onChange={e => setFirst(e.target.value)} placeholder="Enter first name\u2026" style={fieldStyle()}/>
                 </FormField>
                 <FormField label="Last Name" required>
-                  <input value={last} onChange={e => setLast(e.target.value)} placeholder="Enter last name‚Ä¶" style={fieldStyle()}/>
+                  <input value={last} onChange={e => setLast(e.target.value)} placeholder="Enter last name\u2026" style={fieldStyle()}/>
                 </FormField>
               </div>
               <FormField label="Email" required>
-                <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Enter email address‚Ä¶" style={fieldStyle()} type="email"/>
+                <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Enter email address\u2026" style={fieldStyle()} type="email"/>
               </FormField>
               <FormField label="Phone">
-                <input value={phone} onChange={e => setPhone(e.target.value)} placeholder="Enter phone number‚Ä¶" style={fieldStyle()} type="tel"/>
+                <input value={phone} onChange={e => setPhone(e.target.value)} placeholder="Enter phone number\u2026" style={fieldStyle()} type="tel"/>
               </FormField>
               <FormField label="Type" required>
                 <select value={type} onChange={e => setType(e.target.value)} style={{ ...fieldStyle(), appearance: 'none' }}>
@@ -6635,7 +6635,7 @@ function ArtistEditor({ index, accent, artist, onChange, onRemove }) {
                 <button onClick={() => removeTag(t)} style={{
                   background: 'transparent', border: 'none', color: accent,
                   fontFamily: 'inherit', cursor: 'pointer', padding: 0, lineHeight: 1, fontSize: 13,
-                }}>√ó</button>
+                }}>&times;</button>
               </span>
             ))}
           </div>
@@ -6662,10 +6662,10 @@ function ArtistEditor({ index, accent, artist, onChange, onRemove }) {
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
         <FormField label="Bio">
-          <textarea value={artist.bio} onChange={e => onChange({ bio: e.target.value })} style={{ ...fieldStyle(), height: 78, padding: 12, resize: 'none' }} placeholder="Short bio‚Ä¶"/>
+          <textarea value={artist.bio} onChange={e => onChange({ bio: e.target.value })} style={{ ...fieldStyle(), height: 78, padding: 12, resize: 'none' }} placeholder="Short bio\u2026"/>
         </FormField>
         <FormField label="Notes">
-          <textarea value={artist.notes} onChange={e => onChange({ notes: e.target.value })} style={{ ...fieldStyle(), height: 78, padding: 12, resize: 'none' }} placeholder="Internal notes‚Ä¶"/>
+          <textarea value={artist.notes} onChange={e => onChange({ notes: e.target.value })} style={{ ...fieldStyle(), height: 78, padding: 12, resize: 'none' }} placeholder="Internal notes\u2026"/>
         </FormField>
       </div>
 
@@ -6729,7 +6729,7 @@ function SocialLinksSheet({ accent, artistIndex, links, onSave, onClose }) {
         {/* Header */}
         <div style={{ padding: '18px 18px 10px', borderBottom: `1px solid ${HED.border}`, position: 'relative' }}>
           <div style={{ fontSize: 16, fontWeight: 700, color: '#fff', letterSpacing: -0.3 }}>
-            Social Links <span style={{ color: HED.muted, fontWeight: 500 }}>‚Äî Artist #{artistIndex + 1}</span>
+            Social Links <span style={{ color: HED.muted, fontWeight: 500 }}>&mdash; Artist #{artistIndex + 1}</span>
           </div>
           <div style={{ fontSize: 12, color: HED.muted, marginTop: 4, lineHeight: 1.4 }}>
             Add social media profiles and website links for this artist.
@@ -6784,7 +6784,7 @@ function SocialLinksSheet({ accent, artistIndex, links, onSave, onClose }) {
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Functional Browse Open Bookings (artist applies)
+// --------------------------------- Functional Browse Open Bookings (artist applies)
 function FuncBrowseBookingsScreen({ accent, onTab, onBack }) {
   const s = useStore();
   const [q, setQ] = React.useState('');
@@ -6809,7 +6809,7 @@ function FuncBrowseBookingsScreen({ accent, onTab, onBack }) {
                 <div style={{ fontWeight: 600, fontSize: 15.5, letterSpacing: -0.2 }}>{b.title}</div>
                 {b.applied ? <Badge tone="published">Applied</Badge> : <Badge tone="violet">Open</Badge>}
               </div>
-              <div style={{ color: HED.muted, fontSize: 13, marginBottom: 10 }}>{b.venue} ¬∑ {b.city}</div>
+              <div style={{ color: HED.muted, fontSize: 13, marginBottom: 10 }}>{b.venue} &middot; {b.city}</div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
                 <Mini icon="calendar" k="Date" v={b.date}/>
                 <Mini icon="clock" k="Set" v={b.duration}/>
@@ -6832,7 +6832,7 @@ function FuncBrowseBookingsScreen({ accent, onTab, onBack }) {
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ EPK Builder with real Save / Next / Back
+// --------------------------------- EPK Builder with real Save / Next / Back
 function FuncEPKBuilder({ epkId, accent, onTab, onBack }) {
   const s = useStore();
   const epk = s.epks.find(e => e.id === epkId) || s.epks[0];
@@ -6881,7 +6881,7 @@ function FuncEPKBuilder({ epkId, accent, onTab, onBack }) {
           ))}
         </div>
         <div style={{ flex: 1, padding: '18px 20px', overflow: 'auto', display: 'flex', flexDirection: 'column' }}>
-          <div style={{ fontSize: 11, color: accent, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 0.6 }}>Step {step} ¬∑ {epk.name}</div>
+          <div style={{ fontSize: 11, color: accent, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 0.6 }}>Step {step} &middot; {epk.name}</div>
           <h2 style={{ margin: '6px 0 0', fontSize: 28, fontWeight: 600, letterSpacing: -0.5 }}>{cur.name}</h2>
           <div style={{
             marginTop: 22, flex: 1, minHeight: 220,
@@ -6907,7 +6907,7 @@ function FuncEPKBuilder({ epkId, accent, onTab, onBack }) {
   );
 }
 
-// ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Functional My EPKs
+// --------------------------------- Functional My EPKs
 function FuncMyEPKsScreen({ accent, onTab, onBack, onOpenEPK }) {
   const s = useStore();
   return (
@@ -6916,7 +6916,7 @@ function FuncMyEPKsScreen({ accent, onTab, onBack, onOpenEPK }) {
         <button onClick={onBack} style={iconBtnStyle()}><Icon name="chevron-left" size={20}/></button>
         <div style={{ fontSize: 22, fontWeight: 600, letterSpacing: -0.4 }}>My EPKs</div>
       </div>
-      <div style={{ padding: '8px 16px 0', color: HED.muted, fontSize: 13, lineHeight: 1.4 }}>Your electronic press kits ‚Äî what bookers see when they discover you.</div>
+      <div style={{ padding: '8px 16px 0', color: HED.muted, fontSize: 13, lineHeight: 1.4 }}>Your electronic press kits &mdash; what bookers see when they discover you.</div>
       <div style={{ padding: '14px 16px 80px', display: 'flex', flexDirection: 'column', gap: 12 }}>
         {s.epks.map(e => (
           <Card key={e.id} padding={0} style={{ overflow: 'hidden' }} onClick={() => onOpenEPK(e.id)}>
@@ -6998,7 +6998,7 @@ function SendOfferSheet({ accent, booking, onClose }) {
       </div>
       <div style={{ flex: 1, overflow: 'auto', padding: '14px 16px 100px' }}>
         <div style={{ color: HED.muted, fontSize: 12.5, marginBottom: 12, lineHeight: 1.5 }}>
-          {booking.venue} ¬∑ {booking.day} {booking.date} ¬∑ <span style={{ color: accent, fontWeight: 700 }}>{booking.payout}</span>
+          {booking.venue} &middot; {booking.day} {booking.date} &middot; <span style={{ color: accent, fontWeight: 700 }}>{booking.payout}</span>
         </div>
         <div style={{ display: 'flex', gap: 6, padding: 4, background: HED.surface, border: `1px solid ${HED.border}`, borderRadius: 11, marginBottom: 14 }}>
           {[
@@ -7070,9 +7070,9 @@ function PaymentManagementCard({ booking, accent, isBuyer, onAdd }) {
         {/* Summary strip */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 1, background: HED.border }}>
           {[
-            { label: 'Payout', value: totalDue != null ? fmt(totalDue) : '‚Äî', tone: '#fff' },
+            { label: 'Payout', value: totalDue != null ? fmt(totalDue) : '\u2014', tone: '#fff' },
             { label: 'Paid', value: fmt(totalPaid), tone: payments.length ? accent : HED.muted },
-            { label: 'Remaining', value: remaining != null ? fmt(remaining) : '‚Äî', tone: remaining > 0 ? '#facc15' : (payments.length ? '#a3e635' : HED.muted) },
+            { label: 'Remaining', value: remaining != null ? fmt(remaining) : '\u2014', tone: remaining > 0 ? '#facc15' : (payments.length ? '#a3e635' : HED.muted) },
           ].map(s => (
             <div key={s.label} style={{ background: HED.bg, padding: '12px 10px', textAlign: 'center' }}>
               <div style={{ fontSize: 10, color: HED.muted, letterSpacing: 0.4, fontWeight: 600, textTransform: 'uppercase', marginBottom: 4 }}>{s.label}</div>
@@ -7112,7 +7112,7 @@ function PaymentManagementCard({ booking, accent, isBuyer, onAdd }) {
                       </div>
                     </div>
                     <div style={{ fontSize: 11.5, color: HED.muted, marginTop: 2, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                      {p.method || 'Manual'} ¬∑ {p.createdOn}{p.note ? ` ¬∑ ${p.note}` : ''}
+                      {p.method || 'Manual'} &middot; {p.createdOn}{p.note ? ` &middot; ${p.note}` : ''}
                     </div>
                   </div>
                 </div>
@@ -7136,7 +7136,7 @@ function PaymentManagementCard({ booking, accent, isBuyer, onAdd }) {
       </Card>
       {fee > 0 && (
         <div style={{ fontSize: 11, color: HED.muted, marginTop: 6, paddingLeft: 2 }}>
-          Hedlyner fee: ${fee.toFixed(2)} ¬∑ auto-deducted on payout
+          Hedlyner fee: ${fee.toFixed(2)} &middot; auto-deducted on payout
         </div>
       )}
     </div>
@@ -7153,7 +7153,7 @@ function SendPaymentSheet({ accent, booking, isBuyer, onClose, onSubmit }) {
     }
   }, []);
 
-  // ‚îÄ‚îÄ‚îÄ Stripe flow: 2 steps (used for buyer Send + artist Record) ‚îÄ‚îÄ‚îÄ‚îÄ
+  // --- Stripe flow: 2 steps (used for buyer Send + artist Record) ----
   {
     const platformFee = Number(String(booking.fee || '').replace(/[^\d.]/g, '')) || 0;
     const payoutNum = Number(String(booking.payout || '').replace(/[^\d.]/g, '')) || 0;
@@ -7170,8 +7170,8 @@ function SendPaymentSheet({ accent, booking, isBuyer, onClose, onSubmit }) {
     const [agreed, setAgreed] = React.useState(false);
 
     const cards = [
-      { id: 'visa-4242', label: 'visa ‚Ä¢‚Ä¢‚Ä¢‚Ä¢ 4242' },
-      { id: 'mc-1881', label: 'mastercard ‚Ä¢‚Ä¢‚Ä¢‚Ä¢ 1881' },
+      { id: 'visa-4242', label: 'visa \u2022\u2022\u2022\u2022 4242' },
+      { id: 'mc-1881', label: 'mastercard \u2022\u2022\u2022\u2022 1881' },
     ];
     const cardLabel = cards.find(c => c.id === card)?.label || cards[0].label;
 
@@ -7293,7 +7293,7 @@ function SendPaymentSheet({ accent, booking, isBuyer, onClose, onSubmit }) {
                     fontSize: 11, fontWeight: 700,
                   }}>{type}</span>
                 } style={{ marginTop: 8 }}/>
-                <PmtDetailRow label="Description" value={description || '‚Äî'} style={{ marginTop: 8 }}/>
+                <PmtDetailRow label="Description" value={description || '\u2014'} style={{ marginTop: 8 }}/>
                 <PmtDetailRow label="Payment Date" value={date} style={{ marginTop: 8 }}/>
                 <PmtDetailRow label="Payment Method" valueNode={
                   <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, color: '#fff', fontSize: 13 }}>
@@ -7358,9 +7358,9 @@ function SendPaymentSheet({ accent, booking, isBuyer, onClose, onSubmit }) {
                 <div style={{ fontSize: 12, lineHeight: 1.5 }}>
                   <div style={{ color: '#60a5fa', fontWeight: 600, marginBottom: 4 }}>What happens next:</div>
                   <ul style={{ color: '#cbd5e1', margin: 0, paddingLeft: 0, listStyle: 'none' }}>
-                    <li>‚Ä¢ Payment processed securely through Stripe</li>
-                    <li style={{ marginTop: 2 }}>‚Ä¢ {isBuyer ? `${artistName} will be notified` : 'Payer will be notified'}</li>
-                    <li style={{ marginTop: 2 }}>‚Ä¢ Payment linked to booking</li>
+                    <li>\u2022 Payment processed securely through Stripe</li>
+                    <li style={{ marginTop: 2 }}>\u2022 {isBuyer ? `${artistName} will be notified` : 'Payer will be notified'}</li>
+                    <li style={{ marginTop: 2 }}>\u2022 Payment linked to booking</li>
                   </ul>
                 </div>
               </div>
@@ -7373,7 +7373,7 @@ function SendPaymentSheet({ accent, booking, isBuyer, onClose, onSubmit }) {
                     disabled={!agreed}
                     onClick={() => onSubmit({
                       amount: num, method: cardLabel, status: isBuyer ? 'Sent' : 'Received',
-                      note: `${type}${description ? ' ¬∑ ' + description : ''}`,
+                      note: `${type}${description ? ' &middot; ' + description : ''}`,
                     })}>
                     {isBuyer ? 'Send Payment' : 'Record Payment'}
                   </Btn>
@@ -7421,7 +7421,7 @@ function LockedRow({ accent, text }) {
       background: 'rgba(34, 197, 94, 0.10)', border: '1px solid rgba(34, 197, 94, 0.25)',
       color: accent, fontSize: 14,
     }}>
-      ‚úì {text}
+      \u2713 {text}
     </div>
   );
 }
@@ -7528,12 +7528,12 @@ Object.assign(window, {
 </script>
 
 <script type="text/babel">
-// Account Settings ‚Äî mirrors the live Hedlyner web settings exactly.
-// Sections: Profile ¬∑ Security ¬∑ Booking Settings ¬∑ Custom Fields ¬∑ Notification Add-Ons ¬∑ Notification Templates
+// Account Settings -- mirrors the live Hedlyner web settings exactly.
+// Sections: Profile \u00B7 Security \u00B7 Booking Settings \u00B7 Custom Fields \u00B7 Notification Add-Ons \u00B7 Notification Templates
 
 const { Phone, Card, Icon, Avatar, HED, useStore, actions, iconBtnStyle } = window;
 
-// ‚îÄ‚îÄ Local primitives
+// -- Local primitives
 function ASField({ label, children, hint }) {
   return (
     <div style={{ marginBottom: 14 }}>
@@ -7580,7 +7580,7 @@ function SectionTitle({ children }) {
   );
 }
 
-// ‚îÄ‚îÄ Section nav (vertical list, mirrors the desktop sidebar)
+// -- Section nav (vertical list, mirrors the desktop sidebar)
 function ASNav({ tab, setTab, accent }) {
   const items = [
     { id: 'profile', label: 'Profile', icon: 'user-round' },
@@ -7612,7 +7612,7 @@ function ASNav({ tab, setTab, accent }) {
   );
 }
 
-// ‚îÄ‚îÄ Primary green button (matches the lime "Save Changes")
+// -- Primary green button (matches the lime "Save Changes")
 function PrimaryBtn({ onClick, children, icon, disabled }) {
   return (
     <button onClick={onClick} disabled={disabled} style={{
@@ -7641,7 +7641,7 @@ function GhostBtn({ onClick, children, color, icon }) {
   );
 }
 
-// ‚îÄ‚îÄ PROFILE SECTION
+// -- PROFILE SECTION
 function ProfileSection({ auth, setA, accent, onFlash, dirty, onSave }) {
   return (
     <>
@@ -7651,7 +7651,7 @@ function ProfileSection({ auth, setA, accent, onFlash, dirty, onSave }) {
       <div style={{ background: '#262626', border: `1px solid ${HED.border}`, borderRadius: 12, padding: 20, marginBottom: 18 }}>
         <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 14 }}>Profile Photo</div>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
-          <button onClick={() => onFlash && onFlash('Photo upload ‚Äî demo')} style={{
+          <button onClick={() => onFlash && onFlash('Photo upload \u2014 demo')} style={{
             width: 140, height: 140, borderRadius: '50%',
             border: `2px dashed ${HED.muted}`, background: 'transparent',
             display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 6,
@@ -7701,7 +7701,7 @@ function ProfileSection({ auth, setA, accent, onFlash, dirty, onSave }) {
   );
 }
 
-// ‚îÄ‚îÄ SECURITY SECTION
+// -- SECURITY SECTION
 function SecuritySection({ accent, onFlash }) {
   const [cur, setCur] = React.useState('');
   const [nw, setNw] = React.useState('');
@@ -7739,7 +7739,7 @@ function SecuritySection({ accent, onFlash }) {
   );
 }
 
-// ‚îÄ‚îÄ BOOKING SETTINGS SECTION (Venue Management)
+// -- BOOKING SETTINGS SECTION (Venue Management)
 function BookingSection({ accent, onAddVenue, onEditVenue, onFlash }) {
   const s = useStore();
   return (
@@ -7792,7 +7792,7 @@ function iconSquare(color) {
   };
 }
 
-// ‚îÄ‚îÄ Empty placeholder section (Custom Fields / Add-Ons / Templates)
+// -- Empty placeholder section (Custom Fields / Add-Ons / Templates)
 function PlaceholderSection({ title, blurb, icon, accent, ctaLabel, onCta }) {
   return (
     <>
@@ -7813,7 +7813,7 @@ function PlaceholderSection({ title, blurb, icon, accent, ctaLabel, onCta }) {
   );
 }
 
-// ‚îÄ‚îÄ Main screen
+// -- Main screen
 function FuncAccountSettingsScreen({ accent = HED.lime, onTab, onBack, onAddVenue, onEditVenue, onFlash }) {
   const s = useStore();
   const initial = React.useMemo(() => ({ ...s.auth }), []);
@@ -7850,7 +7850,7 @@ function FuncAccountSettingsScreen({ accent = HED.lime, onTab, onBack, onAddVenu
         {tab === 'security' && <SecuritySection accent={accent} onFlash={onFlash}/>}
         {tab === 'booking' && <BookingSection accent={accent} onAddVenue={onAddVenue} onEditVenue={onEditVenue} onFlash={onFlash}/>}
         {tab === 'custom' && <PlaceholderSection title="Custom Fields" icon="sliders-horizontal" accent={accent}
-          blurb="Add custom fields to capture booking-specific details ‚Äî riders, hospitality notes, tax IDs."
+          blurb="Add custom fields to capture booking-specific details \u2014 riders, hospitality notes, tax IDs."
           ctaLabel="Add Custom Field" onCta={() => onFlash && onFlash('Demo: add custom field')}/>}
         {tab === 'addons' && <PlaceholderSection title="Notification Add-Ons" icon="megaphone" accent={accent}
           blurb="Connect Slack, SMS, and webhook integrations to mirror Hedlyner notifications elsewhere."
@@ -7868,12 +7868,12 @@ Object.assign(window, { FuncAccountSettingsScreen });
 </script>
 
 <script type="text/babel">
-// Billing & Payments ‚Äî mirrors the live Hedlyner web billing experience.
-// Sections: Subscription ¬∑ Payout Method ¬∑ Payment Methods ¬∑ Payment History
+// Billing & Payments -- mirrors the live Hedlyner web billing experience.
+// Sections: Subscription \u00B7 Payout Method \u00B7 Payment Methods \u00B7 Payment History
 
 const { Phone, Card, Icon, HED, useStore, actions, iconBtnStyle } = window;
 
-// ‚îÄ‚îÄ Plan catalogue (pricing + perks)
+// -- Plan catalogue (pricing + perks)
 const BOOKER_PLANS = [
   {
     id: 'gig-ready',
@@ -7881,7 +7881,7 @@ const BOOKER_PLANS = [
     badge: null,
     tagline: 'Single venue, getting started',
     monthly: 0, yearly: 0,
-    limits: '0 templates ¬∑ 1 seat',
+    limits: '0 templates \u00B7 1 seat',
     perks: ['Unlimited bookings', 'Standard notifications (4)', 'Payout tracking', 'CRM & Contacts', 'Booking calendar'],
   },
   {
@@ -7890,7 +7890,7 @@ const BOOKER_PLANS = [
     badge: 'New',
     tagline: 'Committed single-venue operator',
     monthly: 39, yearly: 390,
-    limits: '1 template ¬∑ 2 seats',
+    limits: '1 template \u00B7 2 seats',
     perks: ['Everything in Gig Ready', 'Custom notification templates', 'Role-based permissions', 'Data export', 'Email reports'],
     highlighted: true,
   },
@@ -7900,7 +7900,7 @@ const BOOKER_PLANS = [
     badge: null,
     tagline: 'Multi-location venue operator',
     monthly: 99, yearly: 990,
-    limits: '3 templates ¬∑ 5 seats',
+    limits: '3 templates \u00B7 5 seats',
     perks: ['Everything in Venue Solo', 'Series & recurring bookings', 'Bulk editing'],
   },
   {
@@ -7909,7 +7909,7 @@ const BOOKER_PLANS = [
     badge: 'New',
     tagline: 'Talent buying agency',
     monthly: 199, yearly: 1990,
-    limits: '10 templates ¬∑ 10 seats',
+    limits: '10 templates \u00B7 10 seats',
     perks: ['Everything in Venue HQ', 'White-label option'],
   },
   {
@@ -7931,7 +7931,7 @@ const ARTIST_PLANS = [
     badge: null,
     tagline: 'Create and share your EPK',
     monthly: 0,
-    limits: '1 EPK ¬∑ Midnight theme only',
+    limits: '1 EPK \u00B7 Midnight theme only',
     perks: ['1 EPK', 'Standard Discover placement', 'Midnight theme'],
   },
   {
@@ -7950,7 +7950,7 @@ const ARTIST_PLANS = [
 const ALL_PLANS = [...BOOKER_PLANS, ...ARTIST_PLANS];
 const planById = (id) => ALL_PLANS.find(p => p.id === id);
 
-// ‚îÄ‚îÄ Plan ordering for upgrade/downgrade detection within booker tier
+// -- Plan ordering for upgrade/downgrade detection within booker tier
 const BOOKER_ORDER = ['gig-ready', 'venue-solo', 'venue-hq', 'agency-pro', 'enterprise'];
 const ARTIST_ORDER = ['artist-free', 'artist-pro'];
 function compareInTier(aId, bId) {
@@ -7963,7 +7963,7 @@ function compareInTier(aId, bId) {
   return 0;
 }
 
-// ‚îÄ‚îÄ Sub-nav (mirrors desktop billing sidebar)
+// -- Sub-nav (mirrors desktop billing sidebar)
 function BillingNav({ tab, setTab, accent }) {
   const items = [
     { id: 'subscription', label: 'Subscription', icon: 'sparkles' },
@@ -8034,7 +8034,7 @@ function GhostBtn({ onClick, children, color, icon, full, disabled }) {
   );
 }
 
-// ‚îÄ‚îÄ Active plans summary card (top of Subscription tab)
+// -- Active plans summary card (top of Subscription tab)
 function ActivePlansCard({ billing, accent, onFlash }) {
   const bookerPlan = BOOKER_PLANS.find(p => p.id === billing.currentPlan);
   const artistPlan = ARTIST_PLANS.find(p => p.id === (billing.currentArtistPlan || 'artist-free'));
@@ -8082,7 +8082,7 @@ function ActivePlansCard({ billing, accent, onFlash }) {
   );
 }
 
-// ‚îÄ‚îÄ Booker / Artist segmented toggle (full-width)
+// -- Booker / Artist segmented toggle (full-width)
 function TierToggle({ tier, onChange, accent }) {
   return (
     <div style={{
@@ -8108,7 +8108,7 @@ function TierToggle({ tier, onChange, accent }) {
   );
 }
 
-// ‚îÄ‚îÄ Billing cycle toggle (monthly / yearly)
+// -- Billing cycle toggle (monthly / yearly)
 function CycleToggle({ cycle, onChange, accent }) {
   return (
     <div style={{
@@ -8129,7 +8129,7 @@ function CycleToggle({ cycle, onChange, accent }) {
               fontSize: 10, padding: '2px 6px', borderRadius: 6,
               background: on ? '#0a0a0a' : `color-mix(in oklch, ${accent} 22%, transparent)`,
               color: accent,
-            }}>‚àí20%</span>}
+            }}>&#x2212;20%</span>}
           </button>
         );
       })}
@@ -8137,7 +8137,7 @@ function CycleToggle({ cycle, onChange, accent }) {
   );
 }
 
-// ‚îÄ‚îÄ "Need more?" divider before Enterprise
+// -- "Need more?" divider before Enterprise
 function NeedMoreDivider() {
   return (
     <div style={{
@@ -8154,7 +8154,7 @@ function NeedMoreDivider() {
   );
 }
 
-// ‚îÄ‚îÄ Plan card
+// -- Plan card
 function PlanCard({ plan, cycle, currentPlanId, tier, accent, onUpgrade, onDowngrade, onContactSales }) {
   const isCurrent = plan.id === currentPlanId;
   const rel = compareInTier(plan.id, currentPlanId); // <0 cheaper, >0 pricier, 0 same
@@ -8185,7 +8185,7 @@ function PlanCard({ plan, cycle, currentPlanId, tier, accent, onUpgrade, onDowng
       </GhostBtn>
     );
   } else {
-    action = <PrimaryBtn full onClick={() => onUpgrade(plan)}>Upgrade ‚Üí</PrimaryBtn>;
+    action = <PrimaryBtn full onClick={() => onUpgrade(plan)}>Upgrade &#x2192;</PrimaryBtn>;
   }
 
   return (
@@ -8258,7 +8258,7 @@ function PlanCard({ plan, cycle, currentPlanId, tier, accent, onUpgrade, onDowng
   );
 }
 
-// ‚îÄ‚îÄ Inline downgrade confirmation card
+// -- Inline downgrade confirmation card
 function DowngradeConfirmCard({ currentPlan, targetPlan, accent, onConfirm, onCancel }) {
   // Diff: perks present in current but absent in target
   const targetSet = new Set((targetPlan.perks || []).map(p => p.toLowerCase().trim()));
@@ -8295,7 +8295,7 @@ function DowngradeConfirmCard({ currentPlan, targetPlan, accent, onConfirm, onCa
       }}>
         {lost.length === 0 ? (
           <div style={{ fontSize: 12.5, color: HED.muted, fontStyle: 'italic' }}>
-            No feature differences ‚Äî just a price change.
+            No feature differences &mdash; just a price change.
           </div>
         ) : lost.map((p, i) => (
           <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 13, color: '#e5e5e5' }}>
@@ -8317,7 +8317,7 @@ function DowngradeConfirmCard({ currentPlan, targetPlan, accent, onConfirm, onCa
   );
 }
 
-// ‚îÄ‚îÄ SUBSCRIPTION SECTION
+// -- SUBSCRIPTION SECTION
 function SubscriptionSection({ billing, accent, onFlash }) {
   const [cycle, setCycle] = React.useState(billing.cycle);
   const [tier, setTier] = React.useState('booker');
@@ -8343,7 +8343,7 @@ function SubscriptionSection({ billing, accent, onFlash }) {
     onFlash && onFlash('Plan downgraded');
     setPendingDowngrade(null);
   };
-  const contactSales = (plan) => onFlash && onFlash(`Demo: contact sales ‚Äî ${plan.name}`);
+  const contactSales = (plan) => onFlash && onFlash(`Demo: contact sales &mdash; ${plan.name}`);
 
   const renderPlan = (plan) => {
     if (pendingDowngrade === plan.id) {
@@ -8386,7 +8386,7 @@ function SubscriptionSection({ billing, accent, onFlash }) {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
             <div>
               <div style={{ fontSize: 15, fontWeight: 600 }}>Booker plans</div>
-              <div style={{ fontSize: 12, color: HED.muted, marginTop: 2 }}>Switch anytime ‚Äî prorated automatically.</div>
+              <div style={{ fontSize: 12, color: HED.muted, marginTop: 2 }}>Switch anytime &mdash; prorated automatically.</div>
             </div>
           </div>
           <div style={{ marginTop: 12 }}>
@@ -8406,7 +8406,7 @@ function SubscriptionSection({ billing, accent, onFlash }) {
           <div style={{ marginBottom: 14 }}>
             <div style={{ fontSize: 15, fontWeight: 600 }}>Artist plans</div>
             <div style={{ fontSize: 12.5, color: HED.muted, marginTop: 4, lineHeight: 1.5 }}>
-              $9/mo per EPK ‚Äî upgrade your free EPK or add more EPKs.
+              $9/mo per EPK &mdash; upgrade your free EPK or add more EPKs.
             </div>
           </div>
 
@@ -8431,7 +8431,7 @@ function SubscriptionSection({ billing, accent, onFlash }) {
   );
 }
 
-// ‚îÄ‚îÄ PAYOUT METHOD SECTION
+// -- PAYOUT METHOD SECTION
 function PayoutSection({ billing, accent, onFlash }) {
   return (
     <>
@@ -8464,7 +8464,7 @@ function PayoutSection({ billing, accent, onFlash }) {
             </div>
             <div style={{ minWidth: 0, flex: 1 }}>
               <div style={{ fontSize: 14, fontWeight: 600 }}>Bank Account Connected</div>
-              <div style={{ fontSize: 12, color: HED.muted, marginTop: 1 }}>Chase Business Checking ¬∑¬∑¬∑¬∑6712</div>
+              <div style={{ fontSize: 12, color: HED.muted, marginTop: 1 }}>Chase Business Checking &middot;&middot;&middot;&middot;6712</div>
             </div>
           </div>
           <GhostBtn full icon="external-link" onClick={() => onFlash && onFlash('Demo: open Stripe dashboard')}>Manage in Stripe</GhostBtn>
@@ -8484,7 +8484,7 @@ function PayoutSection({ billing, accent, onFlash }) {
   );
 }
 
-// ‚îÄ‚îÄ PAYMENT METHODS SECTION
+// -- PAYMENT METHODS SECTION
 function MethodsSection({ billing, accent, onFlash }) {
   return (
     <>
@@ -8503,7 +8503,7 @@ function MethodsSection({ billing, accent, onFlash }) {
               fontSize: 10, fontWeight: 700, color: '#fff', letterSpacing: 0.4,
             }}>{pm.brand.toUpperCase()}</div>
             <div style={{ minWidth: 0, flex: 1 }}>
-              <div style={{ fontSize: 14, fontWeight: 500 }}>{pm.brand} ¬∑¬∑¬∑¬∑ {pm.last4}</div>
+              <div style={{ fontSize: 14, fontWeight: 500 }}>{pm.brand} &middot;&middot;&middot;&middot; {pm.last4}</div>
               <div style={{ fontSize: 12, color: HED.muted, marginTop: 1 }}>Expires {pm.exp}</div>
             </div>
             {pm.isDefault && (
@@ -8522,7 +8522,7 @@ function MethodsSection({ billing, accent, onFlash }) {
   );
 }
 
-// ‚îÄ‚îÄ PAYMENT HISTORY SECTION
+// -- PAYMENT HISTORY SECTION
 function HistorySection({ billing, accent, onFlash }) {
   return (
     <>
@@ -8546,7 +8546,7 @@ function HistorySection({ billing, accent, onFlash }) {
                 <div style={{ fontSize: 14, fontWeight: 500 }}>${inv.amount.toFixed(2)}</div>
                 <div style={{ fontSize: 11, color: '#86efac', fontWeight: 500 }}>{inv.status}</div>
               </div>
-              <div style={{ fontSize: 12, color: HED.muted, marginTop: 1 }}>{inv.plan} ¬∑ {inv.date}</div>
+              <div style={{ fontSize: 12, color: HED.muted, marginTop: 1 }}>{inv.plan} &middot; {inv.date}</div>
             </div>
             <button onClick={() => onFlash && onFlash(`Demo: download ${inv.id}`)} style={{
               width: 36, height: 36, borderRadius: 10, cursor: 'pointer',
@@ -8560,13 +8560,13 @@ function HistorySection({ billing, accent, onFlash }) {
       </div>
 
       <div style={{ marginTop: 14, fontSize: 12, color: HED.subtle, textAlign: 'center' }}>
-        Showing last 3 invoices ¬∑ <span style={{ color: accent, cursor: 'pointer' }} onClick={() => onFlash && onFlash('Demo: view all invoices')}>View all</span>
+        Showing last 3 invoices &middot; <span style={{ color: accent, cursor: 'pointer' }} onClick={() => onFlash && onFlash('Demo: view all invoices')}>View all</span>
       </div>
     </>
   );
 }
 
-// ‚îÄ‚îÄ Main screen
+// -- Main screen
 function FuncBillingScreen({ accent = HED.lime, onTab, onBack, onFlash }) {
   const s = useStore();
   const billing = s.billing || {};
@@ -8605,7 +8605,7 @@ Object.assign(window, { FuncBillingScreen });
 </script>
 
 <script type="text/babel">
-// Clickable Prototype v2 ‚Äî wires functional screens (store-backed) into a navigable phone.
+// Clickable Prototype v2 -- wires functional screens (store-backed) into a navigable phone.
 // Adds: auth gate, role switch (Booker/Artist view), notifications, get-paid screen.
 
 const {
@@ -8652,7 +8652,7 @@ function Prototype({ accent = '#CDEB09', variant = 'B', navBus }) {
     }
   }, [s.notifications]);
 
-  // Imperative shortcut handler ‚Äî wired via navBus from the page.
+  // Imperative shortcut handler -- wired via navBus from the page.
   React.useEffect(() => {
     if (!navBus) return;
     navBus.navigate = (key) => {
@@ -8710,7 +8710,7 @@ function Prototype({ accent = '#CDEB09', variant = 'B', navBus }) {
   function switchTab(t) { setTab(t); }
   function flash(text) { setToast({ text, id: Date.now() }); setTimeout(() => setToast(null), 1800); }
 
-  // ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Auth gate
+  // ----- Auth gate
   if (!s.auth.signedIn) {
     return (
       <div style={{ width: 390, height: 844, background: HED.bg, overflow: 'hidden', position: 'relative', borderRadius: 'inherit' }}>
@@ -8719,7 +8719,7 @@ function Prototype({ accent = '#CDEB09', variant = 'B', navBus }) {
     );
   }
 
-  // ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ Screen renderer
+  // ----- Screen renderer
   let screen = null;
 
   if (route.name === 'discover') {
@@ -8773,7 +8773,7 @@ function Prototype({ accent = '#CDEB09', variant = 'B', navBus }) {
         onOpenVenue={(id) => push({ name: 'edit-venue', params: { venueId: id } })}
         onAddVenue={() => {
           actions.addVenue({ name: 'New Venue', city: '', address: '', type: 'Brewery', timezone: 'America/New_York', website: '', capacity: 0, description: '', inviteDetails: '', terms: '', provided: '', stages: [] });
-          flash('New venue added ‚Äî tap to edit');
+          flash('New venue added \u2014 tap to edit');
         }}
       />
     );
@@ -8832,7 +8832,7 @@ function Prototype({ accent = '#CDEB09', variant = 'B', navBus }) {
         onBack={pop}
         onAddVenue={() => {
           actions.addVenue({ name: 'New Venue', city: '', address: '', type: 'Brewery', timezone: 'America/New_York', website: '', capacity: 0, description: '', inviteDetails: '', terms: '', provided: [], stages: [] });
-          flash('New venue added ‚Äî tap to edit');
+          flash('New venue added \u2014 tap to edit');
         }}
         onEditVenue={(id) => push({ name: 'edit-venue', params: { venueId: id } })}
         onFlash={flash}
@@ -8972,7 +8972,7 @@ function AccountWithNav({ accent, onTab, onOpenEPKs, onOpenVenues, onOpenBrowseB
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ fontWeight: 600, fontSize: 17 }}>{s.auth.name}</div>
             <div style={{ color: HED.muted, fontSize: 13, marginTop: 2, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{s.auth.email}</div>
-            <div style={{ marginTop: 8 }}><Badge tone="lime">Venue Solo ¬∑ $39/mo</Badge></div>
+            <div style={{ marginTop: 8 }}><Badge tone="lime">Venue Solo &middot; $39/mo</Badge></div>
           </div>
         </Card>
 
@@ -8982,7 +8982,7 @@ function AccountWithNav({ accent, onTab, onOpenEPKs, onOpenVenues, onOpenBrowseB
               <Icon name="mic-vocal" size={18}/>
             </div>
             <div style={{ fontWeight: 600, fontSize: 14.5 }}>My EPKs</div>
-            <div style={{ color: HED.muted, fontSize: 12, marginTop: 2 }}>{s.epks.length} total{draftEPKs > 0 ? ` ¬∑ ${draftEPKs} draft` : ''}</div>
+            <div style={{ color: HED.muted, fontSize: 12, marginTop: 2 }}>{s.epks.length} total{draftEPKs > 0 ? ` &middot; ${draftEPKs} draft` : ''}</div>
           </Card>
           <Card padding={14} style={{ cursor: 'pointer' }} onClick={onOpenVenues}>
             <div style={{ width: 36, height: 36, borderRadius: 10, background: 'rgba(186,135,255,0.18)', color: HED.violet, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 10 }}>
@@ -8999,7 +8999,7 @@ function AccountWithNav({ accent, onTab, onOpenEPKs, onOpenVenues, onOpenBrowseB
           <div style={{ flex: 1 }}>
             <div style={{ fontWeight: 600, fontSize: 14 }}>Get Paid</div>
             <div style={{ color: HED.muted, fontSize: 12, marginTop: 2 }}>
-              {s.payouts.length > 0 ? `${s.payouts.length} payout${s.payouts.length > 1 ? 's' : ''} received ¬∑ ` : ''}
+              {s.payouts.length > 0 ? `${s.payouts.length} payout${s.payouts.length > 1 ? 's' : ''} received &middot; ` : ''}
               {pendingPayouts} in advance
             </div>
           </div>
@@ -9041,7 +9041,7 @@ Object.assign(window, { Prototype });
 </script>
 
 <script>
-// Mount the React phone app ‚Äî poll until Babel finishes all transforms
+// Mount the React phone app -- poll until Babel finishes all transforms
 (function mount() {
   var navBus = { navigate: function() {} };
   window.__navBus = navBus;
