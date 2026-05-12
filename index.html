@@ -1315,9 +1315,9 @@ const MY_BOOKINGS = [
 // Contacts can have multiple artist accounts (acts/EPKs) -- one person manages many projects.
 // `artists` = array of artist IDs (refs into ARTISTS) the contact manages.
 const CONTACTS = [
-  { id: 'c1', name: 'Lila Ostrander', email: 'lila@dustroads.co', role: 'Talent', last: 'Apr 28', initials: 'LO', color: '#BA87FF', artists: ['a1'], lists: ['Favorites', 'Americana Roster'] },
-  { id: 'c2', name: 'Marcus Beaumont', email: 'm.beaumont@nola.jazz', role: 'Talent', last: 'Apr 14', initials: 'MB', color: '#CDEB09', artists: ['a2', 'a7'], lists: ['Jazz Brunch'] },
-  { id: 'c3', name: 'Wedge at Foundation', email: 'booking@wedgebrewing.com', role: 'Venue', last: 'May 1', initials: 'WF', color: '#D47EBF', artists: [], lists: [] },
+  { id: 'c1', starred: true, name: 'Lila Ostrander', email: 'lila@dustroads.co', role: 'Talent', last: 'Apr 28', initials: 'LO', color: '#BA87FF', artists: ['a1'], lists: ['Favorites', 'Americana Roster'] },
+  { id: 'c2', starred: true, name: 'Marcus Beaumont', email: 'm.beaumont@nola.jazz', role: 'Talent', last: 'Apr 14', initials: 'MB', color: '#CDEB09', artists: ['a2', 'a7'], lists: ['Jazz Brunch'] },
+  { id: 'c3', starred: true, name: 'Wedge at Foundation', email: 'booking@wedgebrewing.com', role: 'Venue', last: 'May 1', initials: 'WF', color: '#D47EBF', artists: [], lists: [] },
   { id: 'c4', name: 'Sofia Reyes', email: 'sofia@sofiareyes.music', role: 'Talent', last: 'Mar 22', initials: 'SR', color: '#D8B500', artists: ['a3'], lists: ['Singer-Songwriters'] },
   { id: 'c5', name: 'Hollis & Wren', email: 'duo@hollisandwren.co', role: 'Talent', last: 'Apr 30', initials: 'HW', color: '#CB9B1F', artists: ['a6'], lists: ['Favorites', 'Singer-Songwriters'] },
   { id: 'c6', name: 'Will Tannehill', email: 'will@tannehillmgmt.com', role: 'Talent', last: 'May 2', initials: 'WT', color: '#C9CD00', artists: ['a4', 'a8', 'a9'], lists: ['Americana Roster'] },
@@ -6474,10 +6474,12 @@ function FuncContactsScreen({ accent, onTab, onOpenThread, onOpenContact }) {
   const [addOpen, setAddOpen] = React.useState(false);
   const [newListOpen, setNewListOpen] = React.useState(false);
   const [newListName, setNewListName] = React.useState('');
-  const ROLE_FILTERS = ['All', 'Talent', 'Venue'];
+  const [deleteConfirm, setDeleteConfirm] = React.useState(null);
+  const ROLE_FILTERS = ['All', '★ Starred', 'Talent', 'Venue'];
   const filtered = s.contacts.filter(c => {
     if (list === 'Talent' && c.role !== 'Talent') return false;
     if (list === 'Venue' && c.role !== 'Venue') return false;
+    if (list === '★ Starred' && !c.starred) return false;
     if (list !== 'All' && list !== 'Talent' && list !== 'Venue' && !(c.lists || []).includes(list)) return false;
     if (q && !(c.name + ' ' + c.email).toLowerCase().includes(q.toLowerCase())) return false;
     return true;
@@ -6495,7 +6497,7 @@ function FuncContactsScreen({ accent, onTab, onOpenThread, onOpenContact }) {
         {(s.contactLists || []).map(l => (
           <span key={l} style={{ display: 'inline-flex', alignItems: 'center', gap: 2 }}>
             <Chip on={list === l} accent={accent} onClick={() => setList(l)}>{l}</Chip>
-            {list === l && <button onClick={() => { if (window.confirm('Delete list "' + l + '"?')) { actions.deleteContactList(l); setList('All'); } }} style={{ background: 'none', border: 'none', cursor: 'pointer', color: HED.muted, fontSize: 14, padding: '0 2px' }}>×</button>}
+            {list === l && <button onClick={() => setDeleteConfirm(l)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: HED.muted, fontSize: 14, padding: '0 2px' }}>×</button>}
           </span>
         ))}
         <Chip on={false} accent={accent} onClick={() => setNewListOpen(true)}>＋ New List</Chip>
@@ -6517,7 +6519,17 @@ function FuncContactsScreen({ accent, onTab, onOpenThread, onOpenContact }) {
         ))}
       </div>
       {addOpen && <AddContactSheet accent={accent} onClose={() => setAddOpen(false)}/>}
-      {newListOpen && (
+      {deleteConfirm && (
+          <BottomSheet onClose={() => setDeleteConfirm(null)}>
+            <div style={{ textAlign: 'center', padding: '8px 0 16px' }}>
+              <div style={{ fontSize: 17, fontWeight: 600, color: HED.text, marginBottom: 8 }}>Delete List</div>
+              <div style={{ fontSize: 14, color: HED.textSoft }}>Remove "{deleteConfirm}" from your lists? Contacts won't be affected.</div>
+            </div>
+            <PrimaryBtn accent={'#e05252'} onClick={() => { actions.deleteContactList(deleteConfirm); if (list === deleteConfirm) setList('All'); setDeleteConfirm(null); }}>Delete List</PrimaryBtn>
+            <GhostBtn style={{ marginTop: 10, width: '100%' }} onClick={() => setDeleteConfirm(null)}>Cancel</GhostBtn>
+          </BottomSheet>
+        )}
+        {newListOpen && (
         <BottomSheet onClose={() => { setNewListOpen(false); setNewListName(''); }}>
           <div style={{ padding: '4px 0 8px', fontWeight: 600, fontSize: 16 }}>New List</div>
           <input autoFocus value={newListName} onChange={e => setNewListName(e.target.value)} placeholder="List name" style={{ ...fieldStyle(), height: 42, marginBottom: 12 }} onKeyDown={e => { if (e.key === 'Enter' && newListName.trim()) { actions.createContactList(newListName); setList(newListName.trim()); setNewListOpen(false); setNewListName(''); }}} />
