@@ -6490,7 +6490,7 @@ function FuncContactsScreen({ accent, onTab, onOpenThread, onOpenContact }) {
     if (list === 'Talent' && c.role !== 'Talent') return false;
     if (list === 'Venue' && c.role !== 'Venue') return false;
     if (list === '★ Starred' && !c.starred) return false;
-    if (list !== 'All' && list !== 'Talent' && list !== 'Venue' && !(c.lists || []).includes(list)) return false;
+    if (list !== 'All' && list !== 'Talent' && list !== 'Venue' && list !== '★ Starred' && !(c.lists || []).includes(list)) return false;
     if (q && !(c.name + ' ' + c.email).toLowerCase().includes(q.toLowerCase())) return false;
     return true;
   });
