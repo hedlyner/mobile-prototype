@@ -8709,7 +8709,7 @@ function Prototype({ accent = '#CDEB09', variant = 'B', navBus }) {
   function push(r) { setStacks(st => ({ ...st, [tab]: [...st[tab], r] })); }
   function pop() { setStacks(st => ({ ...st, [tab]: st[tab].length > 1 ? st[tab].slice(0, -1) : st[tab] })); }
   function reset(t) { setStacks(st => ({ ...st, [t]: [{ name: t }] })); }
-  function switchTab(t) { setTab(t); }
+  function switchTab(t) { if (t === tab) { setStacks(st => ({ ...st, [t]: [{ name: t }] })); } setTab(t); }
   function flash(text) { setToast({ text, id: Date.now() }); setTimeout(() => setToast(null), 1800); }
 
   // ----- Auth gate
