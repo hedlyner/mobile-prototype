@@ -6521,7 +6521,7 @@ function FuncContactsScreen({ accent, onTab, onOpenThread, onOpenContact }) {
         <BottomSheet onClose={() => { setNewListOpen(false); setNewListName(''); }}>
           <div style={{ padding: '4px 0 8px', fontWeight: 600, fontSize: 16 }}>New List</div>
           <input autoFocus value={newListName} onChange={e => setNewListName(e.target.value)} placeholder="List name" style={{ ...fieldStyle(), height: 42, marginBottom: 12 }} onKeyDown={e => { if (e.key === 'Enter' && newListName.trim()) { actions.createContactList(newListName); setList(newListName.trim()); setNewListOpen(false); setNewListName(''); }}} />
-          <WeakButton label="Create List" onClick={() => { if (newListName.trim()) { actions.createContactList(newListName); setList(newListName.trim()); setNewListOpen(false); setNewListName(''); }}} />
+          <PrimaryBtn accent={HED.lime} onClick={() => { if (newListName.trim()) { actions.createContactList(newListName); setList(newListName.trim()); setNewListOpen(false); setNewListName(''); }}}>Create List</PrimaryBtn>
         </BottomSheet>
       )}
     </Phone>
@@ -9057,6 +9057,17 @@ function Prototype({ accent = '#CDEB09', variant = 'B', navBus }) {
           to { opacity: 1; transform: translate(-50%, 0); }
         }
       `}</style>
+    </div>
+  );
+}
+
+function BottomSheet({ children, onClose }) {
+  return (
+    <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(6px)', display: 'flex', alignItems: 'flex-end', zIndex: 60 }} onClick={onClose}>
+      <div style={{ width: '100%', background: HED.surface, borderRadius: '16px 16px 0 0', padding: '20px 20px 36px', maxHeight: '72%', overflowY: 'auto' }} onClick={e => e.stopPropagation()}>
+        <div style={{ width: 36, height: 4, background: HED.border, borderRadius: 2, margin: '0 auto 16px' }}/>
+        {children}
+      </div>
     </div>
   );
 }
