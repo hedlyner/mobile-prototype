@@ -3579,6 +3579,7 @@ function FuncDiscoverScreen({ accent, onTab, onOpenEpk, onInvite }) {
   const [filters, setFilters] = React.useState({ feeMin: 0, feeMax: 5000, location: '' });
   const [activeChip, setActiveChip] = React.useState('All');
   const startRef = React.useRef(null);
+  const draggedRef = React.useRef(false);
   const [idxOffset, setIdxOffset] = React.useState(0);
 
   // Discover swipe deck = the same rich EPK pool as Step 3 of New Booking flow.
@@ -3612,11 +3613,12 @@ function FuncDiscoverScreen({ accent, onTab, onOpenEpk, onInvite }) {
   const next = cards[(idxOffset + 1) % cards.length];
   const next2 = cards[(idxOffset + 2) % cards.length];
 
-  const onPointerDown = (e) => { startRef.current = { x: e.clientX, y: e.clientY }; setDrag({ x: 0, y: 0, dragging: true }); };
-  const onPointerMove = (e) => { if (!startRef.current) return; setDrag({ x: e.clientX - startRef.current.x, y: e.clientY - startRef.current.y, dragging: true }); };
-  const onPointerUp = () => {
+  const onPointerDown = (e) => { draggedRef.current = false; startRef.current = { x: e.clientX, y: e.clientY }; e.currentTarget.setPointerCapture(e.pointerId); setDrag({ x: 0, y: 0, dragging: false }); };
+  const onPointerMove = (e) => { if (!startRef.current) return; e.preventDefault(); const dx = e.clientX - startRef.current.x; if (Math.abs(dx) > 5) draggedRef.current = true; setDrag({ x: dx, y: e.clientY - startRef.current.y, dragging: true }); };
+  const onPointerUp = (e) => {
     if (!startRef.current) return;
-    if (Math.abs(drag.x) > 100) {
+    try { e.currentTarget.releasePointerCapture(e.pointerId); } catch(_) {}
+        if (Math.abs(drag.x) > 100) {
       const dir = drag.x > 0 ? 'right' : 'left';
       commit(dir);
     } else { setDrag({ x: 0, y: 0, dragging: false }); }
@@ -3669,14 +3671,14 @@ function FuncDiscoverScreen({ accent, onTab, onOpenEpk, onInvite }) {
                 opacity: isTop && exiting ? 0 : 1,
                 transition: drag.dragging && isTop ? 'none' : 'transform .22s cubic-bezier(.22,1,.36,1), opacity .22s cubic-bezier(.22,1,.36,1)',
                 willChange: 'transform, opacity',
-                zIndex: i, pointerEvents: isTop ? 'auto' : 'none',
+                zIndex: i, pointerEvents: isTop ? 'auto' : 'none', touchAction: 'none',
               }}
               onPointerDown={isTop ? onPointerDown : undefined}
               onPointerMove={isTop ? onPointerMove : undefined}
               onPointerUp={isTop ? onPointerUp : undefined}
               onPointerCancel={isTop ? onPointerUp : undefined}
               >
-                <SwipeCard artist={c} accent={accent} onTap={isTop ? () => onOpenEpk && onOpenEpk(c) : undefined} dx={isTop ? dx : 0} />
+                <SwipeCard artist={c} accent={accent} onTap={isTop ? () => { if (draggedRef.current) return; onOpenEpk && onOpenEpk(c); } : undefined} dx={isTop ? dx : 0} />
               </div>
             );
           })}
