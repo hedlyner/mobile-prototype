@@ -6507,7 +6507,7 @@ function FuncContactsScreen({ accent, onTab, onOpenThread, onOpenContact }) {
         {(s.contactLists || []).map(l => (
           <span key={l} style={{ display: 'inline-flex', alignItems: 'center', gap: 2 }}>
             <Chip on={list === l} accent={accent} onClick={() => setList(l)}>{l}</Chip>
-            {list === l && <><button onClick={() => { setRenameList(l); setRenameName(l); }} style={{ background: 'none', border: 'none', cursor: 'pointer', color: HED.textSoft, fontSize: 13, padding: '0 3px', lineHeight: 1 }}>✏</button><button onClick={() => setDeleteConfirm(l)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: HED.muted, fontSize: 14, padding: '0 2px' }}>×</button></>
+            {list === l && <><button onClick={() => { setRenameList(l); setRenameName(l); }} style={{ background: 'none', border: 'none', cursor: 'pointer', color: HED.textSoft, fontSize: 13, padding: '0 3px', lineHeight: 1 }}>✏</button><button onClick={() => setDeleteConfirm(l)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: HED.muted, fontSize: 14, padding: '0 2px' }}>×</button></>}
           </span>
         ))}
         <Chip on={false} accent={accent} onClick={() => setNewListOpen(true)}>＋ New List</Chip>
