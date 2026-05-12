@@ -9,7 +9,7 @@
 
 <style>
 /* ===== DESIGN SYSTEM: colors_and_type.css (inlined) ===== */
-/* =========================================================================
+/* =======================================================================
    Hedlyner Design System -- Colors & Type
    Source of truth: hedlyner-ui-v5 src/index.css + Figma "New Component Library"
    ========================================================================= */
@@ -4083,7 +4083,7 @@ function FuncBookingsScreen({ accent, onTab, onOpenBooking, onCreateBooking }) {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8, gap: 8 }}>
               <div style={{ minWidth: 0, flex: 1 }}>
                 <div style={{ fontWeight: 600, fontSize: 15.5, marginBottom: 2, letterSpacing: -0.2 }}>{b.title}</div>
-                <div style={{ color: HED.muted, fontSize: 13 }}>{b.venue} \u00B7 {b.city}</div>
+                <div style={{ color: HED.muted, fontSize: 13 }}>{b.venue} &middot; {b.city}</div>
               </div>
               <StatusBadge status={b.status}/>
             </div>
@@ -4141,7 +4141,7 @@ function FuncBookingDetail({ booking, accent, variant, onTab, onBack }) {
 
       <div style={{ padding: '4px 20px 14px' }}>
         <h1 style={{ margin: 0, fontSize: 24, fontWeight: 600, letterSpacing: -0.5, lineHeight: 1.15 }}>{b.title}</h1>
-        <div style={{ marginTop: 6, color: HED.muted, fontSize: 14 }}><span style={{ color: '#fff', fontWeight: 600 }}>{b.day}</span> {b.date} \u00B7 {b.venue}</div>
+        <div style={{ marginTop: 6, color: HED.muted, fontSize: 14 }}><span style={{ color: '#fff', fontWeight: 600 }}>{b.day}</span> {b.date} &middot; {b.venue}</div>
       </div>
 
       {/* Phase Timeline */}
@@ -4176,7 +4176,7 @@ function FuncBookingDetail({ booking, accent, variant, onTab, onBack }) {
             <div style={{ fontSize: 44, fontWeight: 700, color: accent, letterSpacing: -1.5, lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>{b.daysToGo > 0 ? b.daysToGo : 0}</div>
             <div>
               <div style={{ fontSize: 13, color: HED.muted, textTransform: 'uppercase', letterSpacing: 0.5, fontWeight: 600 }}>Days to Go</div>
-              <div style={{ fontSize: 14, marginTop: 2 }}>{b.startTime} \u00B7 {b.duration}</div>
+              <div style={{ fontSize: 14, marginTop: 2 }}>{b.startTime} &middot; {b.duration}</div>
             </div>
             <div style={{ flex: 1 }}/>
             <div style={{ textAlign: 'right' }}>
@@ -4221,7 +4221,7 @@ function FuncBookingDetail({ booking, accent, variant, onTab, onBack }) {
               <Avatar src={b.artist?.photo} size={52} ring={accent} initials={(b.artist?.name || 'A').slice(0,1)}/>
               <div style={{ flex: 1 }}>
                 <div style={{ fontWeight: 600, fontSize: 15 }}>{b.artist?.act}</div>
-                <div style={{ color: HED.muted, fontSize: 12.5, marginTop: 2 }}>{b.duration} \u00B7 {b.payout}</div>
+                <div style={{ color: HED.muted, fontSize: 12.5, marginTop: 2 }}>{b.duration} &middot; {b.payout}</div>
               </div>
               <button title="Message artist" style={iconBtnStyle()}><Icon name="message-square" size={16}/></button>
             </div>
@@ -9081,5 +9081,24 @@ Object.assign(window, { Prototype });
 })();
 </script>
 
+
+<script>
+window.addEventListener('load', function() {
+  if (!window.setState) return;
+  function fixStr(s) {
+    return typeof s === 'string' ? s.replace(/\u201A\u00C4\u00EE/g, '\u2014') : s;
+  }
+  window.setState(function(s) {
+    return Object.assign({}, s, {
+      bookings: (s.bookings||[]).map(function(b) {
+        return Object.assign({}, b, { title: fixStr(b.title) });
+      }),
+      openBookings: (s.openBookings||[]).map(function(b) {
+        return Object.assign({}, b, { title: fixStr(b.title) });
+      })
+    });
+  });
+});
+</script>
 </body>
 </html>
