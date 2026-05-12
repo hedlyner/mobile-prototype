@@ -3028,8 +3028,10 @@ function SectionHeader({ icon, title, subtitle, accent }) {
 }
 
 // --------------------------------- My Venues list
-function MyVenuesScreen({ accent = HED.lime, onTab, onBack, onOpenVenue, onAddVenue }) {
+function MyVenuesScreen({ accent = HED.lime, onTab, onBack, onOpenVenue, onAddVenue, onOpenBilling }) {
   const s = useStore();
+  const [showUpgrade, setShowUpgrade] = React.useState(false);
+  const UpgModal = window.UpgradeModal;
   return (
     <Phone tab="account" onTab={onTab} accent={accent}>
       <div style={{ padding: '12px 16px 4px', display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -3082,7 +3084,7 @@ function MyVenuesScreen({ accent = HED.lime, onTab, onBack, onOpenVenue, onAddVe
                 <div onClick={e => e.stopPropagation()} style={{ borderTop: `1px solid ${HED.borderSoft}`, padding: '9px 14px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                   <div style={{ fontSize: 12, color: active ? accent : HED.muted, fontWeight: active ? 600 : 400 }}>Venue Template</div>
                   {!active && !canActivate ? (
-                    <div onClick={() => actions.pushNotification('Upgrade your plan to add more venue template slots')}
+                    <div onClick={() => setShowUpgrade(true)}
                       style={{ display: 'flex', alignItems: 'center', gap: 5, padding: '4px 10px', borderRadius: 10, background: `color-mix(in oklch, ${accent} 15%, transparent)`, border: `1px solid color-mix(in oklch, ${accent} 50%, transparent)`, cursor: 'pointer' }}>
                       <Icon name="zap" size={12} color={accent}/>
                       <div style={{ fontSize: 11.5, fontWeight: 700, color: accent }}>Upgrade</div>
@@ -3113,18 +3115,21 @@ function MyVenuesScreen({ accent = HED.lime, onTab, onBack, onOpenVenue, onAddVe
           <Icon name="plus" size={20}/> Add Venue
         </button>
       </div>
+      {showUpgrade && UpgModal && <UpgModal open={showUpgrade} onClose={() => setShowUpgrade(false)} onViewPlans={() => { setShowUpgrade(false); onOpenBilling && onOpenBilling(); }} accent={accent}/>}
     </Phone>
   );
 }
 
 // --------------------------------- Edit Venue
-function EditVenueScreen({ venueId, accent = HED.lime, onTab, onBack, onSaved }) {
+function EditVenueScreen({ venueId, accent = HED.lime, onTab, onBack, onSaved, onOpenBilling }) {
   const s = useStore();
   const original = s.venues.find(v => v.id === venueId) || s.venues[0];
   const [v, setV] = React.useState(original);
   const set = (k, val) => setV(prev => ({ ...prev, [k]: val }));
   const dirty = JSON.stringify(v) !== JSON.stringify(original);
   const isTemplate = (s.billing?.venueTemplateSlots || []).includes(venueId);
+  const [showUpgrade, setShowUpgrade] = React.useState(false);
+  const UpgModal = window.UpgradeModal;
 
   function save() {
     actions.updateVenue && actions.updateVenue(v);
@@ -3160,7 +3165,7 @@ function EditVenueScreen({ venueId, accent = HED.lime, onTab, onBack, onSaved })
               <div style={{ fontSize: 13, fontWeight: 600, color: accent, marginBottom: 1 }}>No template slot active</div>
               <div style={{ fontSize: 12, color: HED.muted, lineHeight: 1.4 }}>Only Name and Address can be edited. Upgrade your plan to enable full venue templates.</div>
             </div>
-            <div onClick={() => actions.pushNotification && actions.pushNotification('Upgrade to unlock full venue templates')}
+            <div onClick={() => setShowUpgrade(true)}
               style={{ padding: '6px 11px', borderRadius: 9, background: accent, cursor: 'pointer', flexShrink: 0 }}>
               <div style={{ fontSize: 11.5, fontWeight: 700, color: '#0a0a0a' }}>Upgrade</div>
             </div>
@@ -3291,6 +3296,7 @@ function EditVenueScreen({ venueId, accent = HED.lime, onTab, onBack, onSaved })
           }}><Icon name="trash-2" size={16} color="#e05252"/></button>
         )}
       </div>
+      {showUpgrade && UpgModal && <UpgModal open={showUpgrade} onClose={() => setShowUpgrade(false)} onViewPlans={() => { setShowUpgrade(false); onOpenBilling && onOpenBilling(); }} accent={accent}/>}
     </Phone>
   );
 }
@@ -8855,7 +8861,96 @@ function FuncBillingScreen({ accent = HED.lime, onTab, onBack, onFlash }) {
   );
 }
 
-Object.assign(window, { FuncBillingScreen });
+// --------------------------------- Upgrade Modal (uses BOOKER_ORDER + planById defined in this block)
+function UpgradeModal({ open, onClose, onViewPlans, accent }) {
+  if (!open) return null;
+  const s = window.useStore ? window.useStore() : { billing: {} };
+  const accentColor = accent || HED.lime;
+  const currentId = s.billing?.currentPlan || 'venue-hq';
+  const currentIdx = BOOKER_ORDER.indexOf(currentId);
+  const currentPlan = planById(currentId);
+  const nextPlan = (currentIdx >= 0 && currentIdx < BOOKER_ORDER.length - 1)
+    ? planById(BOOKER_ORDER[currentIdx + 1])
+    : null;
+  const cycle = s.billing?.cycle || 'monthly';
+  const price = nextPlan?.custom ? null
+    : cycle === 'yearly' ? Math.round((nextPlan?.yearly || 0) / 12)
+    : (nextPlan?.monthly || 0);
+  const slots = s.billing?.venueTemplateSlots || [];
+  const maxSlots = parseInt(currentPlan?.limits?.match(/(\d+) template/)?.[1] || '3', 10);
+  return (
+    <div onClick={onClose} style={{
+      position: 'fixed', inset: 0, zIndex: 9999,
+      background: 'rgba(0,0,0,0.72)', backdropFilter: 'blur(6px)',
+      display: 'flex', alignItems: 'flex-end', justifyContent: 'center',
+    }}>
+      <div onClick={e => e.stopPropagation()} style={{
+        width: '100%', maxWidth: 430,
+        background: HED.bg, borderRadius: '24px 24px 0 0',
+        boxShadow: '0 -8px 40px rgba(0,0,0,0.5)', paddingBottom: 32,
+      }}>
+        <div style={{ display: 'flex', justifyContent: 'center', padding: '12px 0 0' }}>
+          <div style={{ width: 36, height: 4, borderRadius: 2, background: HED.border }}/>
+        </div>
+        <div style={{ padding: '16px 20px 14px', textAlign: 'center' }}>
+          <div style={{ width: 52, height: 52, borderRadius: 15, background: `color-mix(in oklch, ${accentColor} 15%, transparent)`, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 12px' }}>
+            <Icon name="zap" size={24} color={accentColor}/>
+          </div>
+          <div style={{ fontSize: 19, fontWeight: 700, marginBottom: 7, letterSpacing: -0.3 }}>Unlock More Template Slots</div>
+          <div style={{ fontSize: 13.5, color: HED.muted, lineHeight: 1.55 }}>
+            {'You\'re on '}
+            <span style={{ color: '#fff', fontWeight: 600 }}>{currentPlan?.name}</span>
+            {` \u2014 ${slots.length}/${maxSlots} template slots used. Upgrade to add more venues.`}
+          </div>
+        </div>
+        {nextPlan && (
+          <div style={{ margin: '0 16px 14px', borderRadius: 16, border: `1.5px solid ${accentColor}`, background: `color-mix(in oklch, ${accentColor} 8%, transparent)`, padding: 16 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 10 }}>
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 4 }}>
+                  <div style={{ fontSize: 16, fontWeight: 700 }}>{nextPlan.name}</div>
+                  <div style={{ fontSize: 10.5, fontWeight: 700, color: accentColor, background: `color-mix(in oklch, ${accentColor} 15%, transparent)`, padding: '2px 7px', borderRadius: 20 }}>RECOMMENDED</div>
+                </div>
+                <div style={{ fontSize: 12.5, color: HED.muted }}>{nextPlan.tagline}</div>
+              </div>
+              <div style={{ textAlign: 'right', flexShrink: 0, marginLeft: 12 }}>
+                {nextPlan.custom ? (
+                  <div style={{ fontSize: 15, fontWeight: 700 }}>Custom</div>
+                ) : (
+                  <div>
+                    <div style={{ fontSize: 22, fontWeight: 800, lineHeight: 1, letterSpacing: -0.5 }}>${price}</div>
+                    <div style={{ fontSize: 11, color: HED.muted }}>/mo</div>
+                  </div>
+                )}
+              </div>
+            </div>
+            <div style={{ fontSize: 12, color: accentColor, fontWeight: 700, marginBottom: 10 }}>{nextPlan.limits}</div>
+            {nextPlan.perks.slice(0, 3).map((perk, i) => (
+              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+                <Icon name="check" size={13} color={accentColor}/>
+                <div style={{ fontSize: 12.5, color: HED.subtle }}>{perk}</div>
+              </div>
+            ))}
+          </div>
+        )}
+        <div style={{ padding: '0 16px', display: 'flex', flexDirection: 'column', gap: 10 }}>
+          <button
+            onClick={() => { onClose(); window.actions && window.actions.pushNotification && window.actions.pushNotification(`Upgrade to ${nextPlan?.name || 'next tier'} \u2014 contact support@hedlyner.com`); }}
+            style={{ width: '100%', padding: 15, borderRadius: 14, background: accentColor, border: 'none', color: '#0a0a0a', fontSize: 15, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit', letterSpacing: -0.1 }}>
+            {`Upgrade to ${nextPlan?.name || 'Next Tier'}`}
+          </button>
+          <button
+            onClick={onViewPlans}
+            style={{ width: '100%', padding: 13, borderRadius: 14, background: 'transparent', border: `1px solid ${HED.border}`, color: HED.muted, fontSize: 14, fontWeight: 500, cursor: 'pointer', fontFamily: 'inherit' }}>
+            View All Plans
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+Object.assign(window, { FuncBillingScreen, UpgradeModal });
 
 </script>
 
@@ -9030,6 +9125,7 @@ function Prototype({ accent = '#CDEB09', variant = 'B', navBus }) {
           actions.addVenue({ name: 'New Venue', city: '', address: '', type: 'Brewery', timezone: 'America/New_York', website: '', capacity: 0, description: '', inviteDetails: '', terms: '', provided: '', stages: [] });
           flash('New venue added \u2014 tap to edit');
         }}
+        onOpenBilling={() => push({ name: 'billing' })}
       />
     );
   } else if (route.name === 'edit-venue') {
@@ -9040,6 +9136,7 @@ function Prototype({ accent = '#CDEB09', variant = 'B', navBus }) {
         onTab={switchTab}
         onBack={pop}
         onSaved={() => { pop(); flash('Venue saved'); }}
+        onOpenBilling={() => push({ name: 'billing' })}
       />
     );
   } else if (route.name === 'browse-bookings') {
