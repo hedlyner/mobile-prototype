@@ -6357,45 +6357,74 @@ function FuncContactDetailScreen({ contactId, onTab, onBack, onOpenThread, accen
   const c = s.contacts.find(x => x.id === contactId);
   if (!c) return null;
   const tid = Object.keys(s.threads).find(id => s.threads[id].name === c.name);
+  const artistNames = c.artists ? c.artists.map(aid => ARTISTS.find(a => a.id === aid)?.name).filter(Boolean) : [];
+  const iconStyle = { flexShrink: 0, verticalAlign: 'middle' };
   return (
     <Phone tab="contacts" onTab={onTab} accent={accent}>
-      <ScreenHeader title={c.name} back onBack={onBack}/>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '24px 20px 20px', gap: 12 }}>
-        <Avatar size={72} initials={c.initials} color={c.color}/>
-        <div>
-          <div style={{ color: HED.fg, fontWeight: 600, fontSize: 20, textAlign: 'center' }}>{c.name}</div>
-          <div style={{ display: 'flex', justifyContent: 'center', marginTop: 6 }}>
-            <span style={{ background: c.color + '22', color: c.color, fontSize: 11, fontWeight: 600, padding: '2px 8px', borderRadius: 4, letterSpacing: 0.5 }}>{c.role.toUpperCase()}</span>
-          </div>
-        </div>
+      <ScreenHeader title={c.name} subtitle="Contact Details" back onBack={onBack}/>
+      <div style={{ display: 'flex', gap: 8, padding: '0 20px 16px', flexWrap: 'wrap' }}>
+        <button style={{ display: 'flex', alignItems: 'center', background: 'none', border: 'none', cursor: 'pointer', color: HED.fg, padding: '7px 8px', borderRadius: 8 }}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={iconStyle}><path d="M8.34 8.34 2 9.27l5 4.87L5.82 21 12 17.77 18.18 21l-.59-3.43"/><path d="M18.42 12.76 22 9.27l-6.91-1L12 2l-1.44 2.91"/><line x1="2" x2="22" y1="2" y2="22"/></svg>
+        </button>
+        <button style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'none', border: '1px solid ' + HED.border, cursor: 'pointer', color: HED.fg, padding: '6px 12px', borderRadius: 10, fontSize: 14, fontWeight: 500 }}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={iconStyle}><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"/></svg>
+          Edit
+        </button>
+        <button style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'none', border: '1px solid ' + HED.border, cursor: 'pointer', color: HED.fg, padding: '6px 12px', borderRadius: 10, fontSize: 14, fontWeight: 500 }}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={iconStyle}><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/><line x1="12" x2="12" y1="7" y2="13"/><line x1="15" x2="9" y1="10" y2="10"/></svg>
+          Add to List
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={iconStyle}><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <button onClick={() => tid && onOpenThread && onOpenThread(tid)} style={{ display: 'flex', alignItems: 'center', gap: 6, background: accent, border: 'none', cursor: 'pointer', color: '#000', padding: '6px 12px', borderRadius: 10, fontSize: 14, fontWeight: 700, opacity: tid ? 1 : 0.5 }}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={iconStyle}><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Send Message
+        </button>
       </div>
-      <div style={{ padding: '0 20px 24px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '14px 0', borderBottom: '1px solid ' + HED.borderSoft }}>
-          <Icon name="mail" size={16} style={{ color: HED.muted, flexShrink: 0 }}/>
-          <span style={{ color: HED.fg, fontSize: 14 }}>{c.email}</span>
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '14px 0', borderBottom: '1px solid ' + HED.borderSoft }}>
-          <Icon name="clock" size={16} style={{ color: HED.muted, flexShrink: 0 }}/>
-          <div>
-            <div style={{ color: HED.muted, fontSize: 11, fontWeight: 600, letterSpacing: 0.5, marginBottom: 2 }}>LAST CONTACT</div>
-            <div style={{ color: HED.fg, fontSize: 14 }}>{c.last}</div>
+      <div style={{ padding: '0 20px 32px', display: 'flex', flexDirection: 'column', gap: 16 }}>
+        <div style={{ background: HED.surface, border: '1px solid ' + HED.border, borderRadius: 12, padding: 20 }}>
+          <div style={{ textAlign: 'center', marginBottom: 16 }}>
+            <Avatar size={96} initials={c.initials} color={c.color}/>
+            <div style={{ color: HED.fg, fontWeight: 600, fontSize: 20, marginTop: 12 }}>{c.name}</div>
+            <span style={{ display: 'inline-flex', alignItems: 'center', background: c.color + '22', color: c.color, border: '1px solid ' + c.color + '44', fontSize: 13, fontWeight: 500, padding: '3px 12px', borderRadius: 9999, marginTop: 8 }}>{c.role}</span>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 0', borderTop: '1px solid ' + HED.borderSoft }}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={accent} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={iconStyle}><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <span style={{ color: HED.fg, fontSize: 14 }}>{c.email}</span>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 0', borderTop: '1px solid ' + HED.borderSoft }}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={HED.muted} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={iconStyle}><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+            <span style={{ color: HED.fg, fontSize: 14 }}>Added: {c.last}</span>
           </div>
         </div>
+        {c.role === 'Talent' && artistNames.length > 0 && (
+          <div style={{ background: HED.surface, border: '1px solid ' + HED.border, borderRadius: 12, padding: 20 }}>
+            <div style={{ color: HED.fg, fontWeight: 600, fontSize: 16, marginBottom: 12 }}>Artist / Act</div>
+            {artistNames.map((name, i) => (
+              <div key={i} style={{ background: HED.bg, borderRadius: 10, padding: 14, marginBottom: i < artistNames.length - 1 ? 10 : 0 }}>
+                <div style={{ color: HED.muted, fontSize: 11, fontWeight: 600, letterSpacing: 0.5, marginBottom: 4 }}>ARTIST NAME</div>
+                <div style={{ color: HED.fg, fontSize: 14, fontWeight: 600 }}>{name}</div>
+              </div>
+            ))}
+          </div>
+        )}
         {c.lists && c.lists.length > 0 && (
-          <div style={{ padding: '14px 0', borderBottom: '1px solid ' + HED.borderSoft }}>
-            <div style={{ color: HED.muted, fontSize: 11, fontWeight: 600, letterSpacing: 0.5, marginBottom: 10 }}>LISTS</div>
+          <div style={{ background: HED.surface, border: '1px solid ' + HED.border, borderRadius: 12, padding: 20 }}>
+            <div style={{ color: HED.fg, fontWeight: 600, fontSize: 16, marginBottom: 12 }}>Lists</div>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {c.lists.map(l => (
-                <span key={l} style={{ background: HED.surface, color: HED.muted, fontSize: 12, padding: '4px 10px', borderRadius: 6, border: '1px solid ' + HED.border }}>{l}</span>
+                <span key={l} style={{ background: HED.bg, color: HED.muted, fontSize: 13, padding: '4px 12px', borderRadius: 8, border: '1px solid ' + HED.border }}>{l}</span>
               ))}
             </div>
           </div>
         )}
-        {tid && (
-          <button onClick={() => onOpenThread && onOpenThread(tid)} style={{ marginTop: 24, width: '100%', background: accent, color: '#000', fontWeight: 700, fontSize: 15, padding: '14px 0', borderRadius: 10, border: 'none', cursor: 'pointer' }}>
-            Message
-          </button>
-        )}
+        <div style={{ background: HED.surface, border: '1px solid ' + HED.border, borderRadius: 12, padding: 20 }}>
+          <div style={{ color: HED.fg, fontWeight: 600, fontSize: 16, marginBottom: 8 }}>Notes</div>
+          <p style={{ color: HED.muted, fontSize: 14, margin: 0 }}>No notes added yet.</p>
+        </div>
+        <div style={{ background: HED.surface, border: '1px solid ' + HED.border, borderRadius: 12, padding: 20 }}>
+          <div style={{ color: HED.fg, fontWeight: 600, fontSize: 16, marginBottom: 8 }}>Tags (vibe keywords)</div>
+          <p style={{ color: HED.muted, fontSize: 14, margin: 0 }}>No tags added yet.</p>
+        </div>
       </div>
     </Phone>
   );
