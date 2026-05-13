@@ -2405,60 +2405,217 @@ function stepBlurb(name) {
 }
 
 // --------------------------------- Get Paid
-function GetPaidScreen({ onTab, accent = HED.lime, onBack }) {
-  return (
-    <Phone tab="bookings" onTab={onTab} accent={accent}>
-      <div style={{ padding: '12px 16px' }}>
-        <button onClick={onBack} style={{ background: HED.surface, border: 'none', cursor: 'pointer', width: 36, height: 36, borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}><Icon name="chevron-left" size={20}/></button>
-      </div>
-      <div style={{ padding: '20px 24px 12px' }}>
-        <div style={{ fontSize: 11, color: accent, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 0.6 }}>End of Advance</div>
-        <h1 style={{ margin: '4px 0 0', fontSize: 30, fontWeight: 600, letterSpacing: -0.6 }}>Get paid</h1>
-        <div style={{ color: HED.muted, fontSize: 14, marginTop: 6 }}>Saturday Tap Room Session &middot; Wedge at Foundation</div>
-      </div>
+// Seed payout data for the artist earnings dashboard
+const ARTIST_PAYOUTS = [
+  {
+    id: 'p1', title: 'Saturday Tap Room Session', venue: 'Wedge at Foundation',
+    date: 'May 23, 2026', gross: 450, fee: 0, status: 'advance',
+    source: 'direct', // booker's own contact — no commission
+  },
+  {
+    id: 'p2', title: 'Jazz & Blues Night', venue: 'Burial Beer Co.',
+    date: 'Apr 12, 2026', gross: 600, fee: 48, status: 'transferring',
+    source: 'hedlyner', // hedlyner-recruited — 8% commission
+  },
+  {
+    id: 'p3', title: 'Blue Ridge Winter Session', venue: 'Pisgah Brewing',
+    date: 'Mar 8, 2026', gross: 500, fee: 0, status: 'paid',
+    source: 'direct',
+  },
+  {
+    id: 'p4', title: 'Mountain Stage Opener', venue: 'The Orange Peel',
+    date: 'Feb 18, 2026', gross: 800, fee: 64, status: 'paid',
+    source: 'hedlyner',
+  },
+];
 
-      {/* Big payout card */}
-      <div style={{ padding: '16px 20px' }}>
-        <div style={{
-          background: `linear-gradient(160deg, color-mix(in oklch, ${accent} 28%, #0d0d0d), #0d0d0d 70%)`,
-          border: `1px solid color-mix(in oklch, ${accent} 30%, transparent)`,
-          borderRadius: 22, padding: 24, position: 'relative', overflow: 'hidden',
-        }}>
-          <div style={{ position: 'absolute', top: -40, right: -40, width: 180, height: 180, borderRadius: '50%', background: `radial-gradient(circle, color-mix(in oklch, ${accent} 28%, transparent), transparent 70%)` }}/>
-          <div style={{ position: 'relative' }}>
-            <div style={{ fontSize: 11, color: accent, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1 }}>Payout Amount</div>
-            <div style={{ fontSize: 56, fontWeight: 700, letterSpacing: -2, lineHeight: 1, marginTop: 4, color: '#fff' }}>$450<span style={{ fontSize: 22, color: HED.muted, fontWeight: 500, marginLeft: 6 }}>.00</span></div>
-            <div style={{ marginTop: 12, fontSize: 13, color: HED.muted }}>Flat payout &middot; less 8% Hedlyner fee</div>
+function GetPaidScreen({ onTab, accent = HED.lime, onBack }) {
+  const [selected, setSelected] = React.useState(null);
+
+  const advance     = ARTIST_PAYOUTS.filter(p => p.status === 'advance');
+  const transferring = ARTIST_PAYOUTS.filter(p => p.status === 'transferring');
+  const paid        = ARTIST_PAYOUTS.filter(p => p.status === 'paid');
+
+  const sum = (list) => list.reduce((acc, p) => acc + p.gross - p.fee, 0);
+
+  const STATUS_META = {
+    advance:     { label: 'In Advance',   color: '#60a5fa', bg: 'rgba(96,165,250,0.14)',  icon: 'clock' },
+    transferring:{ label: 'Transferring', color: '#fbbf24', bg: 'rgba(251,191,36,0.14)',  icon: 'arrow-right-left' },
+    paid:        { label: 'Paid Out',     color: HED.lime,  bg: 'rgba(205,235,9,0.12)',   icon: 'check-circle' },
+  };
+
+  if (selected) {
+    const p = selected;
+    const net = p.gross - p.fee;
+    const meta = STATUS_META[p.status];
+    return (
+      <Phone tab="account" onTab={onTab} accent={accent}>
+        <div style={{ overflowY: 'auto', height: '100%', paddingBottom: 28 }}>
+          <div style={{ padding: '12px 16px 0' }}>
+            <button onClick={() => setSelected(null)} style={{ background: HED.surface, border: 'none', cursor: 'pointer', width: 36, height: 36, borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
+              <Icon name="chevron-left" size={20}/>
+            </button>
+          </div>
+
+          <div style={{ padding: '16px 20px 8px' }}>
+            <div style={{
+              background: `linear-gradient(160deg, color-mix(in oklch, ${meta.color} 22%, #0d0d0d), #0d0d0d 70%)`,
+              border: `1px solid color-mix(in oklch, ${meta.color} 28%, transparent)`,
+              borderRadius: 22, padding: 24, position: 'relative', overflow: 'hidden',
+            }}>
+              <div style={{ position: 'absolute', top: -40, right: -40, width: 160, height: 160, borderRadius: '50%', background: `radial-gradient(circle, color-mix(in oklch, ${meta.color} 22%, transparent), transparent 70%)` }}/>
+              <div style={{ position: 'relative' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 10 }}>
+                  <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 0.8, color: meta.color }}>{meta.label}</div>
+                  <div style={{ width: 4, height: 4, borderRadius: '50%', background: meta.color, opacity: 0.5 }}/>
+                  <div style={{ fontSize: 11, color: HED.muted }}>{p.date}</div>
+                </div>
+                <div style={{ fontSize: 13, color: HED.muted, marginBottom: 4 }}>{p.title}</div>
+                <div style={{ fontSize: 13, color: HED.subtle, marginBottom: 16 }}>{p.venue}</div>
+                <div style={{ fontSize: 48, fontWeight: 700, letterSpacing: -1.5, lineHeight: 1, color: '#fff' }}>
+                  ${${net.toLocaleString()}}
+                  <span style={{ fontSize: 18, color: HED.muted, fontWeight: 500, marginLeft: 6 }}>.00</span>
+                </div>
+                <div style={{ fontSize: 12, color: HED.muted, marginTop: 8 }}>
+                  {p.source === 'direct' ? 'Direct booking — no platform fee' : `$${p.gross} gross · 8% Hedlyner fee`}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style={{ margin: '4px 20px 16px', padding: '12px 14px', borderRadius: 12, background: meta.bg, border: `1px solid color-mix(in oklch, ${meta.color} 20%, transparent)` }}>
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10 }}>
+              <Icon name={meta.icon} size={15} color={meta.color} style={{ marginTop: 1, flexShrink: 0 }}/>
+              <div style={{ fontSize: 12.5, color: HED.subtle, lineHeight: 1.55 }}>
+                {p.status === 'advance' && 'Your show is confirmed and coming up. Hedlyner holds payment until after the show wraps — this protects both you and the booker.'}
+                {p.status === 'transferring' && 'Great show! The booker has wrapped the booking and Hedlyner is releasing your payment. Funds typically arrive in your bank within 1–2 business days.'}
+                {p.status === 'paid' && 'Payment complete. This amount was deposited to your bank account on file.'}
+              </div>
+            </div>
+          </div>
+
+          <div style={{ padding: '0 20px 14px' }}>
+            <SectionLabel>Breakdown</SectionLabel>
+            <Card padding={0}>
+              <BreakdownRow k="Set fee" v={`$${p.gross.toLocaleString()}.00`}/>
+              {p.fee > 0 && <BreakdownRow k="Hedlyner fee (8%)" v={`−$${p.fee}.00`} muted/>}
+              {p.fee === 0 && <BreakdownRow k="Platform fee" v="None — direct booking" muted/>}
+              <BreakdownRow k="Net payout" v={`$${net.toLocaleString()}.00`} last accent={meta.color}/>
+            </Card>
+            {p.source === 'direct' && (
+              <div style={{ fontSize: 11.5, color: HED.muted, marginTop: 8, lineHeight: 1.5, paddingLeft: 2 }}>
+                This booking came through your booker's own network. Hedlyner does not take a commission on direct-contact bookings.
+              </div>
+            )}
+          </div>
+
+          <div style={{ padding: '0 20px 8px' }}>
+            <SectionLabel>Payment Method</SectionLabel>
+            <Card padding={0}>
+              <div style={{ display: 'flex', alignItems: 'center', padding: 14, gap: 12 }}>
+                <div style={{ width: 44, height: 32, borderRadius: 6, background: '#5d34d4', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 11, fontWeight: 700, letterSpacing: 0.5 }}>STRIPE</div>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontWeight: 600, fontSize: 14 }}>Direct deposit</div>
+                  <div style={{ color: HED.muted, fontSize: 12.5 }}>Bank ending in &bull;&bull;&bull;&bull; 4471</div>
+                </div>
+                <Icon name="chevron-right" size={18} color={HED.muted}/>
+              </div>
+            </Card>
           </div>
         </div>
-      </div>
+      </Phone>
+    );
+  }
 
-      <div style={{ padding: '0 20px 14px' }}>
-        <SectionLabel>Payment Method</SectionLabel>
-        <Card padding={0}>
-          <div style={{ display: 'flex', alignItems: 'center', padding: 14, gap: 12 }}>
-            <div style={{ width: 44, height: 32, borderRadius: 6, background: '#5d34d4', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 11, fontWeight: 700, letterSpacing: 0.5 }}>STRIPE</div>
-            <div style={{ flex: 1 }}>
-              <div style={{ fontWeight: 600, fontSize: 14 }}>Direct deposit</div>
-              <div style={{ color: HED.muted, fontSize: 12.5 }}>Bank ending in &bull;&bull;&bull;&bull; 4471</div>
-            </div>
-            <Icon name="chevron-right" size={18} color={HED.muted}/>
+  return (
+    <Phone tab="account" onTab={onTab} accent={accent}>
+      <div style={{ overflowY: 'auto', height: '100%', paddingBottom: 32 }}>
+        <div style={{ padding: '12px 16px 0' }}>
+          <button onClick={onBack} style={{ background: HED.surface, border: 'none', cursor: 'pointer', width: 36, height: 36, borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
+            <Icon name="chevron-left" size={20}/>
+          </button>
+        </div>
+        <div style={{ padding: '16px 24px 20px' }}>
+          <div style={{ fontSize: 11, color: accent, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 0.6 }}>Artist Payouts</div>
+          <h1 style={{ margin: '4px 0 6px', fontSize: 28, fontWeight: 700, letterSpacing: -0.6 }}>Your Earnings</h1>
+          <div style={{ color: HED.muted, fontSize: 13.5, lineHeight: 1.5 }}>
+            Total artist payouts from confirmed bookings. Hedlyner releases payment after each show wraps.
           </div>
-        </Card>
-      </div>
+        </div>
 
-      <div style={{ padding: '0 20px 14px' }}>
-        <SectionLabel>Breakdown</SectionLabel>
-        <Card padding={0}>
-          <BreakdownRow k="Set fee" v="$450.00"/>
-          <BreakdownRow k="Hedlyner fee (8%)" v="\u2212$36.00" muted/>
-          <BreakdownRow k="Net payout" v="$414.00" last accent={accent}/>
-        </Card>
-      </div>
+        <div style={{ padding: '0 16px 20px', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8 }}>
+          {[
+            { label: 'In Advance', sublabel: 'Upcoming shows', amount: sum(advance), meta: STATUS_META.advance, count: advance.length },
+            { label: 'Transferring', sublabel: 'On the way', amount: sum(transferring), meta: STATUS_META.transferring, count: transferring.length },
+            { label: 'Paid Out', sublabel: 'In your bank', amount: sum(paid), meta: STATUS_META.paid, count: paid.length },
+          ].map(({ label, sublabel, amount, meta, count }) => (
+            <div key={label} style={{ background: meta.bg, border: `1px solid color-mix(in oklch, ${meta.color} 20%, transparent)`, borderRadius: 14, padding: '12px 10px' }}>
+              <div style={{ fontSize: 18, fontWeight: 800, color: '#fff', letterSpacing: -0.5 }}>$${amount.toLocaleString()}</div>
+              <div style={{ fontSize: 10.5, fontWeight: 700, color: meta.color, marginTop: 3, letterSpacing: 0.2 }}>{label}</div>
+              <div style={{ fontSize: 10, color: HED.muted, marginTop: 1 }}>{count === 1 ? '1 booking' : `${count} bookings`}</div>
+            </div>
+          ))}
+        </div>
 
-      <div style={{ padding: '4px 20px 28px' }}>
-        <Btn kind="primary" full size="lg" accent={accent} icon="check-circle">Mark Complete</Btn>
-        <div style={{ textAlign: 'center', color: HED.subtle, fontSize: 11.5, marginTop: 10 }}>Funds typically arrive in 1&ndash;2 business days.</div>
+        {[
+          { group: advance,      meta: STATUS_META.advance,      heading: 'In Advance',   desc: "Show hasn't happened yet. Payment is secured and will release after wrap-up." },
+          { group: transferring, meta: STATUS_META.transferring, heading: 'Transferring', desc: 'Show wrapped — Hedlyner is disbursing to your bank (1–2 business days).' },
+          { group: paid,         meta: STATUS_META.paid,         heading: 'Paid Out',     desc: 'Deposited to your bank account on file.' },
+        ].map(({ group, meta, heading, desc }) => group.length === 0 ? null : (
+          <div key={heading} style={{ padding: '0 16px 18px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+              <Icon name={meta.icon} size={13} color={meta.color}/>
+              <div style={{ fontSize: 11, fontWeight: 700, color: meta.color, textTransform: 'uppercase', letterSpacing: 0.7 }}>{heading}</div>
+            </div>
+            <div style={{ fontSize: 11.5, color: HED.muted, lineHeight: 1.5, marginBottom: 10 }}>{desc}</div>
+            <Card padding={0}>
+              {group.map((p, i) => {
+                const net = p.gross - p.fee;
+                return (
+                  <div key={p.id} onClick={() => setSelected(p)} style={{
+                    display: 'flex', alignItems: 'center', padding: '13px 14px', gap: 12, cursor: 'pointer',
+                    borderBottom: i < group.length - 1 ? `1px solid ${HED.borderSoft}` : 'none',
+                  }}>
+                    <div style={{ width: 38, height: 38, borderRadius: 10, background: meta.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      <Icon name={meta.icon} size={16} color={meta.color}/>
+                    </div>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ fontWeight: 600, fontSize: 13.5, marginBottom: 2, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{p.title}</div>
+                      <div style={{ fontSize: 11.5, color: HED.muted }}>{p.venue} · {p.date}</div>
+                      {p.source === 'hedlyner' && (
+                        <div style={{ fontSize: 11, color: '#fbbf24', marginTop: 2 }}>8% Hedlyner fee applied</div>
+                      )}
+                      {p.source === 'direct' && (
+                        <div style={{ fontSize: 11, color: HED.muted, marginTop: 2 }}>No platform fee · direct booking</div>
+                      )}
+                    </div>
+                    <div style={{ textAlign: 'right', flexShrink: 0 }}>
+                      <div style={{ fontWeight: 700, fontSize: 15, color: '#fff' }}>$${net.toLocaleString()}</div>
+                      {p.fee > 0 && <div style={{ fontSize: 10.5, color: HED.muted, marginTop: 1 }}>of $${p.gross}</div>}
+                    </div>
+                  </div>
+                );
+              })}
+            </Card>
+          </div>
+        ))}
+
+        <div style={{ padding: '0 16px 8px' }}>
+          <SectionLabel>Payment Method</SectionLabel>
+          <Card padding={0}>
+            <div style={{ display: 'flex', alignItems: 'center', padding: 14, gap: 12 }}>
+              <div style={{ width: 44, height: 32, borderRadius: 6, background: '#5d34d4', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 11, fontWeight: 700, letterSpacing: 0.5 }}>STRIPE</div>
+              <div style={{ flex: 1 }}>
+                <div style={{ fontWeight: 600, fontSize: 14 }}>Direct deposit</div>
+                <div style={{ color: HED.muted, fontSize: 12.5 }}>Bank ending in &bull;&bull;&bull;&bull; 4471</div>
+              </div>
+              <Icon name="chevron-right" size={18} color={HED.muted}/>
+            </div>
+          </Card>
+          <div style={{ fontSize: 11.5, color: HED.muted, marginTop: 10, lineHeight: 1.5, paddingLeft: 2 }}>
+            Payouts are processed through Stripe Connect. Hedlyner releases funds after each booking reaches Wrap-Up.
+          </div>
+        </div>
       </div>
     </Phone>
   );
@@ -9334,6 +9491,9 @@ function AccountWithNav({ accent, onTab, onOpenEPKs, onOpenVenues, onOpenBrowseB
   const draftEPKs = s.epks.filter(e => e.status === 'Draft').length;
   const venueCount = s.venues.length;
   const pendingPayouts = s.bookings.filter(b => b.status === 'Advance').length;
+  const earningsAdvance     = ARTIST_PAYOUTS.filter(p => p.status === 'advance').reduce((a, p) => a + p.gross - p.fee, 0);
+  const earningsTransfer    = ARTIST_PAYOUTS.filter(p => p.status === 'transferring').reduce((a, p) => a + p.gross - p.fee, 0);
+  const earningsPaid        = ARTIST_PAYOUTS.filter(p => p.status === 'paid').reduce((a, p) => a + p.gross - p.fee, 0);
 
   return (
     <Phone tab="account" onTab={onTab} accent={accent}>
@@ -9376,10 +9536,13 @@ function AccountWithNav({ accent, onTab, onOpenEPKs, onOpenVenues, onOpenBrowseB
             <Icon name="dollar-sign" size={18}/>
           </div>
           <div style={{ flex: 1 }}>
-            <div style={{ fontWeight: 600, fontSize: 14 }}>Get Paid</div>
+            <div style={{ fontWeight: 600, fontSize: 14 }}>Your Earnings</div>
             <div style={{ color: HED.muted, fontSize: 12, marginTop: 2 }}>
-              {s.payouts.length > 0 ? `${s.payouts.length} payout${s.payouts.length > 1 ? 's' : ''} received &middot; ` : ''}
-              {pendingPayouts} in advance
+              {earningsAdvance > 0 ? `$${earningsAdvance} in advance` : ''}
+              {earningsAdvance > 0 && earningsTransfer > 0 ? ' · ' : ''}
+              {earningsTransfer > 0 ? `$${earningsTransfer} transferring` : ''}
+              {(earningsAdvance > 0 || earningsTransfer > 0) && earningsPaid > 0 ? ' · ' : ''}
+              {earningsPaid > 0 ? `$${earningsPaid.toLocaleString()} paid out` : ''}
             </div>
           </div>
           <Icon name="chevron-right" size={16} color={HED.subtle}/>
