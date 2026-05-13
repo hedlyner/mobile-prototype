@@ -426,7 +426,13 @@ p, .body {
         <button class="shortcut" data-route="messages" data-tab="messages"><span class="num">&middot;</span> Messages</button>
         <button class="shortcut" data-route="contacts" data-tab="contacts"><span class="num">&middot;</span> Contacts</button>
       </div>
-      <p style="font-size:11.5px; color:#8a847a; line-height:1.5; margin-top:18px; padding-top:14px; border-top:1px solid rgba(0,0,0,0.08);">
+      <div style="margin-top:18px; padding-top:14px; border-top:1px solid rgba(0,0,0,0.08);">
+        <button id="reset-demo-btn" onclick="window.__navBus && window.__navBus.navigate('reset-data')" style="width:100%; background:#1a1a1a; color:#8a847a; border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:10px 14px; cursor:pointer; font-family:inherit; font-size:12px; font-weight:500; display:flex; align-items:center; gap:8px; transition:all .15s;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          Reset demo data
+        </button>
+      </div>
+      <p style="font-size:11.5px; color:#8a847a; line-height:1.5; margin-top:14px;">
         Or just tap freely &mdash; bottom nav, swipe cards, the <strong>+</strong> FAB on Bookings, etc. Open the <strong>Tweaks</strong> panel to swap accent or advance variant.
       </p>
     </div>
@@ -9238,7 +9244,6 @@ function Prototype({ accent = '#CDEB09', variant = 'B', navBus }) {
         onOpenAccountSettings={() => push({ name: 'account-settings' })}
         onOpenBilling={() => push({ name: 'billing' })}
         onOpenNotifs={() => setNotifOpen(true)}
-        onResetDemo={() => { actions.reset(); reset('account'); flash('Demo data reset'); }}
       />
     );
   }
@@ -9324,7 +9329,7 @@ function relTime(t) {
 }
 
 // Account screen with full functional integrations.
-function AccountWithNav({ accent, onTab, onOpenEPKs, onOpenVenues, onOpenBrowseBookings, onOpenGetPaid, onOpenAccountSettings, onOpenBilling, onOpenNotifs, onResetDemo }) {
+function AccountWithNav({ accent, onTab, onOpenEPKs, onOpenVenues, onOpenBrowseBookings, onOpenGetPaid, onOpenAccountSettings, onOpenBilling, onOpenNotifs }) {
   const s = useStore();
   const draftEPKs = s.epks.filter(e => e.status === 'Draft').length;
   const venueCount = s.venues.length;
@@ -9386,10 +9391,6 @@ function AccountWithNav({ accent, onTab, onOpenEPKs, onOpenVenues, onOpenBrowseB
           <SettingRow icon="credit-card" k="Billing" onClick={onOpenBilling}/>
           <SettingRow icon="bell" k="Notifications" v={s.notifications.length || ''} onClick={onOpenNotifs}/>
           <SettingRow icon="lock" k="Privacy & Security" last/>
-        </Card>
-
-        <Card padding={0} style={{ marginBottom: 14 }}>
-          <SettingRow icon="rotate-ccw" k="Reset demo data" onClick={onResetDemo} last/>
         </Card>
 
         <Card padding={0}>
