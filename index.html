@@ -3091,8 +3091,7 @@ function AccountScreen({ onTab, accent = HED.lime, onOpenEPKs }) {
         <Card padding={0} style={{ marginBottom: 14 }}>
           <SettingRow icon="user-round" k="Account Settings"/>
           <SettingRow icon="credit-card" k="Billing"/>
-          <SettingRow icon="bell" k="Notifications"/>
-          <SettingRow icon="lock" k="Privacy & Security" last/>
+          <SettingRow icon="bell" k="Notifications" last/>
         </Card>
 
         <SectionLabel>Support</SectionLabel>
@@ -9564,8 +9563,7 @@ function AccountWithNav({ accent, onTab, onOpenEPKs, onOpenVenues, onOpenBrowseB
         <Card padding={0} style={{ marginBottom: 14 }}>
           <SettingRow icon="user-round" k="Account Settings" onClick={onOpenAccountSettings}/>
           <SettingRow icon="credit-card" k="Billing" onClick={onOpenBilling}/>
-          <SettingRow icon="bell" k="Notifications" v={s.notifications.length || ''} onClick={onOpenNotifs}/>
-          <SettingRow icon="lock" k="Privacy & Security" last/>
+          <SettingRow icon="bell" k="Notifications" v={s.notifications.length || ''} onClick={onOpenNotifs} last/>
         </Card>
 
         <Card padding={0}>
