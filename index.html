@@ -2474,7 +2474,7 @@ function GetPaidScreen({ onTab, accent = HED.lime, onBack }) {
                 <div style={{ fontSize: 13, color: HED.muted, marginBottom: 4 }}>{p.title}</div>
                 <div style={{ fontSize: 13, color: HED.subtle, marginBottom: 16 }}>{p.venue}</div>
                 <div style={{ fontSize: 48, fontWeight: 700, letterSpacing: -1.5, lineHeight: 1, color: '#fff' }}>
-                  ${net.toLocaleString()}
+                  {"$"}{net.toLocaleString()}
                   <span style={{ fontSize: 18, color: HED.muted, fontWeight: 500, marginLeft: 6 }}>.00</span>
                 </div>
                 <div style={{ fontSize: 12, color: HED.muted, marginTop: 8 }}>
@@ -2557,7 +2557,7 @@ function GetPaidScreen({ onTab, accent = HED.lime, onBack }) {
             { label: 'Paid Out', sublabel: 'In your bank', amount: sum(paid), meta: STATUS_META.paid, count: paid.length },
           ].map(({ label, sublabel, amount, meta, count }) => (
             <div key={label} style={{ background: meta.bg, border: `1px solid color-mix(in oklch, ${meta.color} 20%, transparent)`, borderRadius: 14, padding: '12px 10px' }}>
-              <div style={{ fontSize: 18, fontWeight: 800, color: '#fff', letterSpacing: -0.5 }}>${amount.toLocaleString()}</div>
+              <div style={{ fontSize: 18, fontWeight: 800, color: '#fff', letterSpacing: -0.5 }}>{"$"}{amount.toLocaleString()}</div>
               <div style={{ fontSize: 10.5, fontWeight: 700, color: meta.color, marginTop: 3, letterSpacing: 0.2 }}>{label}</div>
               <div style={{ fontSize: 10, color: HED.muted, marginTop: 1 }}>{count === 1 ? '1 booking' : `${count} bookings`}</div>
             </div>
@@ -2598,8 +2598,8 @@ function GetPaidScreen({ onTab, accent = HED.lime, onBack }) {
                       )}
                     </div>
                     <div style={{ textAlign: 'right', flexShrink: 0 }}>
-                      <div style={{ fontWeight: 700, fontSize: 15, color: '#fff' }}>${net.toLocaleString()}</div>
-                      {p.fee > 0 && <div style={{ fontSize: 10.5, color: HED.muted, marginTop: 1 }}>of ${p.gross}</div>}
+                      <div style={{ fontWeight: 700, fontSize: 15, color: '#fff' }}>{"$"}{net.toLocaleString()}</div>
+                      {p.fee > 0 && <div style={{ fontSize: 10.5, color: HED.muted, marginTop: 1 }}>of {"$"}{p.gross}</div>}
                     </div>
                   </div>
                 );
@@ -6760,12 +6760,12 @@ function FuncContactsScreen({ accent, onTab, onOpenThread, onOpenContact }) {
   const [deleteConfirm, setDeleteConfirm] = React.useState(null);
   const [renameList, setRenameList] = React.useState(null);
   const [renameName, setRenameName] = React.useState('');
-  const ROLE_FILTERS = ['All', '‚òÖ Starred', 'Talent', 'Venue'];
+  const ROLE_FILTERS = ['All', '★ Starred', 'Talent', 'Venue'];
   const filtered = s.contacts.filter(c => {
     if (list === 'Talent' && c.role !== 'Talent') return false;
     if (list === 'Venue' && c.role !== 'Venue') return false;
-    if (list === '‚òÖ Starred' && !c.starred) return false;
-    if (list !== 'All' && list !== 'Talent' && list !== 'Venue' && list !== '‚òÖ Starred' && !(c.lists || []).includes(list)) return false;
+    if (list === '★ Starred' && !c.starred) return false;
+    if (list !== 'All' && list !== 'Talent' && list !== 'Venue' && list !== '★ Starred' && !(c.lists || []).includes(list)) return false;
     if (q && !(c.name + ' ' + c.email).toLowerCase().includes(q.toLowerCase())) return false;
     return true;
   });
@@ -6782,10 +6782,10 @@ function FuncContactsScreen({ accent, onTab, onOpenThread, onOpenContact }) {
         {(s.contactLists || []).map(l => (
           <span key={l} style={{ display: 'inline-flex', alignItems: 'center', gap: 2 }}>
             <Chip on={list === l} accent={accent} onClick={() => setList(l)}>{l}</Chip>
-            {list === l && <><button onClick={() => { setRenameList(l); setRenameName(l); }} style={{ background: 'none', border: 'none', cursor: 'pointer', color: HED.textSoft, fontSize: 13, padding: '0 3px', lineHeight: 1 }}>‚úè</button><button onClick={() => setDeleteConfirm(l)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: HED.muted, fontSize: 14, padding: '0 2px' }}>√ó</button></>}
+            {list === l && <><button onClick={() => { setRenameList(l); setRenameName(l); }} style={{ background: 'none', border: 'none', cursor: 'pointer', color: HED.textSoft, fontSize: 13, padding: '0 3px', lineHeight: 1 }}>✏</button><button onClick={() => setDeleteConfirm(l)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: HED.muted, fontSize: 14, padding: '0 2px' }}>×</button></>}
           </span>
         ))}
-        <Chip on={false} accent={accent} onClick={() => setNewListOpen(true)}>Ôºã New List</Chip>
+        <Chip on={false} accent={accent} onClick={() => setNewListOpen(true)}>＋ New List</Chip>
       </div>
       <div style={{ padding: '6px 20px 24px' }}>
         {filtered.length === 0 && <div style={{ padding: 28, textAlign: 'center', color: HED.muted, fontSize: 13.5 }}>No contacts match.</div>}
@@ -9075,7 +9075,7 @@ function UpgradeModal({ open, onClose, onViewPlans, accent }) {
           <div style={{ fontSize: 13.5, color: HED.muted, lineHeight: 1.55 }}>
             {'You\'re on '}
             <span style={{ color: '#fff', fontWeight: 600 }}>{currentPlan?.name}</span>
-            {` ‚Äî ${slots.length}/${maxSlots} template slots used. Upgrade to add more venues.`}
+            {` — ${slots.length}/${maxSlots} template slots used. Upgrade to add more venues.`}
           </div>
         </div>
         {nextPlan && (
@@ -9110,7 +9110,7 @@ function UpgradeModal({ open, onClose, onViewPlans, accent }) {
         )}
         <div style={{ padding: '0 16px', display: 'flex', flexDirection: 'column', gap: 10 }}>
           <button
-            onClick={() => { onClose(); window.actions && window.actions.pushNotification && window.actions.pushNotification(`Upgrade to ${nextPlan?.name || 'next tier'} ‚Äî contact support@hedlyner.com`); }}
+            onClick={() => { onClose(); window.actions && window.actions.pushNotification && window.actions.pushNotification(`Upgrade to ${nextPlan?.name || 'next tier'} — contact support@hedlyner.com`); }}
             style={{ width: '100%', padding: 15, borderRadius: 14, background: accentColor, border: 'none', color: '#0a0a0a', fontSize: 15, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit', letterSpacing: -0.1 }}>
             {`Upgrade to ${nextPlan?.name || 'Next Tier'}`}
           </button>
@@ -9551,9 +9551,9 @@ function AccountWithNav({ accent, onTab, onOpenEPKs, onOpenVenues, onOpenBrowseB
             <div style={{ fontWeight: 600, fontSize: 14 }}>Your Earnings</div>
             <div style={{ color: HED.muted, fontSize: 12, marginTop: 2 }}>
               {earningsAdvance > 0 ? `$${earningsAdvance} in advance` : ''}
-              {earningsAdvance > 0 && earningsTransfer > 0 ? ' ¬∑ ' : ''}
+              {earningsAdvance > 0 && earningsTransfer > 0 ? ' · ' : ''}
               {earningsTransfer > 0 ? `$${earningsTransfer} transferring` : ''}
-              {(earningsAdvance > 0 || earningsTransfer > 0) && earningsPaid > 0 ? ' ¬∑ ' : ''}
+              {(earningsAdvance > 0 || earningsTransfer > 0) && earningsPaid > 0 ? ' · ' : ''}
               {earningsPaid > 0 ? `$${earningsPaid.toLocaleString()} paid out` : ''}
             </div>
           </div>
